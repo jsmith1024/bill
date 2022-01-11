@@ -1,0 +1,27 @@
+IDENTIFIER: CHARACTER (CHARACTER | DECDIGIT) ~0..15
+instruction: IDENTIFIER "(" (valuelist | expression) ")"
+
+valuelist: number ("," number)*
+expression: number (OPERATOR number)*
+
+OPERATOR: ("+" | "-" | "*" | "/" | "%" | "**")
+
+number: DECNUM
+DECNUM: DECDIGIT~1..5
+
+CHARACTER: ("a" .. "z")
+DECDIGIT: ("0" .. "9")
+
+COMMENT: /\#[^\n]*/
+%ignore COMMENT
+
+WHITESPACE: (" " | "\t")
+%ignore WHITESPACE
+
+BLANK: _NEWLINE
+%ignore BLANK
+
+_NEWLINE: "\n"
+
+start: (instruction) +
+
