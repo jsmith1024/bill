@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2edox_13',['main.dox',['../main_8dox.html',1,'']]]
+  ['list_11',['list',['../classSubsetTransformer_1_1SubsetTransformer.html#a3671babefc47aee9236f1593404a4453',1,'SubsetTransformer::SubsetTransformer']]]
 ];

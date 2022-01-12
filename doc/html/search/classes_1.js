@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['testadd_5fsubsetparser_56',['TestAdd_SubsetParser',['../classtest__SubsetParser_1_1TestAdd__SubsetParser.html',1,'test_SubsetParser']]],
-  ['tryparser_57',['TryParser',['../classSubsetParser_075th_01copy_08_1_1TryParser.html',1,'SubsetParser(5th copy).TryParser'],['../classSubsetParser_076th_01copy_08_1_1TryParser.html',1,'SubsetParser(6th copy).TryParser'],['../classSubsetParser_1_1TryParser.html',1,'SubsetParser.TryParser'],['../classSubsetParser_077th_01copy_08_1_1TryParser.html',1,'SubsetParser(7th copy).TryParser'],['../classSubsetParser_074th_01copy_08_1_1TryParser.html',1,'SubsetParser(4th copy).TryParser']]],
-  ['trytransformer_58',['TryTransformer',['../classSubsetParser_076th_01copy_08_1_1TryTransformer.html',1,'SubsetParser(6th copy).TryTransformer'],['../classSubsetParser_077th_01copy_08_1_1TryTransformer.html',1,'SubsetParser(7th copy).TryTransformer'],['../classSubsetParser_074th_01copy_08_1_1TryTransformer.html',1,'SubsetParser(4th copy).TryTransformer'],['../classSubsetTransformer_1_1TryTransformer.html',1,'SubsetTransformer.TryTransformer'],['../classSubsetParser_075th_01copy_08_1_1TryTransformer.html',1,'SubsetParser(5th copy).TryTransformer']]]
+  ['testadd_5fsubsetparser_36',['TestAdd_SubsetParser',['../classtest__SubsetParser_1_1TestAdd__SubsetParser.html',1,'test_SubsetParser']]]
 ];

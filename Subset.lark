@@ -12,7 +12,7 @@ DECNUM: DECDIGIT~1..5
 CHARACTER: ("a" .. "z")
 DECDIGIT: ("0" .. "9")
 
-COMMENT: /\#[^\n]*/
+COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
 %ignore COMMENT
 
 WHITESPACE: (" " | "\t")

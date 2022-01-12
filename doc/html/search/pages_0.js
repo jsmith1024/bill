@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['subset_108',['Subset',['../index.html',1,'']]]
+  ['⊆ubset_70',['⊆ubset',['../index.html',1,'']]]
 ];

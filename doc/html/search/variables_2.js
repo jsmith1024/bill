@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['infile_99',['infile',['../namespaceSubsetParser_01_074th_01copy_08.html#a9386c7908d762fe7b4a135dbfa2172ed',1,'SubsetParser (4th copy).infile()'],['../namespaceSubsetParser_01_075th_01copy_08.html#ac32f6dcd5caf1256739a96bb7c441e6e',1,'SubsetParser (5th copy).infile()'],['../namespaceSubsetParser_01_076th_01copy_08.html#ab74c6b13862df70ea3b20d94869b13d8',1,'SubsetParser (6th copy).infile()'],['../namespaceSubsetParser_01_077th_01copy_08.html#a56cd71eb851ec3d0a32f37b7801205f2',1,'SubsetParser (7th copy).infile()']]]
+  ['name_68',['name',['../classFunction_1_1SubsetStatement.html#a724e67721a30b298fab018bc35601da4',1,'Function.SubsetStatement.name()'],['../classInstruction_1_1SubsetStatement.html#aa50efeb95636ee15ddf061dde344977d',1,'Instruction.SubsetStatement.name()'],['../classStatement_1_1SubsetStatement.html#abd758ebb776c352502fcb7e6b6933bbc',1,'Statement.SubsetStatement.name()'],['../classSubsetStatement_1_1SubsetStatement.html#a1fef6142bec74b63897192fe3d823435',1,'SubsetStatement.SubsetStatement.name()']]]
 ];
