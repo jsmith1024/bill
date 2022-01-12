@@ -1,0 +1,30 @@
+/**
+@mainpage   Subset
+
+@section intro_sec Introduction
+:
+    - :
+    <ul>
+        <li> 
+    </ul>
+
+@section    License
+    Copyright (c)  2022  J. Smith. \n
+    Permission is granted to copy, distribute and/or modify this document
+    
+
+@section    Instructions
+@par
+Follow this example code:
+
+@include 
+
+Of course, some variation is possible.
+
+@note
+A copy of this example file is included in the documentation. To run: \n
+python3 /usr/share/doc/-doc/html/demo-.py
+
+@todo
+    Continue testing.
+*/

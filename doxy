@@ -1,0 +1,20 @@
+#!/bin/sh
+
+doxyfile="dox/DoxyHtml"
+if [ -f ${doxyfile} ]
+	then
+		doxygen ${doxyfile}
+fi
+
+doxyfile="dox/DoxyMan"
+if [ -f ${doxyfile} ]
+	then
+		doxygen ${doxyfile}
+fi
+
+doxyfile="dox/DoxyTex"
+if [ -f ${doxyfile} ]
+	then
+		doxygen ${doxyfile}
+fi
+
