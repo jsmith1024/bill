@@ -1,0 +1,70 @@
+Joe,
+
+I haven't read your material yet, but... here is the python library I used.
+
+https://github.com/lark-parser/lark
+
+It has significant options, and requires some things.
+
+1) I did a git clone on their repo
+
+2) In the files that import it, I added before the import: sys.path.insert(0, "/home/nekenyu/git/lark")
+   -- adjust as appropriate
+
+3) I elected to put my language in a text file called language.lark
+
+
+As an advanced technique, I put all except the top level start definition there and had several files defining start tokens so that I could runtime parse specific language features for test/debug purposes, and simply concatenated the proper start and the main file with the following code:
+def buildParser(filenames):
+    language = ""
+    for filename in filenames:
+        infile = open(filename)
+        language += infile.read()
+        infile.close()
+    return Lark(language)
+
+Then I could have multiple parsers available:
+
+    __fullParser = buildParser(["language.lark", "full.lark"])
+    __formParser = buildParser(["language.lark", "form.lark"])
+    __expressionParser = buildParser(["language.lark", "expression.lark"])
+
+This also shows how you build a parser: Lark(languageText).  Its going to say error on line 7 (example) which is a pain if you use a """" quoted string in the file.
+
+Basic parsing:
+
+    def rawParse(self, input):
+        return self.__fullParser.parse(input)
+
+    def rawParsePretty(self, input):
+        return self.parse(input).pretty()
+
+Note the pretty() gives you something to understand the resulting parse tree to help you figure out how to break it apart.  I had a LOT of issues with tree.children[0], etc.
+
+Before you try building the runtime data structures, just try to iterate the parse tree...  There willl be surprises.
+
+Hope this helps.  You will feel overwhelmed.  Just start with the following lark:
+
+start: _instruction +
+
+where you define an _instruction (without any comments) as something simple like print "string"
+
+then build up to
+
+start: ( _instruction | COMMENT ) +
+
+COMMENT was a *pain*.  Full warning.  Start with enough example language before you add it.  Examples were on the internet.  It *matters* if you have it in a string or a file (due to escape characters).  I can't explain this trivially, but I provide these samples...  This makes a comment a # or // through the end of the line, and ignores it completely.  This allowed comments to be partial line (keeping whats before) or full line.  Then there is the whitespace after it for reference.
+
+COMMENT: /(#|\/\/)[^\n]*/
+%ignore COMMENT
+
+WHITESPACE: (" " | "\t" | "\n")
+%ignore WHITESPACE
+
+
+
+On 1/26/20 4:25 PM, jsmith1024 wrote:
+> I added a list of known built in functions and updated some details.
+>
+> tnx,
+> joe

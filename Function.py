@@ -5,7 +5,7 @@
 #from lark import Lark, Tree, Token, Transformer
 #import lark
 
-class SubsetStatement:
+class Function:
     def __init__(self, name, arguments):
         #print('INSTRUCTION: {0} {1}'.format(name, arguments))
         self.name = name

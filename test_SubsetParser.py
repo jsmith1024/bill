@@ -23,7 +23,8 @@ class TestAdd_SubsetParser(unittest.TestCase):
             result  = str(parse.parse(source))
         result      = str(e.exception)
         #print(result)
-        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n'
+        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n'
+        #print(control)
         self.assertEqual(control,  result)
         
         source      = '// Try this!'
@@ -31,7 +32,8 @@ class TestAdd_SubsetParser(unittest.TestCase):
             result  = str(parse.parse(source))
         result      = str(e.exception)
         #print(result)
-        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n'
+        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n'
+        #print(control)
         self.assertEqual(control,  result)
         
         source      = '/* Try this! */'
@@ -39,43 +41,70 @@ class TestAdd_SubsetParser(unittest.TestCase):
             result  = str(parse.parse(source))
         result      = str(e.exception)
         #print(result)
-        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n'
+        control     = 'Unexpected end-of-input. Expected one of: \n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n\t* IDENTIFIER\n'
         self.assertEqual(control,  result)
+        
+        source      = 'return   # none'
+        result      = str(parse.parse(source))
+        #print(str(result))
+        control     = "Tree(start, [Tree(statement, [Tree(reserved_word, [Token(IDENTIFIER, 'return')])])])"
+        #print(control)
+        self.assertEqual(control, result)
+        
+        source      = 'return 8   # outputs 8'
+        result      = str(parse.parse(source))
+        #print(str(result))
+        control     = "Tree(start, [Tree(statement, [Tree(reserved_word, [Token(IDENTIFIER, 'return'), Tree(number, [Token(DECNUM, '8')])])])])"
+        #print(control)
+        self.assertEqual(control, result)
+        
+        source      = 'writeln()'
+        result      = str(parse.parse(source))
+        #print(str(result))
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln')])])])"
+        #print(control)
+        self.assertEqual(control, result)
         
         source      = 'writeln(8)'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         source      = 'writeln(8)   # outputs 8'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         source      = 'writeln(8)   /* outputs 8 */'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         source      = 'writeln(7, 9)'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         source      = 'writeln(7, 9) // 7 9'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         source      = 'writeln(2 + 3)\n'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(expression, [Tree(number, [Token(DECNUM, '2')]), Token(OPERATOR, '+'), Tree(number, [Token(DECNUM, '3')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(expression, [Tree(number, [Token(DECNUM, '2')]), Token(OPERATOR, '+'), Tree(number, [Token(DECNUM, '3')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
         
         parse       = SubsetParser()
@@ -85,7 +114,8 @@ class TestAdd_SubsetParser(unittest.TestCase):
         source     += 'writeln(2 + 3)\n'
         result      = str(parse.parse(source))
         #print(str(result))
-        control     = "Tree(start, [Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])]), Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])]), Tree(instruction, [Token(IDENTIFIER, 'writeln'), Tree(expression, [Tree(number, [Token(DECNUM, '2')]), Token(OPERATOR, '+'), Tree(number, [Token(DECNUM, '3')])])])])"
+        control     = "Tree(start, [Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '8')])])])]), Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(valuelist, [Tree(number, [Token(DECNUM, '7')]), Tree(number, [Token(DECNUM, '9')])])])]), Tree(statement, [Tree(function, [Token(IDENTIFIER, 'writeln'), Tree(expression, [Tree(number, [Token(DECNUM, '2')]), Token(OPERATOR, '+'), Tree(number, [Token(DECNUM, '3')])])])])])"
+        #print(control)
         self.assertEqual(control, result)
 
 # main function

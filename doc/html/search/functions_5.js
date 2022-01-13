@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_59',['number',['../classSubsetTransformer_1_1SubsetTransformer.html#aa591894e660ba317071046405114fd08',1,'SubsetTransformer::SubsetTransformer']]]
+  ['operator_58',['OPERATOR',['../classSubsetTransformer_1_1SubsetTransformer.html#aa72763e7fa2c8f5dceccb552a585b497',1,'SubsetTransformer::SubsetTransformer']]]
 ];

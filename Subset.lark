@@ -1,5 +1,8 @@
 IDENTIFIER: CHARACTER (CHARACTER | DECDIGIT) ~0..15
-instruction: IDENTIFIER "(" (valuelist | expression) ")"
+statement: (reserved_word | function)  // ";"
+
+reserved_word: IDENTIFIER number?
+function: IDENTIFIER "(" (valuelist | expression)? ")"
 
 valuelist: number ("," number)*
 expression: number (OPERATOR number)*
@@ -23,5 +26,4 @@ BLANK: _NEWLINE
 
 _NEWLINE: "\n"
 
-start: (instruction) +
-
+start: (statement) +

@@ -1,0 +1,10 @@
+#!/usr/bin/bill
+
+import Sample.bill;
+
+write “SAMPLE PROGRAM\n”;
+
+Spl = Sample(“Roger”, 10);
+writeln(Spl);                               # new line already added
+
+del Spl;

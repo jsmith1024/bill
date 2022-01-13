@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 import unittest
-from test_SubsetParser    import TestAdd_SubsetParser
+from test_SubsetParser          import TestAdd_SubsetParser
+#from Instruction                import Instruction
+#from Function                   import Function
+#from test_SubsetTransformer     import TestAdd_SubsetTransformer
 
 def subset_suite():
     suite   = unittest.TestSuite()

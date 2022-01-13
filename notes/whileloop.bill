@@ -1,0 +1,24 @@
+# whileloop.bill
+# while loop syntax sample
+
+fun noval main(argv):
+{
+    while(true):
+    {
+        # This is the loop that never ends.
+    }
+    
+    while(1 > 3):
+    {
+        # This loop is skipped.
+    }
+    
+    var dynamic int limit   = argv[1];
+    var dynamic int i       = 0;
+    while(i < limit):
+    {
+        writeln(i);
+        i ++;
+    }
+}
+

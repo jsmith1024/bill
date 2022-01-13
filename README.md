@@ -1,6 +1,11 @@
 # ⊆ubset
+Subset is a simple, static typed, functional language.
+####License
+Copyright (c)  2022  J. Smith.
 
-<h3 style="font-size:40px;">Subset is a simple functional language.</h3>
+Permission is granted to copy, distribute and/or modify this document, 
 
-<h5 style="font-size:30px;">To try:</h5>
-<h6 style="font-size:24px;">subset try.sub</h6>
+provided this notice is kept.
+####Instruction
+try:> 
+subset try.sub

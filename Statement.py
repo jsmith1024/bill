@@ -5,20 +5,20 @@
 #from lark import Lark, Tree, Token, Transformer
 #import lark
 
-class SubsetStatement:
+class Statement:
     def __init__(self, name, arguments):
         #print('INSTRUCTION: {0} {1}'.format(name, arguments))
-        self.name = name
-        self.arguments = arguments
+        self.__name         = name
+        self.__arguments    = arguments
     
     def __repr__(self):
-        return "{{Instruction {0}: {1}}}".format(self.name, self.arguments)
+        return "{{Instruction {0}: {1}}}".format(self.__name, self.__arguments)
 
     def getName(self):
-        return self.name
+        return self.__name
 
     def getArguments(self):
-        return self.arguments
+        return self.__arguments
         
 
 def printIt(items, info, indent = ""):

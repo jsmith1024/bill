@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #import sys
-from SubsetStatement    import SubsetStatement
+from Statement          import Statement
 #from lark import Lark, Tree, Token, Transformer
 import lark
 
@@ -31,10 +31,13 @@ class SubsetTransformer(lark.visitors.Transformer_InPlace):
     def number(self, items):
         #print(items)
         return int(items[0])
-    def instruction(self, items):
+    def statement(self, items):
         #print(items)
-        #return items
-        return SubsetStatement(items[0], items[1])
+        #print(type(items))
+        #print(type(items[0]))
+        if isinstance(items[0], lark.tree.Tree):
+            items = self.tree(items[0])
+        return Statement(items[0], items[1])
 
 def printIt(items, info, indent = ""):
     indentMore = indent + "\t"
