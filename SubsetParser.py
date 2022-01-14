@@ -2,7 +2,7 @@
 
 #import sys
 
-from lark import Lark, Tree, Token, Transformer
+from lark import Lark, Tree, Token  # , Transformer
 import lark
 
 ##  @class SubsetParser
