@@ -1,0 +1,5 @@
+# Try this!
+
+writeln(8);
+writeln(7, 9);
+writeln(2 + 3);

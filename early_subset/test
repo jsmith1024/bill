@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+import unittest
+from test_SubsetParser          import TestAdd_SubsetParser
+#from Instruction                import Instruction
+#from Function                   import Function
+#from test_SubsetTransformer     import TestAdd_SubsetTransformer
+
+def subset_suite():
+    suite   = unittest.TestSuite()
+    result  = unittest.TestResult()
+    suite.addTest(unittest.makeSuite(TestAdd_SubsetParser))
+    runner  = unittest.TextTestRunner(verbosity=2)
+    print(runner.run(suite))
+
+print("\n\n\tunit testing Subset\n")
+subset_suite()
+print()

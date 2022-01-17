@@ -1,44 +1,118 @@
-IDENTIFIER: CHARACTER (CHARACTER | DECDIGIT) ~0..15
-statement: (reserved_word | function | if | else)  // ";"
+// Subset grammer
+// =================================
 
-reserved_word: IDENTIFIER number?
-function: IDENTIFIER "(" (valuelist | expression | bool)? ")"
+statement: (reserved_word | function | if | elsif | else)
 
+// reserved words
+reserved_word: RESERVED_WORD (value | valuelist | function)?
+RESERVED_WORD: ("break" | "continue" | "return")
+
+// classes
+CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
+ACCESS: ("public" | "private" | "protected" | "static")
+instantiate_class: CLASS_NAME = CLASS_NAME "(" valuelist? ")"
+// define class
+def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" _NEWLINE (_INDENT ACCESS (_indent (declare_variable | def_function)* _DEDENT)* _DEDENT)
+
+
+// function
+FUNCTION_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR) ~0..15
+function: FUNCTION_NAME "(" (valuelist | expression | value | function)? ")"
+// define function
+def_function: "fun" FUNCTION_NAME "(" "argsv"? "):" (NOVAL | VARIABLE_TYPE) _NEWLINE tree
+def_main_function: "fun" "main" "(" "argsv"? "):" (NOVAL | "uint()" _NEWLINE tree
+
+// loops
+
+// conditionals
 condition: bool
-if: "if" condition ":" _INDENT statement _DEDENT
-else: "else:"
+if: "if" condition ":" _NEWLINE tree
+elsif: "elsif" condition ":" _NEWLINE tree
+else: "else:" _NEWLINE tree
 
-valuelist: number ("," number)*
-expression: number (OPERATOR number)*
+// block
+// block:
 
-OPERATOR: ("+" | "-" | "*" | "/" | "%" | "**")
 
-// COLON: ":"
+// expressions
+OPERATOR: ( "+"     // add
+          | "-"     // subtract
+          | "*"     // multiply
+          | "/"     // divide
+          | "%"     // modulus
+          | "**"    // power
+          | "=" | "==" | ">" | ">=" | "<" | "<=" | "!=" | "(" | ")") // more
 
-// LBRACE: "{"
-// RBRACE: "}"
+expression: (value | VARIABLE_NAME | function) (OPERATOR (value | VARIABLE_NAME | function))*
 
-number: DECNUM
-DECNUM: DECDIGIT~1..5
+// constants
+CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
 
-CHARACTER: ("a" .. "z")
+// variables
+VARIABLE_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 "$"?
+VARIABLE_TYPE: (BOOL)
+assign_vaiable: VARIABLE_NAME = value
+declare_variable: VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
+
+// dictionaries
+
+// tuples
+
+// lists
+
+// sets
+
+// strings
+%import common.ESCAPED_STRING -> STRING
+
+// scalars
+
+// values
+// contibuted by Jon Smith
 DECDIGIT: ("0" .. "9")
-
+DECDIGIT: ("0" .. "9")
+HEXDIGIT: ("0" .. "9") | ("a" .. "f") | ("A" .. "F")
+BINDIGIT: ("0" | "1")
+decnum16bit: "(" DECNUM ")"
+DECNUM: DECDIGIT~1..5
+hexnum16bit: "#(" HEXNUM ")"
+HEXNUM: HEXDIGIT~1..4
+binnum16bit: "$(" BINNUM ")"
+BINNUM: BINDIGIT~1..16
+number: (decnum16bit | hexnum16bit | binnum16bit)
 
 bool: (TRUE | FALSE)
 TRUE: "true"
 FALSE: "false"
 
+// NULL
+
+value: (number | bool | STRING) // | NULL)
+valuelist: (value | VARIABLE_NAME | function) ("," (value | VARIABLE_NAME | function))*
+
+// comments
 COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
 %ignore COMMENT
 
-// WHITESPACE: (" " | "\t")
-// %ignore WHITESPACE
-
+// whitespace
+// from lark documentation exemples: indented_tree.py
 %import common.WS_INLINE
-%declare _INDENT _DEDENT
 %ignore WS_INLINE
 
+// indentation
+// from lark documentation exemples: indented_tree.py
+_NL: /(\r?\n[\t ]*)+/
+?start: _NL* tree
+tree: NAME _NL [_INDENT tree+ _DEDENT]
+%declare _INDENT _DEDENT
+
+// others
+UPPER_CHAR: ("A" .. "Z")
+LOWER_CHAR: ("a" .. "z")
+
+NOVAL: "no_value"
+
+// contibuted by Jon Smith
 BLANK: _NEWLINE
 %ignore BLANK
 
