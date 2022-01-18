@@ -279,3 +279,26 @@ This message was deleted.
 Side note: I don't think the priority numbers worked, I think it was the order on the line of expression:
 Yeah, and its more mysterious than even taht
 
+ raise UnexpectedToken(t, e.allowed, state=e.state)
+
+expression:  value | VARIABLE_NAME | function 
+                     | (UNARY_OPERATOR_PRE expression)
+                     | (expression UNARY_OPERATOR_POST)
+                     | (expression BINARY_OPERATOR expression)
+                     | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
+valuelist: expression ("," expression)*
+
+Note: This lets us refine what is an expression and valuelist isn't changing.
+
+start
+  function_def
+    main
+    no_value
+    function_call
+      writeln
+      expression
+        value	"Hello World!"
+
+Tree(start, [Tree(function_def, [Token(FUNCTION_NAME, 'main'), Token(NOVAL, 'no_value'), Tree(function_call, [Token(FUNCTION_NAME, 'writeln'), Tree(expression, [Tree(value, [Token(STRING, '"Hello World!"')])])])])])
+
+

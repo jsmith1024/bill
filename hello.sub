@@ -1,2 +1,4 @@
 fun main():no_value
-    writeln("Hello World!")
+{
+   writeln("Hello World!")
+}

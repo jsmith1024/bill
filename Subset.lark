@@ -1,26 +1,27 @@
-// Subset grammer
+// Subset Grammar
 // =================================
 
-statement: (reserved_word | function) // | if | elsif | else)
+// statement: (reserved_word | function_call) // | if | elsif | else)
 
 // reserved words
-reserved_word: RESERVED_WORD (value | valuelist | function)?
+reserved_word: RESERVED_WORD (value | valuelist | function_call)?
 RESERVED_WORD: ("break" | "continue" | "return")
 
 // classes
-CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
-ACCESS: ("public" | "private" | "protected" | "static")
-instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
-// define class
+// CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
+// ACCESS: ("public" | "private" | "protected" | "static")
+// instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
 // def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" _NEWLINE (_INDENT ACCESS (_indent (declare_variable | def_function)* _DEDENT)* _DEDENT)
 
 
-// function
+// functions
+typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE
+typed_argument_list: typed_argument ("," typed_argument)*
 FUNCTION_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR) ~0..15
-function: FUNCTION_NAME "(" (valuelist | expression | value | function)? ")"
-// define function
-def_function: "fun" FUNCTION_NAME "(" valuelist? "):" (NOVAL | VARIABLE_TYPE) tree
-def_main_function: "fun" "main" "(" "argsv"? "):" (NOVAL | "uint()") tree
+function_call: FUNCTION_NAME "(" expression? ")"
+function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) tree
+// function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) "{" function_call "}"  // patch test for hello.sub
+// def_main_function: "fun" "main" "(" "argsv"? "):" (NOVAL | "uint()") tree // Depricate ???
 
 // loops
 
@@ -30,34 +31,48 @@ def_main_function: "fun" "main" "(" "argsv"? "):" (NOVAL | "uint()") tree
 // elsif: "elsif" condition ":" _NEWLINE tree
 // else: "else:" _NEWLINE tree
 
-// block
-// block:
 
+// expressions  // group as urnary, etc//
+UNARY_OPERATOR_PRE:   "-"  // negative
+                    // | "("   // left parenthesis 
 
-// expressions
-OPERATOR: ( "+"     // add
-          | "-"     // subtract
-          | "*"     // multiply
-          | "/"     // divide
-          | "%"     // modulus
-          | "**"    // power
-          | "="     // assignment
-          | "=="    // equal to
-          | "!="    // not equal to
-          | ">"     // greater than to
-          | ">="    // greater than or equal to
-          | "<"     // less than to
-          | "<="    // less than or equal to
-          | "("     // left parenthesis
-          | ")"     ) // more
+UNARY_OPERATOR_POST:  "++"  // increment
+                    | "--"  // decrement
+                    // | ")"   // right parenthesis
 
-expression: (value | VARIABLE_NAME | function) (OPERATOR (value | VARIABLE_NAME | function))*
+BINARY_OPERATOR:  "+"   // add
+                | "-"   // subtract
+                | "*"   // multiply
+                | "/"   // divide
+                | "%"   // modulus
+                | "**"  // power
+                | "="   // assignment
+                | "=="  // equal to
+                | "===" // is
+                | "!="  // not equal to
+                | ">"   // greater than to
+                | ">="  // greater than or equal to
+                | "<"   // less than to
+                | "<="  // less than or equal to        // more
+
+TERNARY_OPERATOR_FIRST:  "?"
+TERNARY_OPERATOR_SECOND: ":"
+
+// expression:  value | VARIABLE_NAME | function_call | (expression OPERATOR expression) // types of expressions
+expression:   value
+            | VARIABLE_NAME
+            | function_call
+            | (UNARY_OPERATOR_PRE expression)
+            | (expression UNARY_OPERATOR_POST)
+            | (expression BINARY_OPERATOR expression)
+            | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
 
 // constants
-// CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
+CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
+declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 
 // variables
-VARIABLE_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 "$" // ?
+VARIABLE_NAME: "$" LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 // "$" // ?
 VARIABLE_TYPE: (BOOL | UINT | INT | FLOAT | STRING)
 assign_vaiable: VARIABLE_NAME "=" value
 declare_variable: VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
@@ -81,11 +96,11 @@ declare_variable: VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
 // scalars -- consider importing a few
 UINT: DECNUM
 INT: ("-" | "+") DECNUM
-FLOAT: ("-" | "+") DECNUM "." DECNUM
-BOOL: (TRUE | FALSE)
-TRUE: "true"
+FLOAT: ("-" | "+") DECNUM "." DECNUM    // clean up negation
+TRUE:  "true"
 FALSE: "false"
-// NULL:
+BOOL: (TRUE | FALSE)
+NULL:  "null"
 
 // values
 // contibuted by Jon Smith
@@ -100,8 +115,8 @@ binnum16bit: "$(" BINNUM ")"
 BINNUM: BINDIGIT~1..16
 number: (decnum16bit | hexnum16bit | binnum16bit)
 
-value: (number | BOOL | STRING) // | NULL)
-valuelist: (value | VARIABLE_NAME | function) ("," (value | VARIABLE_NAME | function))*
+value: (number | BOOL | STRING | NULL)
+valuelist: expression ("," expression)*
 
 // comments
 COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
@@ -128,8 +143,7 @@ NOVAL: "no_value"
 // contibuted by Jon Smith
 BLANK: _NL | _NEWLINE
 %ignore BLANK
-_NEWLINE: "\n" | _NL
+_NEWLINE:  _NL
 
-// start: (statement) +
-start: (def_main_function) +
-// start: (def_function) +
+start: (function_def) +
+// start: (function_def | declare_variable) +
