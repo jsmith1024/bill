@@ -4,6 +4,7 @@
 
 from lark import Lark, Tree, Token  # , Transformer
 import lark
+from lark.indenter import Indenter
 
 ##  @class SubsetParser
 #   @brief parse Subset code
@@ -16,7 +17,7 @@ class SubsetParser():
         infile          = open(self.__filename)
         language: str   = infile.read()
         infile.close()
-        self.__parser   = Lark(language)
+        self.__parser   = Lark(language, parser="lalr")
     
     ##  string representation
     #   @brief  return "SubsetParser: Subset.lark"
