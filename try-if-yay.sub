@@ -1,5 +1,10 @@
 # Try this!
 
+fun yay():string
+{
+    return "Yay!"
+}
+
 fun main():no_value
 {
     if true:
@@ -14,4 +19,6 @@ fun main():no_value
     {
         writeln(2 + 3)
     }
+    
+    writeln(yay())
 }

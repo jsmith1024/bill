@@ -22,9 +22,11 @@ function_call: FUNCTION_NAME "(" valuelist? ")"
 function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) block
 
 // loops
+while: "while"  condition ":" block
+for: "for" condition ("," expression) ":" block
 
 // conditionals
-condition: BOOL
+condition: expression       // binary_expression ?
 if:     "if"    condition ":" block
 elsif:  "elsif" condition ":" block
 else:   "else:" block
@@ -60,10 +62,10 @@ TERNARY_OPERATOR_SECOND: ":"
 expression:   value
             | VARIABLE_NAME
             | function_call
-            | (UNARY_OPERATOR_PRE expression)
-            | (expression UNARY_OPERATOR_POST)
-            | (expression BINARY_OPERATOR expression)
-            | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
+            | (UNARY_OPERATOR_PRE expression)                                                   -> unary_pre_expression
+            | (expression UNARY_OPERATOR_POST)                                                  -> unary_post_expression
+            | (expression BINARY_OPERATOR expression)                                           -> binary_expression
+            | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression) -> ternary_expression
 
 // constants
 CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
@@ -71,9 +73,10 @@ declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 
 // variables
 VARIABLE_NAME: "$" LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 // "$" // ?
-VARIABLE_TYPE: (BOOL | UINT | INT | FLOAT | STRING)
-assign_vaiable: VARIABLE_NAME "=" value
-declare_variable: VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
+// VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
+VARIABLE_TYPE: "bool" | "uint" | "int" | "float" | "string"
+assign_variable: expression         // VARIABLE_NAME "=" expression
+declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
 
 // dictionaries
 // pair: value ":" valuelist
@@ -127,7 +130,7 @@ COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
 // others
 UPPER_CHAR: ("A" .. "Z")
 LOWER_CHAR: ("a" .. "z")
-block: "{" (function_call | reserved_word)* "}"
+block: "{" (declare_variable | assign_variable | for | if | elsif | else | while | function_call | reserved_word | expression)* "}"
 
 NOVAL: "no_value"
 

@@ -1,0 +1,47 @@
+# Try this!
+
+fun yay():string        // declare a function called by main()
+{
+    return "Yay!"       // use return keyword
+}
+
+fun main():no_value
+{
+    // conditions
+    var $x:uint(8, 4)
+    if $x < 1:
+    {
+        writeln(8)
+    }
+    elsif $x = 1:       # Why not take == or <=, etc...?
+    {
+        writeln(7, 9)
+    }
+    else:
+    {
+        writeln(2 + 3)
+    }
+    
+    writeln(yay())      // call a function
+    
+    var $word:string()  // declare
+    $word = yay()       // assign from a function
+    writeln($word)      // print string variable
+    
+    var $y:string(yay())// declare and assign from a function
+    
+    // loops!!
+    var $i:uint()
+    $i = 0
+    while true:
+    {
+        writeln($i)
+        $i++            // increment !!
+    }
+    
+    var $i:uint(8, 0)   // declare and assign
+    for $i < 10, $i++:  // condition and step
+    {
+        writeln($i)
+    }
+}

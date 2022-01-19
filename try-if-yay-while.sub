@@ -1,5 +1,10 @@
 # Try this!
 
+fun yay():string
+{
+    return "Yay!"
+}
+
 fun main():no_value
 {
     if true:
@@ -13,5 +18,15 @@ fun main():no_value
     else:
     {
         writeln(2 + 3)
+    }
+    
+    writeln(yay())
+    
+    var $i:uint()
+    $i = 0
+    while true:
+    {
+        writeln($i)
+        $i++
     }
 }

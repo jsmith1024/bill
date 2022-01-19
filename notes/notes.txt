@@ -332,3 +332,68 @@ Tree(start,
     ]
 )
 
+start
+  function_def
+    yay
+    string
+    block
+      reserved_word
+        return
+        valuelist
+          expression
+            value	"Yay!"
+  function_def
+    main
+    no_value
+    block
+      if
+        condition	true
+        block
+          function_call
+            writeln
+            valuelist
+              expression
+                value
+                  number	8
+      elsif
+        condition	false
+        block
+          function_call
+            writeln
+            valuelist
+              expression
+                value
+                  number	7
+              expression
+                value
+                  number	9
+      else
+        block
+          function_call
+            writeln
+            valuelist
+              expression
+                expression
+                  value
+                    number	2
+                +
+                expression
+                  value
+                    number	3
+      function_call
+        writeln
+        valuelist
+          expression
+            function_call	yay
+
+===============================
+
+elsif
+        condition
+          binary_expression
+            expression	$x
+            =               <- Why not take == or <=, etc...?
+            expression
+              value
+                number	1
+
