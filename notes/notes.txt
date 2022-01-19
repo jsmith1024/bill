@@ -301,4 +301,34 @@ start
 
 Tree(start, [Tree(function_def, [Token(FUNCTION_NAME, 'main'), Token(NOVAL, 'no_value'), Tree(function_call, [Token(FUNCTION_NAME, 'writeln'), Tree(expression, [Tree(value, [Token(STRING, '"Hello World!"')])])])])])
 
+start
+  function_def
+    main
+    no_value
+    block
+      function_call
+        writeln
+        expression
+          value	"Hello World!"
+
+Tree(start, 
+    [
+        Tree(function_def, [Token(FUNCTION_NAME, 'main'), Token(NOVAL, 'no_value'),
+            Tree(block, 
+            [
+                Tree(function_call, [Token(FUNCTION_NAME, 'writeln'),
+                    Tree(expression, 
+                    [
+                        Tree(value, [Token(STRING, '"Hello World!"')]
+                        )
+                    ]
+                    )
+                ]
+                )
+            ]
+            )
+        ]
+        )
+    ]
+)
 

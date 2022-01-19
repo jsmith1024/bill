@@ -4,7 +4,7 @@
 // statement: (reserved_word | function_call) // | if | elsif | else)
 
 // reserved words
-reserved_word: RESERVED_WORD (value | valuelist | function_call)?
+reserved_word: RESERVED_WORD (valuelist | function_call)?
 RESERVED_WORD: ("break" | "continue" | "return")
 
 // classes
@@ -18,18 +18,16 @@ RESERVED_WORD: ("break" | "continue" | "return")
 typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE
 typed_argument_list: typed_argument ("," typed_argument)*
 FUNCTION_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR) ~0..15
-function_call: FUNCTION_NAME "(" expression? ")"
-function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) tree
-// function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) "{" function_call "}"  // patch test for hello.sub
-// def_main_function: "fun" "main" "(" "argsv"? "):" (NOVAL | "uint()") tree // Depricate ???
+function_call: FUNCTION_NAME "(" valuelist? ")"
+function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) block
 
 // loops
 
 // conditionals
-// condition: BOOL
-// if: "if" condition ":" _NEWLINE tree
-// elsif: "elsif" condition ":" _NEWLINE tree
-// else: "else:" _NEWLINE tree
+condition: BOOL
+if:     "if"    condition ":" block
+elsif:  "elsif" condition ":" block
+else:   "else:" block
 
 
 // expressions  // group as urnary, etc//
@@ -99,7 +97,7 @@ INT: ("-" | "+") DECNUM
 FLOAT: ("-" | "+") DECNUM "." DECNUM    // clean up negation
 TRUE:  "true"
 FALSE: "false"
-BOOL: (TRUE | FALSE)
+BOOL: TRUE | FALSE
 NULL:  "null"
 
 // values
@@ -113,7 +111,7 @@ hexnum16bit: "#(" HEXNUM ")"
 HEXNUM: HEXDIGIT~1..4
 binnum16bit: "$(" BINNUM ")"
 BINNUM: BINDIGIT~1..16
-number: (decnum16bit | hexnum16bit | binnum16bit)
+number: (decnum16bit | hexnum16bit | binnum16bit | UINT)
 
 value: (number | BOOL | STRING | NULL)
 valuelist: expression ("," expression)*
@@ -123,27 +121,19 @@ COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
 %ignore COMMENT
 
 // whitespace
-// from lark documentation exemples: indented_tree.py
-%import common.WS_INLINE
-%ignore WS_INLINE
-
-// indentation
-// from lark documentation exemples: indented_tree.py
-_NL: /(\r?\n[\t ]*)+/
-// ?start: _NL* tree
-tree: [_INDENT tree+ _DEDENT] // NAME  _NL
-%declare _INDENT _DEDENT
+%import common.WS
+%ignore WS
 
 // others
 UPPER_CHAR: ("A" .. "Z")
 LOWER_CHAR: ("a" .. "z")
+block: "{" (function_call | reserved_word)* "}"
 
 NOVAL: "no_value"
 
 // contibuted by Jon Smith
-BLANK: _NL | _NEWLINE
+%import common.NEWLINE -> _NEWLINE
+BLANK: _NEWLINE
 %ignore BLANK
-_NEWLINE:  _NL
 
-start: (function_def) +
-// start: (function_def | declare_variable) +
+start: (function_def | declare_variable) +

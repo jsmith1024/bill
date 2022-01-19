@@ -17,7 +17,7 @@ class SubsetParser():
         infile          = open(self.__filename)
         language: str   = infile.read()
         infile.close()
-        self.__parser   = Lark(language, parser="lalr")
+        self.__parser   = Lark(language)        #, parser="lalr")
     
     ##  string representation
     #   @brief  return "SubsetParser: Subset.lark"
