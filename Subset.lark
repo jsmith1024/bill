@@ -26,7 +26,7 @@ while: "while"  condition ":" block
 for: "for" condition ("," expression) ":" block
 
 // conditionals
-condition: expression       // binary_expression ?
+condition: binary_comp_expression | BOOL
 if:     "if"    condition ":" block
 elsif:  "elsif" condition ":" block
 else:   "else:" block
@@ -34,38 +34,57 @@ else:   "else:" block
 
 // expressions  // group as urnary, etc//
 UNARY_OPERATOR_PRE:   "-"  // negative
+                    | "!"  // not
                     // | "("   // left parenthesis 
 
 UNARY_OPERATOR_POST:  "++"  // increment
                     | "--"  // decrement
                     // | ")"   // right parenthesis
 
-BINARY_OPERATOR:  "+"   // add
-                | "-"   // subtract
-                | "*"   // multiply
-                | "/"   // divide
-                | "%"   // modulus
-                | "**"  // power
-                | "="   // assignment
-                | "=="  // equal to
-                | "===" // is
-                | "!="  // not equal to
-                | ">"   // greater than to
-                | ">="  // greater than or equal to
-                | "<"   // less than to
-                | "<="  // less than or equal to        // more
+BINARY_MATH_OPERATOR: "+"   // add
+                    | "-"   // subtract
+                    | "*"   // multiply
+                    | "/"   // divide
+                    | "%"   // modulus
+                    | "**"  // power
+                    | "="   // assignment
+
+BINARY_COMP_OPERATOR: "=="  // equal to
+                    | "===" // is
+                    | "!="  // not equal to
+                    | ">="  // greater than or equal to
+                    | ">"   // greater than to
+                    | "<="  // less than or equal to
+                    | "<"   // less than to
+
+BINARY_LOGIC_OPERATOR: "&&" // and
+                    | "||"  // or
+                    | "!="  // xor
+                    | "<<"  // shift left
+                    | ">>"  // shift right
 
 TERNARY_OPERATOR_FIRST:  "?"
 TERNARY_OPERATOR_SECOND: ":"
 
-// expression:  value | VARIABLE_NAME | function_call | (expression OPERATOR expression) // types of expressions
+unary_pre_expression: (UNARY_OPERATOR_PRE expression)
+unary_post_expression: (expression UNARY_OPERATOR_POST)
+binary_math_expression: (expression BINARY_MATH_OPERATOR expression)
+binary_comp_expression: (expression BINARY_COMP_OPERATOR expression)
+ternary_expression: (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
+
 expression:   value
             | VARIABLE_NAME
             | function_call
-            | (UNARY_OPERATOR_PRE expression)                                                   -> unary_pre_expression
-            | (expression UNARY_OPERATOR_POST)                                                  -> unary_post_expression
-            | (expression BINARY_OPERATOR expression)                                           -> binary_expression
-            | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression) -> ternary_expression
+            | unary_pre_expression
+            | unary_post_expression
+            | binary_math_expression
+            | binary_comp_expression
+            | ternary_expression
+//             | (UNARY_OPERATOR_PRE expression)                                                   -> unary_pre_expression
+//             | (expression UNARY_OPERATOR_POST)                                                  -> unary_post_expression
+//             | (expression BINARY_MATH_OPERATOR expression)                                      -> binary_math_expression
+//             | (expression BINARY_COMP_OPERATOR expression)                                      -> binary_comp_expression
+//             | (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression) -> ternary_expression
 
 // constants
 CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
@@ -96,8 +115,10 @@ declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
 
 // scalars -- consider importing a few
 UINT: DECNUM
-INT: ("-" | "+") DECNUM
-FLOAT: ("-" | "+") DECNUM "." DECNUM    // clean up negation
+// // INT: ("-" | "+") DECNUM
+%import common.SIGNED_INT -> INT
+// // FLOAT: ("-" | "+") DECNUM "." DECNUM
+%import common.SIGNED_FLOAT -> FLOAT
 TRUE:  "true"
 FALSE: "false"
 BOOL: TRUE | FALSE

@@ -13,7 +13,7 @@ fun main():no_value
     {
         writeln(8)
     }
-    elsif $x = 1:       # Why not take == or <=, etc...?
+    elsif $x == 1:       # Why not take == or <=, etc...?
     {
         writeln(7, 9)
     }
@@ -40,7 +40,7 @@ fun main():no_value
     }
     
     var $i:uint(8, 0)   // declare and assign
-    for $i < 10, $i++:  // condition and step
+    for $i <= 10, $i++: // condition and step
     {
         writeln($i)
     }
