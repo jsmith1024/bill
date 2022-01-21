@@ -397,3 +397,23 @@ elsif
               value
                 number	1
 
+===============================
+
+[Tree(function_def, 
+    [Token(FUNCTION_NAME, 'main'), Token(NOVAL, 'no_value'),
+    
+        Tree(block, [Tree(declare_variable, [Token(VARIABLE_NAME, '$x'),
+            Token(VARIABLE_TYPE, 'int'), [[Tree(value, [8])], [Tree(value, [0])]]]),
+        
+        Tree(if, [Tree(condition, [Tree(binary_comp_expression, [[Token(VARIABLE_NAME, '$x')], Token(BINARY_COMP_OPERATOR, '=='), [Tree(value, [0])]])]),
+            Tree(block, [Tree(assign_variable, [[Tree(function_call, [Token(FUNCTION_NAME, 'writeln'), [[Tree(value, [7])]]])]])])]),
+        Tree(elsif, [Tree(condition, [Tree(binary_comp_expression, [[Token(VARIABLE_NAME, '$x')], Token(BINARY_COMP_OPERATOR, '=='), [Tree(value, [1])]])]),
+            Tree(block, [Tree(assign_variable, [[Tree(function_call, [Token(FUNCTION_NAME, 'writeln'), [[Tree(value, [8])]]])]])])]),
+        Tree(else,
+            [Tree(block, [Tree(assign_variable, [[Tree(function_call, [Token(FUNCTION_NAME, 'writeln'), [[Tree(value, [9])]]])]])])]
+        )]
+        
+        )
+    
+    ]
+)]

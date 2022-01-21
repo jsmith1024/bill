@@ -15,20 +15,26 @@ infile.close()
 # parse file
 parser      = SubsetParser()
 tree        = parser.parse(input)
-print(tree.pretty())
-print(tree)
+#print(tree.pretty())
+#print(tree)
 
 # transform tree
-#STrans      = SubsetTransformer()
-#x_form_tree = STrans.transform(tree)
-#result      = []
-#for child in x_form_tree.children:
-    #result.append(child)
+STrans      = SubsetTransformer()
+x_form_tree = STrans.transform(tree)
+result      = []
+for child in x_form_tree.children:
+    result.append(child)
 #print(result)
 #control     = '[{Instruction print: [8]}, {Instruction print: [7, 9]}]'
 #print(control)
 #print('match:', str(result) == control)
 
-# Interpreter fun!
-#I           = Interpreter()
-#I.interpret(result)
+# Build IR
+#SIRB        = SubsetIRBuilder(result)
+#mod         = SIRB.build()
+#print(mod)
+
+# Run IR
+#SE          = SubsetExecutor(mod)
+#SE.run()
+##print(SE)

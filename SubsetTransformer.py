@@ -8,8 +8,9 @@ import lark
 ##  @class SubsetTransformer
 #   @brief transform Subset code
 class SubsetTransformer(lark.visitors.Transformer_InPlace):
-    valuelist = list
-    expression = list
+    tree        = list
+    valuelist   = list
+    expression  = list
     def OPERATOR(self, items):
         return items[0]
     def list(self, items):
@@ -22,12 +23,12 @@ class SubsetTransformer(lark.visitors.Transformer_InPlace):
     def dict(self, items):
         #print(items)
         return dict(items)
-    def tree(self, item):
-        #print(item)
-        results = []
-        for child in item.children:
-            results.append(child)
-        return results
+    #def tree(self, item):
+        ##print(item)
+        #results = []
+        #for child in item.children:
+            #results.append(child)
+        #return results
     def number(self, items):
         #print(items)
         return int(items[0])
@@ -39,14 +40,14 @@ class SubsetTransformer(lark.visitors.Transformer_InPlace):
             items = self.tree(items[0])
         return Statement(items[0], items[1])
 
-def printIt(items, info, indent = ""):
-    indentMore = indent + "\t"
-    print("{0}[ Begin {1}:".format(indent, info))
-    for item in items:
-        if isinstance(item, lark.Tree):
-            printIt(item.children, item.data, indentMore)
-        else:
-            print("{0}{1},".format(indentMore, item))
-    print("{0}End {1} ]".format(indent, info))
+#def printIt(items, info, indent = ""):
+    #indentMore = indent + "\t"
+    #print("{0}[ Begin {1}:".format(indent, info))
+    #for item in items:
+        #if isinstance(item, lark.Tree):
+            #printIt(item.children, item.data, indentMore)
+        #else:
+            #print("{0}{1},".format(indentMore, item))
+    #print("{0}End {1} ]".format(indent, info))
 
 

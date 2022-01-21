@@ -1,6 +1,6 @@
 # Try this!
 
-fun yay():string        // declare a function called by main()
+fun yay():string        // declare a function to be called by main()
 {
     return "Yay!"       // use return keyword
 }
@@ -13,7 +13,7 @@ fun main():no_value
     {
         writeln(8)
     }
-    elsif $x == 1:       # Why not take == or <=, etc...?
+    elsif $x == 1:
     {
         writeln(7, 9)
     }

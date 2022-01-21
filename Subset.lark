@@ -13,6 +13,7 @@ RESERVED_WORD: ("break" | "continue" | "return")
 // instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
 // def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" _NEWLINE (_INDENT ACCESS (_indent (declare_variable | def_function)* _DEDENT)* _DEDENT)
 
+// structs
 
 // functions
 typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE
@@ -41,27 +42,43 @@ UNARY_OPERATOR_POST:  "++"  // increment
                     | "--"  // decrement
                     // | ")"   // right parenthesis
 
-BINARY_MATH_OPERATOR: "+"   // add
-                    | "-"   // subtract
+BINARY_MATH_OPERATOR: "+"   // add, concatenate strings
+                    | "-"   // subtract, set difference
                     | "*"   // multiply
                     | "/"   // divide
+                    | "//"  // floor divide
                     | "%"   // modulus
                     | "**"  // power
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
                     | "="   // assignment
+
+BINARY_INP_OPERATOR:  "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "*="  // inplace multiply
+                    | "/="  // implace divide
+                    | "//=" // inplace true divide
+                    | "%="  // implace modulus
 
 BINARY_COMP_OPERATOR: "=="  // equal to
                     | "===" // is
                     | "!="  // not equal to
-                    | ">="  // greater than or equal to
-                    | ">"   // greater than to
-                    | "<="  // less than or equal to
-                    | "<"   // less than to
+                    | ">="  // greater than or equal to, set superset (exclusive)
+                    | ">"   // greater than to, set superset
+                    | "<="  // less than or equal to,s set subset
+                    | "<"   // less than to, set subset (exclusive)
+                    | "in"  // membership
 
-BINARY_LOGIC_OPERATOR: "&&" // and
-                    | "||"  // or
-                    | "!="  // xor
+BINARY_LOGIC_OPERATOR: "&"  // and, set intersection
+                    | "|"   // or, set union
+                    | "^"   // xor, set symmetric difference
                     | "<<"  // shift left
                     | ">>"  // shift right
+                    | "~"   // invert
 
 TERNARY_OPERATOR_FIRST:  "?"
 TERNARY_OPERATOR_SECOND: ":"
@@ -106,6 +123,9 @@ declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
 
 // lists
 // list: "[" valuelist "]"
+
+// arrays
+// array: "[" valuelist "]"
 
 // sets
 // set: "{" valuelist "}"

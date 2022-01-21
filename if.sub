@@ -1,0 +1,19 @@
+# Try this!
+
+fun main():no_value
+{
+    var $x:int(8, 0)
+    
+    if $x == 0:
+    {
+        writeln(7)
+    }
+    elsif $x == 1:
+    {
+        writeln(8)
+    }
+    else:
+    {
+        writeln(9)
+    }
+}
