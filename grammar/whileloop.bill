@@ -1,0 +1,24 @@
+# whileloop.bill
+# while loop syntax sample
+
+fun main($argsv):int8
+{
+    while true:
+    {
+        # This is the loop that never ends.
+    }
+    
+    while 1 > 3:
+    {
+        # This loop is skipped.
+    }
+    
+//     var $limit:vector   = $argsv[1]
+    var $i:int8 = 0
+    while $i < $argsv[1]:
+    {
+        writeln($i)
+        $i ++
+    }
+}
+

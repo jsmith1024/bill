@@ -1,0 +1,208 @@
+// Subset Grammar
+// =================================
+
+// statement: (reserved_word | function_call) // | if | elsif | else)
+
+// reserved words
+reserved_word: RESERVED_WORD (valuelist | function_call)?
+RESERVED_WORD: ("break" | "continue" | "del" | "exit" | "return")
+
+// classes
+CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
+ACCESS: ("public" | "private" | "protected" | "static")
+instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
+def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" ("{" ACCESS ("{" (declare_variable | function_def)* "}")* "}")
+
+// structs
+
+// functions
+typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE
+typed_argument_list: typed_argument ("," typed_argument)*
+FUNCTION_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR) ~0..15
+function_call: FUNCTION_NAME "(" valuelist? ")"
+function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) block
+            |  "fun" "main" "(" announce_argsv? "):" (NOVAL | VARIABLE_TYPE) block
+
+// loops
+while: "while"  condition ":" block
+for: "for" "(" assign_variable";" condition (";" expression)? ")" ":" block
+    | "for" assign_variable "to" value ":" block
+
+// conditionals
+condition: binary_comp_expression | BOOL
+if:     "if"    condition ":" block
+elsif:  "elsif" condition ":" block
+else:   "else:" block
+
+
+// expressions  // group as urnary, etc//
+UNARY_OPERATOR_PRE:   "-"  // negative
+                    | "!"  // not
+                    // | "("   // left parenthesis 
+
+UNARY_OPERATOR_POST:  "++"  // increment
+                    | "--"  // decrement
+                    // | ")"   // right parenthesis
+
+BINARY_MATH_OPERATOR: "+"   // add, concatenate strings
+                    | "-"   // subtract, set difference
+                    | "*"   // multiply
+                    | "/"   // divide
+                    | "//"  // floor divide
+                    | "%"   // modulus
+                    | "**"  // power
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "="   // assignment
+
+BINARY_INP_OPERATOR:  "+="  // inplace add
+                    | "-="  // implace subtract
+                    | "*="  // inplace multiply
+                    | "/="  // implace divide
+                    | "//=" // inplace true divide
+                    | "%="  // implace modulus
+
+BINARY_COMP_OPERATOR: "=="  // equal to
+                    | "===" // is
+                    | "!="  // not equal to
+                    | ">="  // greater than or equal to, set superset (exclusive)
+                    | ">"   // greater than to, set superset
+                    | "<="  // less than or equal to,s set subset
+                    | "<"   // less than to, set subset (exclusive)
+                    | "in"  // membership
+
+BINARY_LOGIC_OPERATOR: "&"  // and, set intersection
+                    | "|"   // or, set union
+                    | "^"   // xor, set symmetric difference
+                    | "<<"  // shift left
+                    | ">>"  // shift right
+                    | "~"   // invert
+
+TERNARY_OPERATOR_FIRST:  "?"
+TERNARY_OPERATOR_SECOND: ":"
+
+unary_pre_expression: (UNARY_OPERATOR_PRE expression)
+unary_post_expression: (expression UNARY_OPERATOR_POST)
+binary_math_expression: (expression BINARY_MATH_OPERATOR expression)
+binary_comp_expression: (expression BINARY_COMP_OPERATOR expression)
+binary_inp_expression: (VARIABLE_NAME BINARY_INP_OPERATOR expression)
+ternary_expression: (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
+
+expression:   value
+            | VARIABLE_NAME
+            | function_call
+            | unary_pre_expression
+            | unary_post_expression
+            | binary_math_expression
+            | binary_comp_expression
+            | binary_inp_expression
+            | ternary_expression
+
+// constants
+CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
+declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
+
+// variables
+VARIABLE_NAME: "$" LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 // "$" // ?
+// VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
+VARIABLE_TYPE:    "bool"
+                | "uint1"
+                | "uint8"
+                | "uint16"
+                | "uint32"
+                | "uint64"
+                | "uint128"
+                | "int1"
+                | "int8"
+                | "int16"
+                | "int32"
+                | "int64"
+                | "int128"
+                | "float16"
+                | "float32"
+                | "float64"
+                | "float128"
+                | "string"
+                | "vector"
+assign_variable: (declare_variable | VARIABLE_NAME) "=" expression
+declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
+// declare_assign_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
+
+// dictionaries
+// pair: value ":" valuelist
+// dict: "{" pair ("," pair)* "}"
+
+// tuples
+// tuple: "(" valuelist ")"
+
+// sequence index
+sequence_index: "[" (UINT)? (":")? (UINT)? "]"   // "[" (UINT (":" UINT?)?) | (":" UINT?) "]"
+
+// Vectors
+assign_vector: (declare_vector | VARIABLE_NAME) "=" ("[" valuelist "]" | VARIABLE_NAME | call_vector)
+declare_vector:  "var" VARIABLE_NAME ":" "vector" ("[" UINT "]")?   // length
+call_vector: VARIABLE_NAME (sequence_index)?
+announce_argsv: "$argsv"
+
+// arrays
+// array: "[" valuelist "]"
+
+// sets
+// set: "{" valuelist "}"
+
+// strings
+%import common.ESCAPED_STRING -> STRING
+
+// scalars -- consider importing a few
+UINT: DECNUM
+// // INT: ("-" | "+") DECNUM
+%import common.SIGNED_INT -> INT
+// // FLOAT: ("-" | "+") DECNUM "." DECNUM
+%import common.SIGNED_FLOAT -> FLOAT
+TRUE:  "true"
+FALSE: "false"
+BOOL: TRUE | FALSE
+NULL:  "null"
+
+// values
+// contibuted by Jon Smith
+DECDIGIT: ("0" .. "9")
+HEXDIGIT: ("0" .. "9") | ("a" .. "f") | ("A" .. "F")
+BINDIGIT: ("0" | "1")
+decnum16bit: "(" DECNUM ")"
+DECNUM: DECDIGIT~1..5
+hexnum16bit: "#(" HEXNUM ")"
+HEXNUM: HEXDIGIT~1..4
+binnum16bit: "$(" BINNUM ")"
+BINNUM: BINDIGIT~1..16
+number: (decnum16bit | hexnum16bit | binnum16bit | UINT | FLOAT)
+
+value: (number | BOOL | STRING | NULL)
+valuelist: expression ("," expression)*
+
+// comments
+// %import common.C_COMMENT -> C_COMMENT
+COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")     //C_COMMENT)      // "/*" ((_NEWLINE "*") |_NEWLINE )* "*/")    //  "/*" /[^\n]*/ "*/")
+%ignore COMMENT
+
+// whitespace
+%import common.WS
+%ignore WS
+
+// others
+UPPER_CHAR: ("A" .. "Z")
+LOWER_CHAR: ("a" .. "z")
+block: _NEWLINE "{" _NEWLINE (function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | reserved_word | expression)* _NEWLINE "}" _NEWLINE
+
+NOVAL: "no_value"
+
+// contibuted by Jon Smith
+%import common.NEWLINE -> _NEWLINE
+BLANK: _NEWLINE
+%ignore BLANK
+
+start: (def_class | function_def | declare_variable) +

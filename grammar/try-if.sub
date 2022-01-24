@@ -1,0 +1,17 @@
+# Try this!
+
+fun main():no_value
+{
+    if true:
+    {
+        writeln(8)
+    }
+    elsif false:
+    {
+        writeln(7, 9)
+    }
+    else:
+    {
+        writeln(2 + 3)
+    }
+}

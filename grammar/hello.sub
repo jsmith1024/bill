@@ -1,0 +1,4 @@
+fun main():no_value
+{
+   writeln("Hello World!")
+}

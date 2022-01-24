@@ -1,0 +1,17 @@
+#!/usr/bin/env bill
+
+# nested-fun.bill
+
+fun outer():no_value
+{
+    fun inner($x:int8, $y:int8):int8
+    {
+        return $x + $y
+    }
+    
+    write("Sum: ")
+    writeln(inner(2, 3))
+    
+    exit
+}
+

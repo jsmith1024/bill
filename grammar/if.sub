@@ -1,0 +1,15 @@
+# Try this!
+
+fun main():no_value
+{
+//     var $x:int(8, 0)
+    
+//     if $x == 0:
+//     {
+//         return 7
+//     }
+//     else:
+//     {
+//         return 8
+//     }
+}

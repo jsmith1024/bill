@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import sys
+from BillParser         import BillParser
+
+# read in file
+infile      = open(sys.argv[1])
+input: str  = infile.read()
+infile.close()
+
+# parse file
+parser      = BillParser()
+tree        = parser.parse(input)
+print(tree.pretty())
+print()
+print(tree)
