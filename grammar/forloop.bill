@@ -16,7 +16,7 @@ fun main():no_value
         writeln($i)
     }
     
-    for (var $i:int64 = 0; $i < 1; $i += .03):
+    for (var $i:float64 = 0; $i < 1; $i += .03):
     {
         writeln($i)
     }

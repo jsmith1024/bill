@@ -5,13 +5,13 @@
 
 // reserved words
 reserved_word: RESERVED_WORD (valuelist | function_call)?
-RESERVED_WORD: ("break" | "continue" | "del" | "exit" | "return")
+RESERVED_WORD: ("break" | "continue" | "return")
 
 // classes
 CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
 ACCESS: ("public" | "private" | "protected" | "static")
 instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
-def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" ("{" ACCESS ("{" (declare_variable | function_def)* "}")* "}")
+def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" _NEWLINE (_INDENT ACCESS (_indent (declare_variable | def_function)* _DEDENT)* _DEDENT)
 
 // structs
 
@@ -24,7 +24,7 @@ function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIAB
 
 // loops
 while: "while"  condition ":" block
-for: "for" assign_variable"," condition ("," expression)+ ":" block
+for: "for" condition ("," expression) ":" block
 
 // conditionals
 condition: binary_comp_expression | BOOL
@@ -87,7 +87,6 @@ unary_pre_expression: (UNARY_OPERATOR_PRE expression)
 unary_post_expression: (expression UNARY_OPERATOR_POST)
 binary_math_expression: (expression BINARY_MATH_OPERATOR expression)
 binary_comp_expression: (expression BINARY_COMP_OPERATOR expression)
-binary_inp_expression: (VARIABLE_NAME BINARY_INP_OPERATOR expression)
 ternary_expression: (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)
 
 expression:   value
@@ -97,7 +96,6 @@ expression:   value
             | unary_post_expression
             | binary_math_expression
             | binary_comp_expression
-            | binary_inp_expression
             | ternary_expression
 
 // constants
@@ -107,27 +105,9 @@ declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 // variables
 VARIABLE_NAME: "$" LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 // "$" // ?
 // VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
-VARIABLE_TYPE:    "bool"
-                | "uint1"
-                | "uint8"
-                | "uint16"
-                | "uint32"
-                | "uint64"
-                | "uint128"
-                | "int1"
-                | "int8"
-                | "int16"
-                | "int32"
-                | "int64"
-                | "int128"
-                | "float16"
-                | "float32"
-                | "float64"
-                | "float128"
-                | "string"
-assign_variable: (declare_variable | VARIABLE_NAME) "=" expression
-declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
-// declare_assign_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
+VARIABLE_TYPE: "bool" | "uint" | "int" | "float" | "string"
+assign_variable: expression         // VARIABLE_NAME "=" expression
+declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "(" valuelist? ")"
 
 // dictionaries
 // pair: value ":" valuelist
@@ -170,14 +150,13 @@ hexnum16bit: "#(" HEXNUM ")"
 HEXNUM: HEXDIGIT~1..4
 binnum16bit: "$(" BINNUM ")"
 BINNUM: BINDIGIT~1..16
-number: (decnum16bit | hexnum16bit | binnum16bit | UINT | FLOAT)
+number: (decnum16bit | hexnum16bit | binnum16bit | UINT)
 
 value: (number | BOOL | STRING | NULL)
 valuelist: expression ("," expression)*
 
 // comments
-// %import common.C_COMMENT -> C_COMMENT
-COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")     //C_COMMENT)      // "/*" ((_NEWLINE "*") |_NEWLINE )* "*/")    //  "/*" /[^\n]*/ "*/")
+COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /[^\n]*/ "*/")
 %ignore COMMENT
 
 // whitespace
@@ -196,4 +175,4 @@ NOVAL: "no_value"
 BLANK: _NEWLINE
 %ignore BLANK
 
-start: (def_class | function_def | declare_variable) +
+start: (function_def | declare_variable) +

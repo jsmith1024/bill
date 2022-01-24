@@ -186,7 +186,7 @@ valuelist: expression ("," expression)*
 
 // comments
 // %import common.C_COMMENT -> C_COMMENT
-COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")     //C_COMMENT)      // "/*" ((_NEWLINE "*") |_NEWLINE )* "*/")    //  "/*" /[^\n]*/ "*/")
+COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")
 %ignore COMMENT
 
 // whitespace

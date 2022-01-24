@@ -12,6 +12,6 @@ fun outer():no_value
     write("Sum: ")
     writeln(inner(2, 3))
     
-    exit
+    exit 0
 }
 
