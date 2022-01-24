@@ -1,0 +1,26 @@
+# if_regex.bill
+# regex and conditional sample
+
+# regex NOT in Subset!
+
+import Regex.bill;
+
+fun noval main():
+{
+    var str pattern     = '/+d/';
+    var str text        = 'Hello, my favorite number is 123.";
+    NumberRGX           = Regex(pattern);
+    var bool is_match   = NumberRGX.match(text);
+
+    var replacement     = 'xyz';
+    if is_match:
+    {
+        writeln(NumberRGX.replace(text, replacement));
+    }
+    else:
+    {
+        writeln('Sorry, no match.');
+    }
+    # result is "Hello, my favorite number is xyz."
+}
+

@@ -1,0 +1,64 @@
+/*  @class  Happy
+ *  @brief  sample class definition file
+ */
+class Happy():
+
+private:
+    
+    var x:int(16)               // instance variable declared
+    
+public:
+    
+    /*  constructor
+     *  @brief  set initial value of x
+     */
+    construct():no_value
+        x = 9
+    
+    /*  destructor
+     *  @brief  destroy x
+     */
+    destruct():no_value
+        del(x)                  // or something that really does it.
+    
+    /*  tostring
+     *  @brief  convert to string
+     *  @return (string)
+     */
+    fun tostring():string()
+        return tostring(x)
+    
+    /*  tofloat
+     *  @brief  convert to float
+     *  @return (float(64))
+     */
+    fun tofloat():float(64)
+        return tofloat(64, x)   // i'm winging it here
+    
+    /*  getX
+     *  @brief  get value of x
+     *  @return (uint(16))
+     */
+    fun getX():uint(16)
+        return x
+    
+    /*  setX
+     *  @brief  set new x valuet
+     *  @param (uint(16))
+     */
+    fun setX(in_x:uint(16)):no_value
+        x = in_x                // x must remain a uint(16)
+    
+    /*  loop
+     *  @brief  populate a list, with a length of x
+     */
+    fun loop():no_value
+        var numbers(list)
+        for i:uint(8, 0) to x:
+            numbers.append(i)
+        writeln(numbers.tostring())
+
+fun main():no_value
+    H = Happy()                 // instantiate
+    H.loop()
+    writeln('I am this happy: ' + H.tostring())

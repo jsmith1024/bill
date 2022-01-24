@@ -1,0 +1,21 @@
+# forloop.bill
+# for loop syntax sample
+
+/*  @fn     main
+ *  @brief  simple forloop
+ */
+fun main():no_value
+{
+
+    for var $i:int64 = 0, $i < 1, $i += .03:
+    {
+        writeln($i)
+    }
+
+    # foreach (sequence types only)
+//     foreach(var str arg, argv):
+//     {
+//         writeln(arg);
+//     }
+}
+

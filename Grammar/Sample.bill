@@ -1,0 +1,86 @@
+# Sample.bill
+# sample class definition file.
+
+/*  @class Sample
+ *  @brief sample class example
+ */
+class Sample():
+{
+    private:
+        var private name:string
+        var age:uint8
+        var other:string	
+    
+    public:
+        /*  constructor
+         *  @brief  set up vars
+         *  @param  NAME    (str)       name of person
+         *  @param  AGE     (uint8)     age of person
+         *  @param  OTHER   (string)    other data      [default = false]
+         */
+        fun construct(NAME:string, AGE:uint8 = 0, OTHER:string = ""):no_value
+        {
+            name    = NAME
+            age     = AGE
+            other   = OTHER
+        }
+        
+        /*  string  representation
+         *  @brief  introduction
+         *  @return (string)
+         */
+        fun tostring():string
+        {
+            var result:string   = 'Hello, my name is: '
+            result             +=  name
+            result             +=  '. My age is: '
+            result             +=  age
+            return result
+        }
+    
+        /*  getName
+         *  @brief get name
+         *  return (string)
+         */
+        fun getName():string
+        {
+            return name
+        }
+        
+        /*  getAge
+         *  @brief get age
+         *  return (uint8)
+         */
+        fun getAge():uint8
+        {
+            return age
+        }
+        
+        /*  getOther
+         *  @brief  get other
+         *  return (string)
+         */
+        fun getOther():string
+        {
+            return other
+        }
+        
+        /*  setAge
+         *  @param AGE     (uint8)     age of person
+         *  @brief set age
+         */
+        fun setAge(AGE:uint8):no_value
+        {
+            age     = AGE
+        }
+        
+        /*  destructor
+         *  @brief del vars
+         */
+        fun destruct():no_value
+        {
+            del name
+            del age
+            del other
+        }
+}
