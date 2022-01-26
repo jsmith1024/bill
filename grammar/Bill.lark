@@ -8,25 +8,26 @@ reserved_word: RESERVED_WORD (valuelist | function_call)?
 RESERVED_WORD: ("break" | "continue" | "del" | "exit" | "return")
 
 // classes
-CLASS_NAME: UPPER_CHAR ((UPPER_CHAR | LOWER_CHAR)) ~0..15
-ACCESS: ("public" | "private" | "protected" | "static")
+CLASS_NAME: IDENTIFIER
+access: ("public" | "private" | "protected" | "static") ":" (declare_variable | function_def)*
 instantiate_class: CLASS_NAME "=" CLASS_NAME "(" valuelist? ")"
-def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" ("{" ACCESS ("{" (declare_variable | function_def)* "}")* "}")
+def_class: "class" CLASS_NAME "(" CLASS_NAME? "):" ("{" (access ("{" (declare_variable | function_def)* "}")*)* "}")
+method_call: CLASS_NAME "." function_call
 
 // structs
 
 // functions
-typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE
+typed_argument: VARIABLE_NAME ":" VARIABLE_TYPE ("=" value)?
 typed_argument_list: typed_argument ("," typed_argument)*
-FUNCTION_NAME: LOWER_CHAR (UPPER_CHAR | LOWER_CHAR) ~0..15
+FUNCTION_NAME: IDENTIFIER
 function_call: FUNCTION_NAME "(" valuelist? ")"
 function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIABLE_TYPE) block
             |  "fun" "main" "(" announce_argsv? "):" (NOVAL | VARIABLE_TYPE) block
 
 // loops
 while: "while"  condition ":" block
-for: "for" "(" assign_variable";" condition (";" expression)? ")" ":" block
-    | "for" assign_variable "to" value ":" block
+for:   "for" "(" assign_variable";" condition (";" expression)? ")" ":" block
+    |  "for" assign_variable "to" value ":" block
 
 // conditionals
 condition: binary_comp_expression | BOOL
@@ -95,6 +96,7 @@ ternary_expression: (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERAT
 expression:   value
             | VARIABLE_NAME
             | function_call
+            | method_call
             | unary_pre_expression
             | unary_post_expression
             | binary_math_expression
@@ -107,7 +109,7 @@ CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
 declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 
 // variables
-VARIABLE_NAME: "$" LOWER_CHAR (UPPER_CHAR | LOWER_CHAR | DECDIGIT | "_") ~0..15 // "$" // ?
+VARIABLE_NAME: IDENTIFIER "$"?
 // VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
 VARIABLE_TYPE:    "bool"
                 | "uint1"
@@ -146,7 +148,7 @@ sequence_index: "[" (UINT)? (":")? (UINT)? "]"   // "[" (UINT (":" UINT?)?) | ("
 assign_vector: (declare_vector | VARIABLE_NAME) "=" ("[" valuelist "]" | VARIABLE_NAME | call_vector)
 declare_vector:  "var" VARIABLE_NAME ":" "vector" ("[" UINT "]")?   // length
 call_vector: VARIABLE_NAME (sequence_index)?
-announce_argsv: "$argsv"
+announce_argsv: "argsv"
 
 // arrays
 // array: "[" valuelist "]"
@@ -179,9 +181,10 @@ hexnum16bit: "#(" HEXNUM ")"
 HEXNUM: HEXDIGIT~1..4
 binnum16bit: "$(" BINNUM ")"
 BINNUM: BINDIGIT~1..16
-number: (decnum16bit | hexnum16bit | binnum16bit | UINT | FLOAT)
+INT8: DECNUM
+number: (decnum16bit | hexnum16bit | binnum16bit | UINT | FLOAT | INT8)
 
-value: (number | BOOL | STRING | NULL)
+value: (number | BOOL | STRING | NULL | call_vector)
 valuelist: expression ("," expression)*
 
 // comments
@@ -196,11 +199,12 @@ COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")
 // others
 UPPER_CHAR: ("A" .. "Z")
 LOWER_CHAR: ("a" .. "z")
-block: _NEWLINE "{" _NEWLINE (function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | reserved_word | expression)* _NEWLINE "}" _NEWLINE
+block: "{" (function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | method_call | reserved_word | expression)* "}"
 
 NOVAL: "no_value"
 
 // contibuted by Jon Smith
+IDENTIFIER: /[a-zA-Z][a-zA-Z0-9_]{0,15}/
 %import common.NEWLINE -> _NEWLINE
 BLANK: _NEWLINE
 %ignore BLANK

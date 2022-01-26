@@ -7,7 +7,7 @@
 class Sample():
 {
     private:
-        var private name:string
+        var name:string
         var age:uint8
         var other:string	
     
@@ -31,10 +31,10 @@ class Sample():
          */
         fun tostring():string
         {
-            var result:string   = 'Hello, my name is: '
-            result             +=  name
-            result             +=  '. My age is: '
-            result             +=  age
+            var result:string   = "Hello, my name is: "
+            result             += name
+            result             += ". My age is: "
+            result             += age
             return result
         }
     

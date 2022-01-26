@@ -4,9 +4,9 @@
 
 fun outer():no_value
 {
-    fun inner($x:int8, $y:int8):int8
+    fun inner(x:int8, y:int8):int8
     {
-        return $x + $y
+        return x + y
     }
     
     write("Sum: ")

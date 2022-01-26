@@ -5,17 +5,7 @@
 
 fun main():no_value
 {
-    write("H")      // I haven't worked out char arrays yet.
-    write("e")
-    write("l")      #  This works too.
-    write("l")
-    write("o")      /* As does this. */
-    write(" ")
-    write("W")
-    write("o")
-    write("r")
-    write("l")
-    writeln("d")    // This one adds a newline.
-    exit            // defaults to 0
+    writeln("Hello World")
+    exit                    // defaults to 0
 }
 

@@ -1,7 +1,7 @@
 # whileloop.bill
 # while loop syntax sample
 
-fun main($argsv):int8
+fun main(argsv):int8
 {
     while true:
     {
@@ -14,11 +14,11 @@ fun main($argsv):int8
     }
     
 //     var $limit:vector   = $argsv[1]
-    var $i:int8 = 0
-    while $i < $argsv[1]:
+    var i:int8 = 0
+    while i < argsv[1]:
     {
-        writeln($i)
-        $i ++
+        writeln(i)
+        i ++
     }
 }
 
