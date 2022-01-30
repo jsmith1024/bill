@@ -1,0 +1,5 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Bill}{1}{chapter.1}%
+\contentsline {subsubsection}{\numberline {1.0.0.1}License}{1}{subsubsection.1.0.0.1}%
+\contentsline {subsubsection}{\numberline {1.0.0.2}Instruction}{1}{subsubsection.1.0.0.2}%
+\contentsline {chapter}{\numberline {2}Instructions}{3}{chapter.2}%
