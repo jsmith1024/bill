@@ -6,6 +6,6 @@ Copyright (c)  2022  J. Smith.
 Permission is granted to copy, distribute and/or modify this document, 
 
 provided this notice is kept.
-####Instruction
-try:> 
-bill try.bill
+####Manuals
+
+[Refence Manual](../refman/html/index.html)
