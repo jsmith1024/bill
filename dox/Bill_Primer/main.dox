@@ -1,0 +1,18 @@
+/**
+@mainpage   Bill Primer
+
+@htmlonly
+<h1>Reference Manual</h1>
+<h4>Introduction</h4>
+This document is disigned to help progammers leadn the basics of Bill.
+
+<h4>License</h4>
+    Copyright (c)  2022  J. Smith.</br>
+    Permission is granted to copy, distribute and/or modify this document.</br>
+@endhtmlonly
+
+\ref Hello Hello World
+
+\ref Fun Functions
+
+*/

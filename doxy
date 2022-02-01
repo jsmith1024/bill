@@ -1,12 +1,13 @@
 #!/usr/bin/bash
 
-here=${pwd}
+here=pwd
+# echo ${here}
 
-doxyfile="dox/DoxyHtml"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-fi
+# doxyfile="dox/DoxyHtml"
+# if [ -f ${doxyfile} ]
+# 	then
+# 		doxygen ${doxyfile}
+# fi
 
 doxyfile="dox/DoxyMan"
 if [ -f ${doxyfile} ]
@@ -14,11 +15,13 @@ if [ -f ${doxyfile} ]
 		doxygen ${doxyfile}
 fi
 
-# doxyfile="dox/DoxyTex"
-# if [ -f ${doxyfile} ]
-# 	then
-# 		doxygen ${doxyfile}
-# fi
+
+
+doxyfile="dox/DoxyHome"
+if [ -f ${doxyfile} ]
+	then
+		doxygen ${doxyfile}
+fi
 
 doxyfile="dox/DoxyRefman"
 if [ -f ${doxyfile} ]
@@ -33,9 +36,9 @@ doxyfile="dox/DoxyUserman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-		cd doc/userman/latex
-		make
-		cd $here
+# 		cd doc/userman/latex
+# 		make
+# 		cd $here
 fi
 
 doxyfile="dox/DoxyLangman"
@@ -51,9 +54,9 @@ doxyfile="dox/DoxyStlman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-		cd doc/stlman/latex
-		make
-		cd $here
+# 		cd doc/stlman/latex
+# 		make
+# 		cd $here
 fi
 
-
+# echo ${here}
