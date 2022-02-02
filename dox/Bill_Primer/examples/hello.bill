@@ -1,6 +1,6 @@
 #!/usr/bin/env bill
 
-# main.bill
+# hello.bill
 # aka hello world
 
 fun main():no_value

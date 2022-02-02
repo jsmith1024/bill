@@ -170,8 +170,9 @@
 \end{titlepage}
 \pagebreak
 \vspace*{7cm}
-{\large Copyright (c)  2022  J. Smith.
+{\large This document is disigned to help progammers learn the basics of Bill.
 
+Copyright (c)  2022  J. Smith.
 Permission is granted to copy, distribute and/or modify this document, provided this notice is kept.}\\
 \clearemptydoublepage
 \pagenumbering{roman}
@@ -179,5 +180,19 @@ Permission is granted to copy, distribute and/or modify this document, provided 
 \clearemptydoublepage
 \pagenumbering{arabic}
 \hypersetup{pageanchor=true}
+
+\tableofcontents
+\contentsline {chapter}{\numberline Hello World}{3}
+\contentsline {section}{\numberline Beginning}{3}
+\contentsline {chapter}{\numberline Types}{5}
+\contentsline {chapter}{\numberline Expressions}{7}
+\contentsline {chapter}{\numberline Strings}{9}
+\contentsline {chapter}{\numberline Conditionals}{11}
+\contentsline {chapter}{\numberline Condtainers}{13}
+\contentsline {chapter}{\numberline Loops}{15}
+\contentsline {chapter}{\numberline Functions}
+\contentsline {section}{\numberline Declaring}
+\contentsline {chapter}{\numberline Exceptions}
+\contentsline {chapter}{\numberline Style}
 
 %--- Begin generated contents ---

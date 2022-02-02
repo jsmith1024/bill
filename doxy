@@ -9,11 +9,11 @@ here=pwd
 # 		doxygen ${doxyfile}
 # fi
 
-doxyfile="dox/DoxyMan"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-fi
+# doxyfile="dox/DoxyMan"
+# if [ -f ${doxyfile} ]
+# 	then
+# 		doxygen ${doxyfile}
+# fi
 
 
 
@@ -27,9 +27,9 @@ doxyfile="dox/DoxyRefman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-		cd doc/refman/latex
-		make
-		cd $here
+# 		cd doc/refman/latex
+# 		make
+# 		cd $here
 fi
 
 doxyfile="dox/DoxyUserman"
@@ -45,9 +45,9 @@ doxyfile="dox/DoxyLangman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-		cd doc/langman/latex
-		make
-		cd $here
+# 		cd doc/langman/latex
+# 		make
+# 		cd $here
 fi
 
 doxyfile="dox/DoxyStlman"

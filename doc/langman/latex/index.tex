@@ -1,5 +1,24 @@
+\hypertarget{index_The}{}\doxysection{Beginning}\label{index_The}
+Hello World
+
+\char`\"{}\+Hello World\char`\"{} is traditionally the first program one writes in a new language.
 
 
-Hello Hello World
+\begin{DoxyVerbInclude}
+#!/usr/bin/env bill
 
-Fun Functions 
+# hello.bill
+# aka hello world
+
+fun main():no_value
+{
+    writeln("Hello World")
+    exit                    // defaults to 0
+}
+
+\end{DoxyVerbInclude}
+ hello.\+bill
+
+Of course, the first few lines are unnecessary. However, declaring a main function is required. Details, on that, in the next shapter (\mbox{\hyperlink{Functions}{Functions}}).
+
+Next\+: \mbox{\hyperlink{Types}{Types}} 

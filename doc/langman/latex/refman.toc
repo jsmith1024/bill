@@ -1,2 +1,12 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
-\contentsline {chapter}{\numberline {1}Bill Primer}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Bill Primer}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Beginning}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Conditionals}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Containers}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Exceptions}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Expressions}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Functions}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Declaring a Function}{13}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Strings}{15}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Style}{17}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Types}{19}{chapter.9}%

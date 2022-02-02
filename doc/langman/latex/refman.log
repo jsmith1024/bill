@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  1 FEB 2022 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  1 FEB 2022 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,7 +702,7 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count303
 \l__pdf_internal_box=\box114
 )
-(./refman.aux)
+No file refman.aux.
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
@@ -725,7 +725,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
 LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 15
 2.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -804,20 +804,19 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 152.
 LaTeX Info: Redefining \pageref on input line 152.
 LaTeX Info: Redefining \nameref on input line 152.
-
-(./refman.out) (./refman.out)
 \@outlinefile=\write5
 \openout5 = `refman.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\Etoc@tf=\read4
+
+No file refman.toc.
 Package hyperref Info: Option `pageanchor' set `false' on input line 158.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 158.
 
 Package hyperref Info: Option `unicode' set `true' on input line 158.
  <./Bill_logo.png>
-<Bill_logo.png, id=8, 78.2925pt x 52.195pt>
+<Bill_logo.png, id=4, 78.2925pt x 52.195pt>
 File: Bill_logo.png Graphic file (type png)
 <use Bill_logo.png>
 Package pdftex.def Info: Bill_logo.png  used on input line 164.
@@ -830,83 +829,485 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 176.
+(Font)              scaled to size 8.99994pt on input line 177.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 176.
+(Font)              scaled to size 6.29996pt on input line 177.
 [2]
 \tf@toc=\write6
 \openout6 = `refman.toc'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 179
+Package hyperref Info: Option `pageanchor' set `true' on input line 182.
+
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.186 \contentsline
+                    {section}{\numberline Beginning}{3}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.186 \contentsline
+                    {section}{\numberline Beginning}{3}
+? 
+Runaway argument?
+{
+! Paragraph ended before \HyperDestNameFilter was complete.
+<to be read again> 
+                   \par 
+l.186 \contentsline
+                    {section}{\numberline Beginning}{3}
+? 
+! Extra }, or forgotten \endgroup.
+\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
+                                                  \endgroup \let #1\Hy@gtemp 
+l.186 \contentsline
+                    {section}{\numberline Beginning}{3}
+? 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 186
 .
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 179
+LaTeX Font Info:    Trying to load font information for U+msb on input line 186
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 17
-9.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-) [1
+)
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.188 \contentsline
+                    {chapter}{\numberline Expressions}{7}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.188 \contentsline
+                    {chapter}{\numberline Expressions}{7}
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.188 \contentsline
+                    {chapter}{\numberline Expressions}{7}
+? 
+Runaway argument?
+{
+! Paragraph ended before \HyperDestNameFilter was complete.
+<to be read again> 
+                   \par 
+l.188 \contentsline
+                    {chapter}{\numberline Expressions}{7}
+? 
+! Extra }, or forgotten \endgroup.
+\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
+                                                  \endgroup \let #1\Hy@gtemp 
+l.188 \contentsline
+                    {chapter}{\numberline Expressions}{7}
+? 
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.190 \contentsline
+                    {chapter}{\numberline Conditionals}{11}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.190 \contentsline
+                    {chapter}{\numberline Conditionals}{11}
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.190 \contentsline
+                    {chapter}{\numberline Conditionals}{11}
+? 
+Runaway argument?
+{
+! Paragraph ended before \HyperDestNameFilter was complete.
+<to be read again> 
+                   \par 
+l.190 \contentsline
+                    {chapter}{\numberline Conditionals}{11}
+? 
+! Extra }, or forgotten \endgroup.
+\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
+                                                  \endgroup \let #1\Hy@gtemp 
+l.190 \contentsline
+                    {chapter}{\numberline Conditionals}{11}
+? 
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.192 \contentsline
+                    {chapter}{\numberline Loops}{15}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.192 \contentsline
+                    {chapter}{\numberline Loops}{15}
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192 \contentsline
+                    {chapter}{\numberline Loops}{15}
+? 
+Runaway argument?
+{
+! Paragraph ended before \HyperDestNameFilter was complete.
+<to be read again> 
+                   \par 
+l.192 \contentsline
+                    {chapter}{\numberline Loops}{15}
+? 
+! Extra }, or forgotten \endgroup.
+\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
+                                                  \endgroup \let #1\Hy@gtemp 
+l.192 \contentsline
+                    {chapter}{\numberline Loops}{15}
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 \contentsline {section}
+                             {\numberline Declaring}
+? 
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.194 \contentsline {section}
+                             {\numberline Declaring}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.194 \contentsline {section}
+                             {\numberline Declaring}
+? 
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.194 \contentsline {section}
+                             {\numberline Declaring}
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \contentsline {chapter}
+                             {\numberline Style}
+? 
+! Argument of \contentsline has an extra }.
+<inserted text> 
+                \par 
+l.196 \contentsline {chapter}
+                             {\numberline Style}
+? 
+Runaway argument?
+! Paragraph ended before \contentsline was complete.
+<to be read again> 
+                   \par 
+l.196 \contentsline {chapter}
+                             {\numberline Style}
+? 
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.196 \contentsline {chapter}
+                             {\numberline Style}
+? 
+[1
+
 
 ] [2
 
 ]
-Package hyperref Info: Option `pageanchor' set `true' on input line 181.
-
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 184.
+(Font)              scaled to size 18.66588pt on input line 199.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 184.
+(Font)              scaled to size 18.66588pt on input line 199.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 184.
+(Font)              scaled to size 18.66588pt on input line 199.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 184.
+(Font)              scaled to size 22.39185pt on input line 199.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 184.
+(Font)              scaled to size 22.39185pt on input line 199.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 184.
-(./index.tex) [1
+(Font)              scaled to size 22.39185pt on input line 199.
+(./index.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
 
-] [2
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+ \T1/phv/m/n/10 Hello World  
+ []
 
-] (./refman.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
- (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
-Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 295574C1E588C7828CA9306622689102;114.
- ) 
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+ []\T1/phv/m/n/10 "[]Hello World" is tra-di-tion-ally the first pro-gram one wr
+ites in a new lan-guage.  
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 7.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+ \T1/phv/m/n/10 hello.[]bill  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+ \T1/phv/m/n/10 that, in the next shap-ter ([]).  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 24--201
+ []\T1/phv/m/n/10 Next[]: []   
+ []
+
+[3] [4
+
+]
+Chapter 2.
+(./Conditionals.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--205
+ []\T1/phv/m/n/10 If...   
+ []
+
+[5] [6
+
+]
+Chapter 3.
+(./Containers.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--209
+ []\T1/phv/m/n/10 Containers can hold mul-ti-ple val-ues.   
+ []
+
+[7] [8
+
+]
+Chapter 4.
+(./Exceptions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--213
+ []\T1/phv/m/n/10 oops!   
+ []
+
+[9] [10
+
+]
+Chapter 5.
+(./Expressions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--217
+ []\T1/phv/m/n/10 Express!   
+ []
+
+[11] [12
+
+]
+Chapter 6.
+(./Functions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+ []\T1/phv/m/n/10 Encapsulating re-peat-able steps, is how we make pro-gram-min
+g eas-ier.  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+ \T1/phv/m/n/10 hello.[]bill  
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 21--22
+ []\T1/phv/m/n/10 The fun-cion def-i-ni-tion line should look famil-liar. The "
+fun" re-served word de-clares a func- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+ \T1/phv/m/n/10 tion.  
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 25--25
+ []\T1/phv/m/n/10 A com-mon prac-tice of stat-i-cally typed lan-guages is to de
+-clare the type "void," which is sim-i-lar.[]  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 26--221
+ \T1/phv/m/n/10 etc...   
+ []
+
+[13] [14
+
+]
+Chapter 7.
+(./Strings.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--225
+ []\T1/phv/m/n/10 $$$   
+ []
+
+[15] [16
+
+]
+Chapter 8.
+(./Style.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--229
+ []\T1/phv/m/n/10 S[]T[]Y[]L[]E!   
+ []
+
+[17] [18
+
+]
+Chapter 9.
+(./Types.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+ []  
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--234
+ []\T1/phv/m/n/10 Every form of data is a type. By ex-ten-sion, the same is tru
+e for func-tions.   
+ []
+
+[19] [20
+
+]
+No file refman.ind.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
+(./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
+
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  CA4511505D2892D6059E38CC5A1B9655;1214.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 4)
+
+### semi simple group (level 4) entered at line 196 (\begingroup)
+### simple group (level 3) entered at line 196 ({)
+### semi simple group (level 2) entered at line 194 (\begingroup)
+### simple group (level 1) entered at line 194 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 16310 strings out of 483183
- 236099 string characters out of 5966292
- 502352 words of memory out of 5000000
- 31031 multiletter control sequences out of 15000+600000
- 561894 words of font info for 55 fonts, out of 8000000 for 9000
+ 16412 strings out of 483183
+ 237227 string characters out of 5966292
+ 505214 words of memory out of 5000000
+ 31077 multiletter control sequences out of 15000+600000
+ 568717 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,96p,938b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (6 pages, 27420 bytes).
+ 55i,11n,96p,938b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{chapter} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{\\par\040} has been referenced but does not exist, 
+replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
+uhvr8a.pfb>
+Output written on refman.pdf (22 pages, 54420 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
