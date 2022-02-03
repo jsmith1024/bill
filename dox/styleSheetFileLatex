@@ -575,19 +575,3 @@
 \refstepcounter{figure}%
 \@dblarg{\@caption{figure}}}
 \makeatother
-
-\begin{document}
-\setcounter{tocdepth}{5}
-\contentsline {chapter}{\numberline {1}Hello World}{1}
-\contentsline {section}{\numberline {1.1}Beginning}{1}
-\contentsline {chapter}{\numberline {2}Types}{3}
-\contentsline {chapter}{\numberline {3}Expressions}{5}
-\contentsline {chapter}{\numberline {4}Strings}{7}
-\contentsline {chapter}{\numberline {5}Conditionals}{9}
-\contentsline {chapter}{\numberline {6}Condtainers}{11}
-\contentsline {chapter}{\numberline {7}Loops}{13}
-\contentsline {chapter}{\numberline {8}Functions}{15}
-\contentsline {section}{\numberline {8.1}Declaring}{15}
-\contentsline {chapter}{\numberline {9}Exceptions}{17}
-\contentsline {chapter}{\numberline {10}Style}{19}
-\end{document}
