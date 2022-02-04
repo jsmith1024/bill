@@ -417,3 +417,19 @@ elsif
     
     ]
 )]
+
+@latexonly
+\setlength{\arrayrulewidth}{0pt}
+\noindent
+@endlatexonly
+<table border="0">
+    <tr>
+        <td>&lowast;</td>                   <td>See @ref Flow. </td>
+    </tr>
+    <tr>
+        <td>&lowast;&lowast;</td>           <td>See @ref Functions. </td>
+    </tr>
+    <tr>
+        <td>&lowast;&lowast;&lowast;</td>   <td>See @ref Exceptions. </td>
+    </tr>
+</table>

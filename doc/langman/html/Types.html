@@ -25,7 +25,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><!--Bill-->
    </div>
-   <div id="projectbrief">the Pragmatic Language</div>
+   <div id="projectbrief">Primer</div>
   </td>
  </tr>
  </tbody>
@@ -69,8 +69,44 @@ $(function() {
 
 </div><!-- top -->
 <div class="PageDoc"><div class="contents">
-<div class="textblock"><p><a class="el" href="Types.html">Types</a></p>
-<p>Every form of data is a type. By extension, the same is true for functions. </p>
+<div class="textblock"><h1>Types</h1>
+<p><a class="el" href="Types.html">Types</a></p>
+<p>Every form of data is a type. By extension, the same is true for functions. Built in types:</p><ul>
+<li>null</li>
+<li>boolean</li>
+<li>int8</li>
+<li>int64</li>
+<li>float64</li>
+<li>string</li>
+<li>array</li>
+<li>vector</li>
+<li>set</li>
+<li>tuple</li>
+<li>dictionary</li>
+</ul>
+<h1><a class="anchor" id="Integers"></a>
+Integers</h1>
+<p>All integers are signed. See <a class="el" href="Types.html#Unsigned">Unsigned</a> for more information.</p>
+<p>There are two integer types:</p><ul>
+<li>int8 is 8 bit. (-128 to + 127)</li>
+<li>int64 is 64 bit. (± a really big number)</li>
+</ul>
+<p><em>Tip:</em> Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don't trust "Ther's no reason for it to go beyond limits." It must be <b>impossible</b> to exceed limits or, it's only a matter of time.</p>
+<h2><a class="anchor" id="Unsigned"></a>
+Unsigned</h2>
+<p>Why no unsigned integers? Here is a great answer: <a href="https://blog.robertelder.org/signed-or-unsigned-part-2/">https://blog.robertelder.org/signed-or-unsigned-part-2/</a></p>
+<h1><a class="anchor" id="Floats"></a>
+Floats</h1>
+<h1><a class="anchor" id="Boolean"></a>
+Boolean</h1>
+<h1><a class="anchor" id="Strings"></a>
+Strings</h1>
+<h1><a class="anchor" id="Null"></a>
+Null</h1>
+<h1><a class="anchor" id="Others"></a>
+Others</h1>
+<p>For more information, please see <a class="el" href="Containers.html">Containers</a>.</p>
+<p>Next: <a class="el" href="Expressions.html">Expressions</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->

@@ -1,0 +1,25 @@
+\hypertarget{hello_8bill-example}{}\doxysection{hello.\+bill}
+hello.\+bill
+
+The funcion definition line should look familliar. The \char`\"{}fun\char`\"{} reserved word declares a function.
+
+After the \char`\"{}\+:\char`\"{} is the function return type. However, in this case \char`\"{}no\+\_\+value\char`\"{} indicates there is ho return of any kind.
+
+A common practice of statically typed languages is to declare the type \char`\"{}void,\char`\"{} which is similar.\hypertarget{6.dox_Declaring}{}\doxysubsection{Declaring a Function}\label{6.dox_Declaring}
+etc...
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\#!/usr/bin/env bill}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# hello.bill}
+\DoxyCodeLine{\# aka hello world}
+\DoxyCodeLine{}
+\DoxyCodeLine{fun main():no\_value}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    writeln("Hello World")}
+\DoxyCodeLine{    exit                    // defaults to 0}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\end{DoxyCodeInclude}
+ 

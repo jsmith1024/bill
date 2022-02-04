@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['strings_2edox_7',['Strings.dox',['../Strings_8dox.html',1,'']]],
-  ['style_2edox_8',['Style.dox',['../Style_8dox.html',1,'']]]
+  ['7_2edox_5',['7.dox',['../7_8dox.html',1,'']]]
 ];

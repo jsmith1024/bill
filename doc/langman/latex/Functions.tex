@@ -1,6 +1,10 @@
+
+
 \mbox{\hyperlink{Functions}{Functions}}
 
-Encapsulating repeatable steps, is how we make programming easier.
+Encapsulating repeatable steps, is how we make programming easier.\hypertarget{Functions_Calling}{}\doxysection{Calling a Function}\label{Functions_Calling}
+\hypertarget{Functions_Declaring}{}\doxysection{Declaring a Function}\label{Functions_Declaring}
+As seen in the Introduction, we have simple declarations.
 
 
 \begin{DoxyVerbInclude}
@@ -22,5 +26,22 @@ The funcion definition line should look familliar. The \char`\"{}fun\char`\"{} r
 
 After the \char`\"{}\+:\char`\"{} is the function return type. However, in this case \char`\"{}no\+\_\+value\char`\"{} indicates there is ho return of any kind.
 
-A common practice of statically typed languages is to declare the type \char`\"{}void,\char`\"{} which is similar.\hypertarget{Functions_Declaring}{}\doxysection{Declaring a Function}\label{Functions_Declaring}
-etc... 
+A common practice of statically typed languages is to declare the type \char`\"{}void,\char`\"{} which is similar.\hypertarget{Functions_Return}{}\doxysection{Return}\label{Functions_Return}
+\hypertarget{Functions_In}{}\doxysection{Used in Expressions}\label{Functions_In}
+\hypertarget{Functions_Built-in}{}\doxysection{Built-\/in}\label{Functions_Built-in}
+Here is a list of built-\/in functions\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+catch() &catch exception  \\\cline{1-2}
+throw() &throw exception  \\\cline{1-2}
+to\+Float() &convert to float  \\\cline{1-2}
+to\+Int() &convert to integer  \\\cline{1-2}
+to\+String() &convert to string  \\\cline{1-2}
+to\+Tuple() &convert to tuple  \\\cline{1-2}
+type() &get an object’s type  \\\cline{1-2}
+write() &print (without newline)  \\\cline{1-2}
+writeln() &print (with newline)  \\\cline{1-2}
+\end{longtabu}
+
+
+Next\+: \mbox{\hyperlink{Exceptions}{Exceptions}} 

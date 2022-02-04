@@ -1,3 +1,35 @@
+\doxysection*{Types}
+
 \mbox{\hyperlink{Types}{Types}}
 
-Every form of data is a type. By extension, the same is true for functions. 
+Every form of data is a type. By extension, the same is true for functions. Built in types\+:
+\begin{DoxyItemize}
+\item null
+\item boolean
+\item int8
+\item int64
+\item float64
+\item string
+\item array
+\item vector
+\item set
+\item tuple
+\item dictionary
+\end{DoxyItemize}\hypertarget{Types_Integers}{}\doxysection{Integers}\label{Types_Integers}
+All integers are signed. See \mbox{\hyperlink{Types_Unsigned}{Unsigned}} for more information.
+
+There are two integer types\+:
+\begin{DoxyItemize}
+\item int8 is 8 bit. (-\/128 to + 127)
+\item int64 is 64 bit. (± a really big number)
+\end{DoxyItemize}
+
+{\itshape Tip\+:} Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don\textquotesingle{}t trust \char`\"{}\+Ther\textquotesingle{}s no reason for it to go beyond limits.\char`\"{} It must be {\bfseries{impossible}} to exceed limits or, it\textquotesingle{}s only a matter of time.\hypertarget{Types_Unsigned}{}\doxysubsection{Unsigned}\label{Types_Unsigned}
+Why no unsigned integers? Here is a great answer\+: \href{https://blog.robertelder.org/signed-or-unsigned-part-2/}{\texttt{ https\+://blog.\+robertelder.\+org/signed-\/or-\/unsigned-\/part-\/2/}}\hypertarget{Types_Floats}{}\doxysection{Floats}\label{Types_Floats}
+\hypertarget{Types_Boolean}{}\doxysection{Boolean}\label{Types_Boolean}
+\hypertarget{Types_Strings}{}\doxysection{Strings}\label{Types_Strings}
+\hypertarget{Types_Null}{}\doxysection{Null}\label{Types_Null}
+\hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
+For more information, please see \mbox{\hyperlink{Containers}{Containers}}.
+
+Next\+: \mbox{\hyperlink{Expressions}{Expressions}} 

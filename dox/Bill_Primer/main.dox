@@ -1,25 +1,98 @@
 /**
-@mainpage   Bill Primer
+@mainpage   Introduction
+
+<h4>Name:</h4>
+<b>bill</b>&nbsp;&nbsp;&thinsp;<i>B</i>eginner – <i>I</i>ntermediate <i>L</i>earning <i>L</i>anguage
+
+<h4>Purpose:</h4>
+It is a general purpose statically typed, with dynamic types, easy to use language.
+
+<h4>Key uses:</h4>
+- Learning basic level programming.
+- Pursuing enthusiast programming.
+
+<h4>Features:</h4>
+- portable
+- a variety of useful data types
+- extend-able data types
+- simple to use
+- constants
+- ease of static typing
+- strong static typing
 
 @htmlonly
-<h4>Introduction</h4>
 This document is disigned to help progammers learn the basics of Bill.
 
 <h4>License</h4>
     Copyright (c)  2022  J. Smith.</br>
-    Permission is granted to copy, distribute and/or modify this document, provided this notice is kept.</br>
+    Permission is granted to copy, distribute and/or modify this document,
+    provided this notice is kept.</br>
 @endhtmlonly
 
-@section The Beginning
+@link Hello Hello World
+@endlink
 
-Hello World
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 "Hello World" is traditionally the first program one writes in a new language.
+That makes it a good starting point.
 
 @verbinclude "hello.bill" hello.bill
 
-Of course, the first few lines are unnecessary. However, declaring a main function is required. Details, on that, in the next shapter (\ref Functions).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Of course, the first few lines are unnecessary.
+However, declaring a main function is required.
+For details, on that, in shapter 6 (\ref Functions).
 
-Next: \ref Types
+To compile and run:
+
+@verbinclude run_hello
+
+If you operating system supports shebangs, the following will work:
+
+@verbinclude run_hello_shebang
+
+@section    Reserved Reserved Words
+Here is a list of Reserved Words:
+<table>
+    <tr>
+        <td>break</td>      <td>exit loop&lowast;</td>
+    </tr>
+    <tr>
+        <td>continue</td>   <td>skip to next iteration&lowast;</td>
+    </tr>
+    <tr>
+        <td>else</td>       <td>default condition&lowast;</td>
+    </tr>
+    <tr>
+        <td>elsif</td>      <td>subsequent condition&lowast;</td>
+    </tr>
+    <tr>
+        <td>exit</td>       <td>end program (possible exit value)</td>
+    </tr>
+    <tr>
+        <td>if</td>         <td>condition&lowast;</td>
+    </tr>
+    <tr>
+        <td>return</td>     <td>end a function (possible return value)&lowast;&lowast;</td>
+    </tr>
+    <tr>
+        <td>try</td>        <td>begin try block&lowast;&lowast;&lowast;</td>
+    </tr>
+</table>
+With exit, you can use any positive int64 value.
+However, 0 (default) generally represents a good run.
+Typically, a problem is designated by 1.
+However other values are possible.
+
+&lowast;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+See @ref Flow.
+
+&lowast;&lowast;&nbsp;&nbsp;&nbsp;
+See @ref Functions.
+
+&lowast;&lowast;&lowast;
+See @ref Exceptions.
+
+Next: @ref Types
 
 */

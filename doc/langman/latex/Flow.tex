@@ -1,0 +1,82 @@
+
+
+\mbox{\hyperlink{Flow}{Flow Control }}
+
+If... \hypertarget{Flow_Conditions}{}\doxysection{Conditions}\label{Flow_Conditions}
+\hypertarget{Flow_If}{}\doxysection{If}\label{Flow_If}
+
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+ \hypertarget{Flow_Else}{}\doxysection{Else}\label{Flow_Else}
+
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+ \hypertarget{Flow_Elsif}{}\doxysection{Elsif}\label{Flow_Elsif}
+
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+ \hypertarget{Flow_While}{}\doxysection{While}\label{Flow_While}
+
+\begin{DoxyVerbInclude}
+# whileloop.bill
+# while loop syntax sample
+
+fun main(argsv):int8
+{
+    while true:
+    {
+        # This is the loop that never ends.
+    }
+    
+    while 1 > 3:
+    {
+        # This loop is skipped.
+    }
+    
+//     var $limit:vector   = $argsv[1]
+    var i:int8 = 0
+    while i < argsv[1]:
+    {
+        writeln(i)
+        i ++
+    }
+}
+
+\end{DoxyVerbInclude}
+ \hypertarget{Flow_For}{}\doxysection{For}\label{Flow_For}
+
+\begin{DoxyVerbInclude}
+# forloop.bill
+# for loop syntax sample
+
+/*  @fn     main
+ *  @brief  simple forloop
+ */
+fun main():no_value
+{
+    for var i:int64 = 0 to 10:
+    {
+        writeln(i)
+    }
+    
+    for (var i:int64 = 0; i < 1):
+    {
+        writeln(i)
+    }
+    
+    for (var i:float64 = 0; i < 1; i += .03):
+    {
+        writeln(i)
+    }
+
+    
+    # foreach (sequence types only)
+//     foreach(var str arg, argv):
+//     {
+//         writeln(arg);
+//     }
+}
+
+\end{DoxyVerbInclude}
+ \hypertarget{Flow_Traversals}{}\doxysection{Traversals}\label{Flow_Traversals}
+Next\+: \mbox{\hyperlink{Functions}{Functions}} 

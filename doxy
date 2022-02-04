@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-here=pwd
+here=`pwd`
 # echo ${here}
 
 # doxyfile="dox/DoxyHtml"
@@ -27,9 +27,9 @@ doxyfile="dox/DoxyRefman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-# 		cd doc/refman/latex
-# 		make
-# 		cd $here
+		cd doc/refman/latex
+		make
+		cd $here
 fi
 
 doxyfile="dox/DoxyUserman"
@@ -45,9 +45,9 @@ doxyfile="dox/DoxyLangman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
-# 		cd doc/langman/latex
-# 		make
-# 		cd $here
+		cd doc/langman/latex
+		make
+		cd $here
 fi
 
 doxyfile="dox/DoxyStlman"

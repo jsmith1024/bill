@@ -1,12 +1,43 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
-\contentsline {chapter}{\numberline {1}Bill Primer}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Beginning}{1}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Conditionals}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Containers}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Exceptions}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Expressions}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Reserved Words}{2}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Types}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Integers}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Unsigned}{4}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Floats}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Boolean}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Strings}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Null}{4}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Others}{4}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Expressions}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Math}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Concatenation}{5}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Containers}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Arrays}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Vectors}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Sets}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Tuples}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Dictionaries}{7}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Others}{7}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Flow Control}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conditions}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}If}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Else}{9}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Elsif}{9}{section.5.4}%
+\contentsline {section}{\numberline {5.5}While}{9}{section.5.5}%
+\contentsline {section}{\numberline {5.6}For}{10}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Traversals}{10}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Functions}{11}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Declaring a Function}{11}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Strings}{13}{chapter.7}%
+\contentsline {section}{\numberline {6.1}Calling a Function}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Declaring a Function}{11}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Return}{11}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Used in Expressions}{11}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Built-\/in}{11}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Exceptions}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Throw}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Try}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Catch}{13}{section.7.3}%
 \contentsline {chapter}{\numberline {8}Style}{15}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Types}{17}{chapter.9}%
+\contentsline {section}{\numberline {8.1}Comments}{15}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Statements}{15}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Blocks}{15}{section.8.3}%

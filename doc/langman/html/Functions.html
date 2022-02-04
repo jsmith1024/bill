@@ -25,7 +25,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><!--Bill-->
    </div>
-   <div id="projectbrief">the Pragmatic Language</div>
+   <div id="projectbrief">Primer</div>
   </td>
  </tr>
  </tbody>
@@ -69,8 +69,16 @@ $(function() {
 
 </div><!-- top -->
 <div class="PageDoc"><div class="contents">
-<div class="textblock"><p><a class="el" href="Functions.html">Functions</a></p>
+<div class="textblock"><p> 
+<h1>Functions</h1>
+</p>
+<p><a class="el" href="Functions.html">Functions</a></p>
 <p>Encapsulating repeatable steps, is how we make programming easier.</p>
+<h1><a class="anchor" id="Calling"></a>
+Calling a Function</h1>
+<h1><a class="anchor" id="Declaring"></a>
+Declaring a Function</h1>
+<p>As seen in the Introduction, we have simple declarations.</p>
 <pre class="fragment">#!/usr/bin/env bill
 
 # hello.bill
@@ -86,9 +94,33 @@ fun main():no_value
 <p>The funcion definition line should look familliar. The "fun" reserved word declares a function.</p>
 <p>After the ":" is the function return type. However, in this case "no_value" indicates there is ho return of any kind.</p>
 <p>A common practice of statically typed languages is to declare the type "void," which is similar.</p>
-<h1><a class="anchor" id="Declaring"></a>
-Declaring a Function</h1>
-<p>etc... </p>
+<h1><a class="anchor" id="Return"></a>
+Return</h1>
+<h1><a class="anchor" id="In"></a>
+Used in Expressions</h1>
+<h1><a class="anchor" id="Built-in"></a>
+Built-in</h1>
+<p>Here is a list of built-in functions: </p><table class="doxtable">
+<tr>
+<td>catch() </td><td>catch exception  </td></tr>
+<tr>
+<td>throw() </td><td>throw exception  </td></tr>
+<tr>
+<td>toFloat() </td><td>convert to float  </td></tr>
+<tr>
+<td>toInt() </td><td>convert to integer  </td></tr>
+<tr>
+<td>toString() </td><td>convert to string  </td></tr>
+<tr>
+<td>toTuple() </td><td>convert to tuple  </td></tr>
+<tr>
+<td>type() </td><td>get an object’s type  </td></tr>
+<tr>
+<td>write() </td><td>print (without newline)  </td></tr>
+<tr>
+<td>writeln() </td><td>print (with newline)  </td></tr>
+</table>
+<p>Next: <a class="el" href="Exceptions.html">Exceptions</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->

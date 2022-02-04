@@ -1,0 +1,53 @@
+/**
+@page       Types
+<h1>Types</h1>
+@link       Types
+@endlink
+
+Every form of data is a type. By extension, the same is true for functions.
+Built in types:
+- null
+- boolean
+- int8
+- int64
+- float64
+- string
+- array
+- vector
+- set
+- tuple
+- dictionary
+
+@section    Integers
+All integers are signed. See @ref Unsigned for more information.
+
+There are two integer types:
+- int8 is 8 bit. (-128 to + 127)
+- int64 is 64 bit. (± a really big number)
+
+<i>Tip:</i> Only use int8 for space conserving situations,
+provided all values will always fall within limits.
+Else, use int64. Don't trust "Ther's no reason for it to go beyond limits."
+It must be <b>impossible</b> to exceed limits or, it's only a matter of time. 
+
+@subsection Unsigned
+
+Why no unsigned integers? Here is a great answer:
+https://blog.robertelder.org/signed-or-unsigned-part-2/
+
+@section    Floats
+
+@section    Boolean
+
+@section    Strings
+
+@section    Null
+
+@section    Others
+For more information, please see @ref Containers.
+
+Next: @ref Expressions
+
+
+
+*/

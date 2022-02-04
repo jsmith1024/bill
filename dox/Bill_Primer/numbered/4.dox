@@ -1,9 +1,10 @@
 /**
-@page       Strings
+@page       Containers
 
-@link       Strings
+@link       Containers
 @endlink
 
-$$$
+Containers can hold multiple values.
+
 
 */

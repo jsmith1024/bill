@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bill: Bill Primer</title>
+<title>Bill: Introduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><!--Bill-->
    </div>
-   <div id="projectbrief">the Pragmatic Language</div>
+   <div id="projectbrief">Primer</div>
   </td>
  </tr>
  </tbody>
@@ -70,21 +70,38 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Bill Primer </div>  </div>
+<div class="title">Introduction </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p> 
-<h4>Introduction</h4>
+<div class="textblock"><h4>Name:</h4>
+<p><b>bill</b>&#160;&#160;&thinsp;<em>B</em>eginner – <em>I</em>ntermediate <em>L</em>earning <em>L</em>anguage</p>
+<h4>Purpose:</h4>
+<p>It is a general purpose statically typed, with dynamic types, easy to use language.</p>
+<h4>Key uses:</h4>
+<ul>
+<li>Learning basic level programming.</li>
+<li>Pursuing enthusiast programming.</li>
+</ul>
+<h4>Features:</h4>
+<ul>
+<li>portable</li>
+<li>a variety of useful data types</li>
+<li>extend-able data types</li>
+<li>simple to use</li>
+<li>constants</li>
+<li>ease of static typing</li>
+<li>strong static typing</li>
+</ul>
+<p> 
 This document is disigned to help progammers learn the basics of Bill.
 
 <h4>License</h4>
     Copyright (c)  2022  J. Smith.</br>
-    Permission is granted to copy, distribute and/or modify this document, provided this notice is kept.</br>
+    Permission is granted to copy, distribute and/or modify this document,
+    provided this notice is kept.</br>
 </p>
-<h1><a class="anchor" id="The"></a>
-Beginning</h1>
-<p>Hello World</p>
-<p>"Hello World" is traditionally the first program one writes in a new language.</p>
+<p><a class="el" href="">Hello World </a></p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; "Hello World" is traditionally the first program one writes in a new language. That makes it a good starting point.</p>
 <pre class="fragment">#!/usr/bin/env bill
 
 # hello.bill
@@ -97,7 +114,35 @@ fun main():no_value
 }
 
 </pre><p> hello.bill</p>
-<p>Of course, the first few lines are unnecessary. However, declaring a main function is required. Details, on that, in the next shapter (<a class="el" href="Functions.html">Functions</a>).</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; Of course, the first few lines are unnecessary. However, declaring a main function is required. For details, on that, in shapter 6 (<a class="el" href="Functions.html">Functions</a>).</p>
+<p>To compile and run:</p>
+<pre class="fragment">prompt&gt; bill hello.bill
+</pre><p>If you operating system supports shebangs, the following will work:</p>
+<pre class="fragment">prompt&gt; hello.bill
+</pre><h1><a class="anchor" id="Reserved"></a>
+Reserved Words</h1>
+<p>Here is a list of Reserved Words: </p><table class="doxtable">
+<tr>
+<td>break </td><td>exit loop&lowast;  </td></tr>
+<tr>
+<td>continue </td><td>skip to next iteration&lowast;  </td></tr>
+<tr>
+<td>else </td><td>default condition&lowast;  </td></tr>
+<tr>
+<td>elsif </td><td>subsequent condition&lowast;  </td></tr>
+<tr>
+<td>exit </td><td>end program (possible exit value)  </td></tr>
+<tr>
+<td>if </td><td>condition&lowast;  </td></tr>
+<tr>
+<td>return </td><td>end a function (possible return value)&lowast;&lowast;  </td></tr>
+<tr>
+<td>try </td><td>begin try block&lowast;&lowast;&lowast;  </td></tr>
+</table>
+<p>With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1. However other values are possible.</p>
+<p>&lowast;&#160;&#160;&#160;&#160;&#160;&#160; See <a class="el" href="Flow.html">Flow Control</a>.</p>
+<p>&lowast;&lowast;&#160;&#160;&#160; See <a class="el" href="Functions.html">Functions</a>.</p>
+<p>&lowast;&lowast;&lowast; See <a class="el" href="Exceptions.html">Exceptions</a>.</p>
 <p>Next: <a class="el" href="Types.html">Types</a> </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

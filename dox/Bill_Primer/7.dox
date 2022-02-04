@@ -1,0 +1,20 @@
+/**
+@page       Exceptions
+
+@htmlonly
+<h1>Exceptions</h1>
+@endhtmlonly
+
+@link       Exceptions
+@endlink
+
+oops!
+
+@section    Throw
+
+@section    Try
+
+@section    Catch
+Next: \ref Style
+
+*/

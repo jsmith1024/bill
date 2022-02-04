@@ -1,0 +1,10 @@
+#   This is a comment type recommended for shebangs.
+//  This is the recommended end-of-line comment.
+/*  This type of comment is recommended for documentation blocks. */
+
+//  or
+
+/*  myfunction
+ *  Demo an operation
+ */
+

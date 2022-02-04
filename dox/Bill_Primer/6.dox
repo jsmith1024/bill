@@ -1,0 +1,65 @@
+/**
+@page       Functions
+
+@htmlonly
+<h1>Functions</h1>
+@endhtmlonly
+
+@link       Functions
+@endlink
+
+Encapsulating repeatable steps, is how we make programming easier.
+
+@section    Calling Calling a Function
+
+@section    Declaring Declaring a Function
+
+As seen in the Introduction, we have simple declarations.
+
+@verbinclude "hello.bill" hello.bill
+
+The funcion definition line should look familliar. The "fun" reserved word declares a function.
+
+After the ":" is the function return type. However, in this case "no_value" indicates there is ho return of any kind.
+
+A common practice of statically typed languages is to declare the type "void," which is similar.
+
+@section    Return
+
+@section    In Used in Expressions
+
+@section    Built-in
+Here is a list of built-in functions:
+<table>
+    <tr>
+        <td>catch()</td>    <td>catch exception</td>
+    </tr>
+    <tr>
+        <td>throw()</td>    <td>throw exception</td>
+    </tr>
+    <tr>
+        <td>toFloat()</td>  <td>convert to float</td>
+    </tr>
+    <tr>
+        <td>toInt()</td>    <td>convert to integer</td>
+    </tr>
+    <tr>
+        <td>toString()</td> <td>convert to string</td>
+    </tr>
+    <tr>
+        <td>toTuple()</td>  <td>convert to tuple</td>
+    </tr>
+    <tr>
+        <td>type()</td>     <td>get an object’s type</td>
+    </tr>
+    <tr>
+        <td>write()</td>    <td>print (without newline)</td>
+    </tr>
+    <tr>
+        <td>writeln()</td>  <td>print (with newline)</td>
+    </tr>
+</table>
+
+Next: \ref Exceptions
+
+*/

@@ -1,7 +1,37 @@
-\hypertarget{index_The}{}\doxysection{Beginning}\label{index_The}
-Hello World
+\doxyparagraph*{Name\+:}
 
-\char`\"{}\+Hello World\char`\"{} is traditionally the first program one writes in a new language.
+{\bfseries{bill}}~~\,{\itshape B}eginner – {\itshape I}ntermediate {\itshape L}earning {\itshape L}anguage
+
+\doxyparagraph*{Purpose\+:}
+
+It is a general purpose statically typed, with dynamic types, easy to use language.
+
+\doxyparagraph*{Key uses\+:}
+
+
+\begin{DoxyItemize}
+\item Learning basic level programming.
+\item Pursuing enthusiast programming.
+\end{DoxyItemize}
+
+\doxyparagraph*{Features\+:}
+
+
+\begin{DoxyItemize}
+\item portable
+\item a variety of useful data types
+\item extend-\/able data types
+\item simple to use
+\item constants
+\item ease of static typing
+\item strong static typing
+\end{DoxyItemize}
+
+
+
+\mbox{\hyperlink{}{Hello World }}
+
+~~~~~~~ \char`\"{}\+Hello World\char`\"{} is traditionally the first program one writes in a new language. That makes it a good starting point.
 
 
 \begin{DoxyVerbInclude}
@@ -19,6 +49,41 @@ fun main():no_value
 \end{DoxyVerbInclude}
  hello.\+bill
 
-Of course, the first few lines are unnecessary. However, declaring a main function is required. Details, on that, in the next shapter (\mbox{\hyperlink{Functions}{Functions}}).
+~~~~~~~ Of course, the first few lines are unnecessary. However, declaring a main function is required. For details, on that, in shapter 6 (\mbox{\hyperlink{Functions}{Functions}}).
+
+To compile and run\+:
+
+
+\begin{DoxyVerbInclude}
+prompt> bill hello.bill
+\end{DoxyVerbInclude}
+
+
+If you operating system supports shebangs, the following will work\+:
+
+
+\begin{DoxyVerbInclude}
+prompt> hello.bill
+\end{DoxyVerbInclude}
+\hypertarget{index_Reserved}{}\doxysection{Reserved Words}\label{index_Reserved}
+Here is a list of Reserved Words\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+break &exit loop{$\ast$}  \\\cline{1-2}
+continue &skip to next iteration{$\ast$}  \\\cline{1-2}
+else &default condition{$\ast$}  \\\cline{1-2}
+elsif &subsequent condition{$\ast$}  \\\cline{1-2}
+exit &end program (possible exit value)  \\\cline{1-2}
+if &condition{$\ast$}  \\\cline{1-2}
+return &end a function (possible return value){$\ast$}{$\ast$}  \\\cline{1-2}
+try &begin try block{$\ast$}{$\ast$}{$\ast$}  \\\cline{1-2}
+\end{longtabu}
+With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1. However other values are possible.
+
+{$\ast$}~~~~~~ See \mbox{\hyperlink{Flow}{Flow Control}}.
+
+{$\ast$}{$\ast$}~~~ See \mbox{\hyperlink{Functions}{Functions}}.
+
+{$\ast$}{$\ast$}{$\ast$} See \mbox{\hyperlink{Exceptions}{Exceptions}}.
 
 Next\+: \mbox{\hyperlink{Types}{Types}} 
