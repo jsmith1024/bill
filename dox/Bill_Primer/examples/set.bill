@@ -1,0 +1,25 @@
+# set.bill
+# for set samples
+
+/*  @fn     main
+ *  @brief  sets
+ */
+fun main():no_value
+{
+    var primaries:set
+    primaries = {"red", "yellow", "blue"}
+    writeln(primaries)      // prints {"red", "yellow", "blue"}
+    
+    var colors:set = {"red", "yellow"}
+    
+    // check subsets
+    writeln(primaries < colors) // prints false
+    writeln(colors < primaries) // prints true
+    
+    // check supersets
+    writeln(primaries > colors) // prints true
+    writeln(colors > primaries) // prints false
+    
+    // add more later
+}
+

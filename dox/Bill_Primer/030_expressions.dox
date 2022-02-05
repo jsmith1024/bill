@@ -11,7 +11,9 @@
 Express!
 
 @section    Math
+@subsection Operators
 @section    Concatenation
+@subsection Operators
 
 Next: @ref Containers
 

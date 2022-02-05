@@ -4,8 +4,65 @@
 
 Containers can hold multiple values. \hypertarget{Containers_Arrays}{}\doxysection{Arrays}\label{Containers_Arrays}
 \hypertarget{Containers_Vectors}{}\doxysection{Vectors}\label{Containers_Vectors}
+Vectors, which are similar to lists, are sequences of data. 
+\begin{DoxyVerbInclude}
+# vector.bill
+# for vector samples
+
+/*  @fn     main
+ *  @brief  vectors
+ */
+fun main():no_value
+{
+    var primaries:vector
+    primaries = ["red", "yellow", "blue"]
+    writeln(primaries)      // prints ["red", "yellow", "blue"]
+    
+    var secondaries:vector = ["orange", "green", "purple"]
+    writeln(primaries[1])   // prints green
+    writeln(primaries[:2])  // prints ["orange", "green"]
+    writeln(primaries[1:])  // prints ["green", "purple"]
+    writeln(primaries[2:3]) // prints ["green", "purple"]
+    // writeln(primaries[-1])  // prints purple
+}
+
+\end{DoxyVerbInclude}
 \hypertarget{Containers_Sets}{}\doxysection{Sets}\label{Containers_Sets}
+Sets are based on the mathenatical sets. See \href{https://en.wikipedia.org/wiki/Set_(mathematics)}{\texttt{ sets}} Note\+: sets are unordered. Accessing them will result in random ordering. 
+\begin{DoxyVerbInclude}
+# set.bill
+# for set samples
+
+/*  @fn     main
+ *  @brief  sets
+ */
+fun main():no_value
+{
+    var primaries:set
+    primaries = {"red", "yellow", "blue"}
+    writeln(primaries)      // prints {"red", "yellow", "blue"}
+    
+    var colors:set = {"red", "yellow"}
+    
+    // check subsets
+    writeln(primaries < colors) // prints false
+    writeln(colors < primaries) // prints true
+    
+    // check supersets
+    writeln(primaries > colors) // prints true
+    writeln(colors > primaries) // prints false
+    
+    // add more later
+}
+
+\end{DoxyVerbInclude}
 \hypertarget{Containers_Tuples}{}\doxysection{Tuples}\label{Containers_Tuples}
+
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
 \hypertarget{Containers_Dictionaries}{}\doxysection{Dictionaries}\label{Containers_Dictionaries}
+
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
 \hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
-Next\+: \mbox{\hyperlink{Flow}{Flow Control}} Flow Control 
+Next\+: \mbox{\hyperlink{Flow}{Flow Control}} 

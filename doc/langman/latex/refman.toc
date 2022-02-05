@@ -11,14 +11,16 @@
 \contentsline {section}{\numberline {2.6}Others}{4}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Expressions}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Math}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Operators}{5}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Concatenation}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Operators}{5}{subsection.3.2.1}%
 \contentsline {chapter}{\numberline {4}Containers}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Arrays}{7}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Vectors}{7}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Sets}{7}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Tuples}{7}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Dictionaries}{7}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Others}{7}{section.4.6}%
+\contentsline {section}{\numberline {4.4}Tuples}{8}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Dictionaries}{8}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Others}{8}{section.4.6}%
 \contentsline {chapter}{\numberline {5}Flow Control}{9}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conditions}{9}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Conditionals}{9}{subsection.5.1.1}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  5 FEB 2022 10:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  5 FEB 2022 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,6 +704,9 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 )
 (./refman.aux
 
+LaTeX Warning: Label `Expressions_Operators' multiply defined.
+
+
 LaTeX Warning: Label `Containers_Others' multiply defined.
 
 )
@@ -821,7 +824,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 158.
 
 Package hyperref Info: Option `unicode' set `true' on input line 158.
  <./Bill_logo.png>
-<Bill_logo.png, id=160, 78.2925pt x 52.195pt>
+<Bill_logo.png, id=168, 78.2925pt x 52.195pt>
 File: Bill_logo.png Graphic file (type png)
 <use Bill_logo.png>
 Package pdftex.def Info: Bill_logo.png  used on input line 164.
@@ -846,40 +849,40 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@toc=\write6
 \openout6 = `refman.toc'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 180
+LaTeX Font Info:    Trying to load font information for U+msa on input line 181
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 180
+LaTeX Font Info:    Trying to load font information for U+msb on input line 181
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
-0.
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1
 
 ] [2]
-Package hyperref Info: Option `pageanchor' set `true' on input line 182.
+Package hyperref Info: Option `pageanchor' set `true' on input line 183.
 
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 185.
+(Font)              scaled to size 18.66588pt on input line 186.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 185.
+(Font)              scaled to size 18.66588pt on input line 186.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 185.
+(Font)              scaled to size 18.66588pt on input line 186.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 185.
+(Font)              scaled to size 22.39185pt on input line 186.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 185.
+(Font)              scaled to size 22.39185pt on input line 186.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 185.
+(Font)              scaled to size 22.39185pt on input line 186.
 (./index.tex
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 5
 .
@@ -929,19 +932,23 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 Chapter 3.
 (./Expressions.tex) [5
 
-] [6
+pdfTeX warning (ext4): destination with the same identifier (name{Expressions_O
+perators}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.196 \chapter
+              {Containers}] [6
 
 ]
 Chapter 4.
-(./Containers.texpdfTeX warning (ext4): destination with the same identifier (n
-ame{Containers_Others}) has been already used, duplicate ignored
+(./Containers.tex [7]pdfTeX warning (ext4): destination with the same identifie
+r (name{Containers_Others}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10 \hypertarget{Containers_Others}{}
+l.67 \hypertarget{Containers_Others}{}
                                       \doxysection{Others}\label{Containers_...
-) [7] [8
-
-]
+) [8]
 Chapter 5.
 (./Flow.tex
 
@@ -953,7 +960,9 @@ Package hyperref Warning: Suppressing link with empty target on input line 32.
 
 Package hyperref Warning: Suppressing link with empty target on input line 52.
 
-[9]
+[9
+
+]
 
 Package hyperref Warning: Suppressing link with empty target on input line 75.
 
@@ -980,23 +989,23 @@ Chapter 8.
 ] [18
 
 ] (./refman.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: DB0CA519C48C1672E57805E7D89712CD;4620.
+(rerunfilecheck)             Checksum: 30A165D056DF90C5CCBB206BB0888613;4900.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16610 strings out of 483183
- 239874 string characters out of 5966292
- 512803 words of memory out of 5000000
- 31205 multiletter control sequences out of 15000+600000
+ 16616 strings out of 483183
+ 239986 string characters out of 5966292
+ 512846 words of memory out of 5000000
+ 31208 multiletter control sequences out of 15000+600000
  577518 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,14n,96p,938b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1006,10 +1015,10 @@ f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
 lvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (22 pages, 84514 bytes).
+Output written on refman.pdf (22 pages, 85760 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 318 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 443 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 334 words of extra memory for PDF output out of 10000 (max. 10000000)
 

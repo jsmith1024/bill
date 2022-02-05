@@ -32,6 +32,7 @@ function_def:  "fun" FUNCTION_NAME "(" typed_argument_list? "):" (NOVAL | VARIAB
 while: "while"  condition ":" block
 for:   "for" "(" assign_variable";" condition (";" expression)? ")" ":" block
     |  "for" assign_variable "to" value ":" block
+foreach: "foreach" "(" declare_variable "," (VARIABLE_NAME | assign_set | assign_vector | static_vector) ")" ":" block
 
 // conditionals
 condition: binary_comp_expression | BOOL
@@ -112,32 +113,6 @@ expression:   value
 CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
 declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 
-// variables
-VARIABLE_NAME: IDENTIFIER "$"?
-// VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
-VARIABLE_TYPE:    "bool"
-                | "uint1"
-                | "uint8"
-                | "uint16"
-                | "uint32"
-                | "uint64"
-                | "uint128"
-                | "int1"
-                | "int8"
-                | "int16"
-                | "int32"
-                | "int64"
-                | "int128"
-                | "float16"
-                | "float32"
-                | "float64"
-                | "float128"
-                | "string"
-                | "vector"
-assign_variable: (declare_variable | VARIABLE_NAME) "=" expression
-declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
-// declare_assign_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
-
 // dictionaries
 // pair: value ":" valuelist
 // dict: "{" pair ("," pair)* "}"
@@ -145,20 +120,43 @@ declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
 // tuples
 // tuple: "(" valuelist ")"
 
-// sequence index
+// indeces
+map_index:      "[" value "]"
 sequence_index: "[" (UINT)? (":")? (UINT)? "]"   // "[" (UINT (":" UINT?)?) | (":" UINT?) "]"
 
 // Vectors
-assign_vector: (declare_vector | VARIABLE_NAME) "=" ("[" valuelist "]" | VARIABLE_NAME | call_vector)
-declare_vector:  "var" VARIABLE_NAME ":" "vector" ("[" UINT "]")?   // length
-call_vector: VARIABLE_NAME (sequence_index)?
+static_vector:  "[" valuelist "]"
+assign_vector:  (declare_vector | VARIABLE_NAME) "=" static_vector   // | VARIABLE_NAME | call_vector)
+declare_vector: "var" VARIABLE_NAME ":" "vector"                       // ("[" UINT "]")?   // length
+call_vector:    VARIABLE_NAME (sequence_index)?
 announce_argsv: "argsv"
 
 // arrays
 // array: "[" valuelist "]"
 
 // sets
-// set: "{" valuelist "}"
+assign_set:     (declare_set | VARIABLE_NAME) "=" ("{" valuelist "}" | VARIABLE_NAME | call_set)
+declare_set: "var" VARIABLE_NAME ":" "set"
+call_set: VARIABLE_NAME
+
+// variables
+VARIABLE_NAME: IDENTIFIER "$"?
+// VARIABLE_TYPE: BOOL | UINT | INT | FLOAT | STRING
+VARIABLE_TYPE:    "bool"
+                | "int8"
+                | "int64"
+                | "int128"
+                | "float64"
+                | "float128"
+                | "string"
+                | "vector"
+                | "set"
+                | "tuple"
+                | "dict"
+
+assign_variable: (declare_variable | VARIABLE_NAME) "=" expression
+declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
+// declare_assign_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
 
 // strings
 %import common.ESCAPED_STRING -> STRING
@@ -203,7 +201,25 @@ COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")
 // others
 UPPER_CHAR: ("A" .. "Z")
 LOWER_CHAR: ("a" .. "z")
-block: "{" (try | catch | function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | method_call | reserved_word | expression)* "}"
+block: "{" (try
+        | catch
+        | function_def
+        | declare_variable
+        | assign_variable
+        | declare_vector
+        | assign_vector
+        | declare_set
+        | assign_set
+        | for
+        | foreach
+        | if
+        | elsif
+        | else
+        | while
+        | function_call
+        | method_call
+        | reserved_word
+        | expression)* "}"
 
 NOVAL: "no_value"
 

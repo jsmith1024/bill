@@ -2,7 +2,7 @@
 # for loop syntax sample
 
 /*  @fn     main
- *  @brief  simple forloop
+ *  @brief  forloops
  */
 fun main():no_value
 {
@@ -25,7 +25,7 @@ fun main():no_value
     // foreach(variable, sequence)
     foreach(var primary:string, ["red", "yellow", "blue"]):
     {
-        writeln(primary);
+        writeln(primary)
     }
 }
 

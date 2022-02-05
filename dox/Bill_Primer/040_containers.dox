@@ -1,0 +1,34 @@
+/**
+@page       Containers
+
+@htmlonly
+<h1>Containers</h1>
+@endhtmlonly
+
+@link       Containers
+@endlink
+
+Containers can hold multiple values.
+// @section    Arrays
+
+@section    Vectors
+Vectors, which are similar to lists, are sequences of data.
+@verbinclude vector.bill
+
+@section    Sets
+Sets are based on the mathenatical sets. See <a href="https://en.wikipedia.org/wiki/Set_(mathematics)">sets</a>
+Note: sets are unordered. Accessing them will result in random ordering.
+@verbinclude set.bill
+
+@section    Tuples
+@verbinclude tuple.bill
+
+@section    Dictionaries
+@verbinclude dict.bill
+
+// @section    Others
+
+Next: @ref Flow
+
+
+*/

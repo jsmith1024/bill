@@ -78,15 +78,60 @@ $(function() {
 Arrays</h1>
 <h1><a class="anchor" id="Vectors"></a>
 Vectors</h1>
-<h1><a class="anchor" id="Sets"></a>
+<p>Vectors, which are similar to lists, are sequences of data. </p><pre class="fragment"># vector.bill
+# for vector samples
+
+/*  @fn     main
+ *  @brief  vectors
+ */
+fun main():no_value
+{
+    var primaries:vector
+    primaries = ["red", "yellow", "blue"]
+    writeln(primaries)      // prints ["red", "yellow", "blue"]
+    
+    var secondaries:vector = ["orange", "green", "purple"]
+    writeln(primaries[1])   // prints green
+    writeln(primaries[:2])  // prints ["orange", "green"]
+    writeln(primaries[1:])  // prints ["green", "purple"]
+    writeln(primaries[2:3]) // prints ["green", "purple"]
+    // writeln(primaries[-1])  // prints purple
+}
+
+</pre><h1><a class="anchor" id="Sets"></a>
 Sets</h1>
-<h1><a class="anchor" id="Tuples"></a>
+<p>Sets are based on the mathenatical sets. See <a href="https://en.wikipedia.org/wiki/Set_(mathematics)">sets</a> Note: sets are unordered. Accessing them will result in random ordering. </p><pre class="fragment"># set.bill
+# for set samples
+
+/*  @fn     main
+ *  @brief  sets
+ */
+fun main():no_value
+{
+    var primaries:set
+    primaries = {"red", "yellow", "blue"}
+    writeln(primaries)      // prints {"red", "yellow", "blue"}
+    
+    var colors:set = {"red", "yellow"}
+    
+    // check subsets
+    writeln(primaries &lt; colors) // prints false
+    writeln(colors &lt; primaries) // prints true
+    
+    // check supersets
+    writeln(primaries &gt; colors) // prints true
+    writeln(colors &gt; primaries) // prints false
+    
+    // add more later
+}
+
+</pre><h1><a class="anchor" id="Tuples"></a>
 Tuples</h1>
-<h1><a class="anchor" id="Dictionaries"></a>
+<pre class="fragment"></pre><h1><a class="anchor" id="Dictionaries"></a>
 Dictionaries</h1>
-<h1><a class="anchor" id="Others"></a>
+<pre class="fragment"></pre><h1><a class="anchor" id="Others"></a>
 Others</h1>
-<p>Next: <a class="el" href="Flow.html">Flow Control</a> Flow Control </p>
+<p>Next: <a class="el" href="Flow.html">Flow Control</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
