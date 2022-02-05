@@ -88,15 +88,18 @@ $(function() {
 Integers</h1>
 <p>All integers are signed. See <a class="el" href="Types.html#Unsigned">Unsigned</a> for more information.</p>
 <p>There are two integer types:</p><ul>
-<li>int8 is 8 bit. (-128 to + 127)</li>
-<li>int64 is 64 bit. (± a really big number)</li>
+<li>int8 is 8 bit. (-128 to +127)</li>
+<li>int64 is 64 bit. (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)</li>
 </ul>
+<p>See <a href="https://en.cppreference.com/w/cpp/language/types">https://en.cppreference.com/w/cpp/language/types</a></p>
 <p><em>Tip:</em> Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don't trust "Ther's no reason for it to go beyond limits." It must be <b>impossible</b> to exceed limits or, it's only a matter of time.</p>
 <h2><a class="anchor" id="Unsigned"></a>
 Unsigned</h2>
-<p>Why no unsigned integers? Here is a great answer: <a href="https://blog.robertelder.org/signed-or-unsigned-part-2/">https://blog.robertelder.org/signed-or-unsigned-part-2/</a></p>
+<p>Why no unsigned integers? Here is a great answer:</p>
+<p><a href="https://blog.robertelder.org/signed-or-unsigned-part-2/">https://blog.robertelder.org/signed-or-unsigned-part-2/</a></p>
 <h1><a class="anchor" id="Floats"></a>
 Floats</h1>
+<p>The float 64 offers the same specs as c++ double.</p>
 <h1><a class="anchor" id="Boolean"></a>
 Boolean</h1>
 <h1><a class="anchor" id="Strings"></a>

@@ -1,10 +1,16 @@
 \doxyparagraph*{Name\+:}
 
-{\bfseries{bill}}~~\,{\itshape B}eginner – {\itshape I}ntermediate {\itshape L}earning {\itshape L}anguage
+{\bfseries{Bill}}
+\begin{DoxyItemize}
+\item {\bfseries{B}}eginner
+\item {\bfseries{I}}ntermediate
+\item {\bfseries{L}}earning
+\item {\bfseries{L}}anguage
+\end{DoxyItemize}
 
 \doxyparagraph*{Purpose\+:}
 
-It is a general purpose statically typed, with dynamic types, easy to use language.
+It is a general purpose statically typed, with dynamic types, easy to learn and use language.
 
 \doxyparagraph*{Key uses\+:}
 
@@ -67,23 +73,17 @@ prompt> hello.bill
 \end{DoxyVerbInclude}
 \hypertarget{index_Reserved}{}\doxysection{Reserved Words}\label{index_Reserved}
 Here is a list of Reserved Words\+: \tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
-break &exit loop{$\ast$}  \\\cline{1-2}
-continue &skip to next iteration{$\ast$}  \\\cline{1-2}
-else &default condition{$\ast$}  \\\cline{1-2}
-elsif &subsequent condition{$\ast$}  \\\cline{1-2}
-exit &end program (possible exit value)  \\\cline{1-2}
-if &condition{$\ast$}  \\\cline{1-2}
-return &end a function (possible return value){$\ast$}{$\ast$}  \\\cline{1-2}
-try &begin try block{$\ast$}{$\ast$}{$\ast$}  \\\cline{1-2}
+break &exit loop &See \mbox{\hyperlink{Flow}{Flow Control}}   \\\cline{1-3}
+continue &skip to next iteration &See \mbox{\hyperlink{Flow}{Flow Control}}   \\\cline{1-3}
+else &default condition &See \mbox{\hyperlink{Flow}{Flow Control}}   \\\cline{1-3}
+elsif&subsequent condition &See \mbox{\hyperlink{Flow}{Flow Control}}   \\\cline{1-3}
+exit &end program (possible exit value) &See below.  \\\cline{1-3}
+if &condition &See \mbox{\hyperlink{Flow}{Flow Control}}   \\\cline{1-3}
+return &end a function (possible return value) &See \mbox{\hyperlink{Functions}{Functions}}   \\\cline{1-3}
+try &begin try block &See \mbox{\hyperlink{Exceptions}{Exceptions}}   \\\cline{1-3}
 \end{longtabu}
-With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1. However other values are possible.
-
-{$\ast$}~~~~~~ See \mbox{\hyperlink{Flow}{Flow Control}}.
-
-{$\ast$}{$\ast$}~~~ See \mbox{\hyperlink{Functions}{Functions}}.
-
-{$\ast$}{$\ast$}{$\ast$} See \mbox{\hyperlink{Exceptions}{Exceptions}}.
+With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1.
 
 Next\+: \mbox{\hyperlink{Types}{Types}} 

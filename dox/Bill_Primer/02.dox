@@ -22,8 +22,10 @@ Built in types:
 All integers are signed. See @ref Unsigned for more information.
 
 There are two integer types:
-- int8 is 8 bit. (-128 to + 127)
-- int64 is 64 bit. (± a really big number)
+- int8 is 8 bit. (-128 to +127)
+- int64 is 64 bit. (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)
+
+See @ref https://en.cppreference.com/w/cpp/language/types
 
 <i>Tip:</i> Only use int8 for space conserving situations,
 provided all values will always fall within limits.
@@ -33,9 +35,12 @@ It must be <b>impossible</b> to exceed limits or, it's only a matter of time.
 @subsection Unsigned
 
 Why no unsigned integers? Here is a great answer:
+
 https://blog.robertelder.org/signed-or-unsigned-part-2/
 
 @section    Floats
+
+The float 64 offers the same specs as c++ double.
 
 @section    Boolean
 

@@ -20,13 +20,17 @@ All integers are signed. See \mbox{\hyperlink{Types_Unsigned}{Unsigned}} for mor
 
 There are two integer types\+:
 \begin{DoxyItemize}
-\item int8 is 8 bit. (-\/128 to + 127)
-\item int64 is 64 bit. (± a really big number)
+\item int8 is 8 bit. (-\/128 to +127)
+\item int64 is 64 bit. (-\/9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)
 \end{DoxyItemize}
 
+See \href{https://en.cppreference.com/w/cpp/language/types}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/language/types}}
+
 {\itshape Tip\+:} Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don\textquotesingle{}t trust \char`\"{}\+Ther\textquotesingle{}s no reason for it to go beyond limits.\char`\"{} It must be {\bfseries{impossible}} to exceed limits or, it\textquotesingle{}s only a matter of time.\hypertarget{Types_Unsigned}{}\doxysubsection{Unsigned}\label{Types_Unsigned}
-Why no unsigned integers? Here is a great answer\+: \href{https://blog.robertelder.org/signed-or-unsigned-part-2/}{\texttt{ https\+://blog.\+robertelder.\+org/signed-\/or-\/unsigned-\/part-\/2/}}\hypertarget{Types_Floats}{}\doxysection{Floats}\label{Types_Floats}
-\hypertarget{Types_Boolean}{}\doxysection{Boolean}\label{Types_Boolean}
+Why no unsigned integers? Here is a great answer\+:
+
+\href{https://blog.robertelder.org/signed-or-unsigned-part-2/}{\texttt{ https\+://blog.\+robertelder.\+org/signed-\/or-\/unsigned-\/part-\/2/}}\hypertarget{Types_Floats}{}\doxysection{Floats}\label{Types_Floats}
+The float 64 offers the same specs as c++ double.\hypertarget{Types_Boolean}{}\doxysection{Boolean}\label{Types_Boolean}
 \hypertarget{Types_Strings}{}\doxysection{Strings}\label{Types_Strings}
 \hypertarget{Types_Null}{}\doxysection{Null}\label{Types_Null}
 \hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}

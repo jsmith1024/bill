@@ -1,0 +1,9 @@
+# if Conditional Example
+
+fun main():no_value
+{
+    if true:
+    {
+        writeln(8)
+    }
+}

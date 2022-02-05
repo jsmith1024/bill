@@ -2,10 +2,14 @@
 @mainpage   Introduction
 
 <h4>Name:</h4>
-<b>bill</b>&nbsp;&nbsp;&thinsp;<i>B</i>eginner – <i>I</i>ntermediate <i>L</i>earning <i>L</i>anguage
+<b>Bill</b>
+- <b>B</b>eginner
+- <b>I</b>ntermediate
+- <b>L</b>earning
+- <b>L</b>anguage
 
 <h4>Purpose:</h4>
-It is a general purpose statically typed, with dynamic types, easy to use language.
+It is a general purpose statically typed, with dynamic types, easy to learn and use language.
 
 <h4>Key uses:</h4>
 - Learning basic level programming.
@@ -55,43 +59,48 @@ If you operating system supports shebangs, the following will work:
 Here is a list of Reserved Words:
 <table>
     <tr>
-        <td>break</td>      <td>exit loop&lowast;</td>
+        <td>break</td>
+        <td>exit loop</td>
+        <td>See @ref Flow </td>
     </tr>
     <tr>
-        <td>continue</td>   <td>skip to next iteration&lowast;</td>
+        <td>continue</td>
+        <td>skip to next iteration</td>
+        <td>See @ref Flow </td>
     </tr>
     <tr>
-        <td>else</td>       <td>default condition&lowast;</td>
+        <td>else</td>
+        <td>default condition</td>
+        <td>See @ref Flow </td>
     </tr>
     <tr>
-        <td>elsif</td>      <td>subsequent condition&lowast;</td>
+        <td>elsif</td><td>subsequent condition</td>
+        <td>See @ref Flow </td>
     </tr>
     <tr>
-        <td>exit</td>       <td>end program (possible exit value)</td>
+        <td>exit</td>
+        <td>end program (possible exit value)</td>
+        <td>See below.</td>
     </tr>
     <tr>
-        <td>if</td>         <td>condition&lowast;</td>
+        <td>if</td>
+        <td>condition</td>
+        <td>See @ref Flow </td>
     </tr>
     <tr>
-        <td>return</td>     <td>end a function (possible return value)&lowast;&lowast;</td>
+        <td>return</td>
+        <td>end a function (possible return value)</td>
+        <td>See @ref Functions </td>
     </tr>
     <tr>
-        <td>try</td>        <td>begin try block&lowast;&lowast;&lowast;</td>
+        <td>try</td>
+        <td>begin try block</td>
+        <td>See @ref Exceptions </td>
     </tr>
 </table>
 With exit, you can use any positive int64 value.
 However, 0 (default) generally represents a good run.
 Typically, a problem is designated by 1.
-However other values are possible.
-
-&lowast;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-See @ref Flow.
-
-&lowast;&lowast;&nbsp;&nbsp;&nbsp;
-See @ref Functions.
-
-&lowast;&lowast;&lowast;
-See @ref Exceptions.
 
 Next: @ref Types
 

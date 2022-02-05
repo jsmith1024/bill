@@ -1,9 +1,4 @@
-# Try this!
-
-fun yay():string
-{
-    return "Yay!"
-}
+# Full Conditional Example
 
 fun main():no_value
 {
@@ -19,6 +14,4 @@ fun main():no_value
     {
         writeln(2 + 3)
     }
-    
-    writeln(yay())
 }
