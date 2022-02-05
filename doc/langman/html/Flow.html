@@ -77,11 +77,20 @@ $(function() {
 <h1>Flow Control</h1>
 </p>
 <p><a class="el" href="Flow.html">Flow Control </a></p>
-<p>If... </p>
+<p>Flow control is about conditions.</p>
 <h1><a class="anchor" id="Conditions"></a>
 Conditions</h1>
-<h1><a class="anchor" id="If"></a>
-If</h1>
+<p>Condtions amount to Bool boolean states. E.G.:</p><ul>
+<li>x &gt; y</li>
+<li>i == 12</li>
+<li>2 + 2 == 4</li>
+<li>fruit == "apple"</li>
+<li>etc &#160;&#160;&#160;&#160;(assuming etc is a boolean variable...)</li>
+</ul>
+<p>Therfore the usual boolean rules apply here.</p>
+<h2><a class="anchor" id="Conditionals"></a>
+Conditionals</h2>
+<p><a class="el" href="">If</a></p>
 <pre class="fragment"># if Conditional Example
 
 fun main():no_value
@@ -91,8 +100,7 @@ fun main():no_value
         writeln(8)
     }
 }
-</pre> <h1><a class="anchor" id="Else"></a>
-Else</h1>
+</pre><p><a class="el" href="">Else</a></p>
 <pre class="fragment"># if - else Conditional Example
 
 fun main():no_value
@@ -106,8 +114,7 @@ fun main():no_value
         writeln(2 + 3)
     }
 }
-</pre> <h1><a class="anchor" id="Elsif"></a>
-Elsif</h1>
+</pre><p><a class="el" href="">Elsif</a></p>
 <pre class="fragment"># Full Conditional Example
 
 fun main():no_value
@@ -125,8 +132,9 @@ fun main():no_value
         writeln(2 + 3)
     }
 }
-</pre> <h1><a class="anchor" id="While"></a>
-While</h1>
+</pre><h2><a class="anchor" id="Loops"></a>
+Loops</h2>
+<p><a class="el" href="">While</a></p>
 <pre class="fragment"># whileloop.bill
 # while loop syntax sample
 
@@ -142,7 +150,6 @@ fun main(argsv):int8
         # This loop is skipped.
     }
     
-//     var $limit:vector   = $argsv[1]
     var i:int8 = 0
     while i &lt; argsv[1]:
     {
@@ -151,8 +158,7 @@ fun main(argsv):int8
     }
 }
 
-</pre> <h1><a class="anchor" id="For"></a>
-For</h1>
+</pre><p><a class="el" href="">For</a></p>
 <pre class="fragment"># forloop.bill
 # for loop syntax sample
 
@@ -177,15 +183,15 @@ fun main():no_value
     }
 
     
-    # foreach (sequence types only)
-//     foreach(var str arg, argv):
-//     {
-//         writeln(arg);
-//     }
+    // foreach(variable, sequence)
+    foreach(var primary:string, ["red", "yellow", "blue"]):
+    {
+        writeln(primary);
+    }
 }
 
-</pre> <h1><a class="anchor" id="Traversals"></a>
-Traversals</h1>
+</pre><h1><a class="anchor" id="Traversal"></a>
+Traversal</h1>
 <p>Next: ref Functions </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

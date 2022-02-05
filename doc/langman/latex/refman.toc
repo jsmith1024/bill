@@ -21,12 +21,9 @@
 \contentsline {section}{\numberline {4.6}Others}{7}{section.4.6}%
 \contentsline {chapter}{\numberline {5}Flow Control}{9}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conditions}{9}{section.5.1}%
-\contentsline {section}{\numberline {5.2}If}{9}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Else}{9}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Elsif}{10}{section.5.4}%
-\contentsline {section}{\numberline {5.5}While}{10}{section.5.5}%
-\contentsline {section}{\numberline {5.6}For}{10}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Traversals}{11}{section.5.7}%
+\contentsline {subsection}{\numberline {5.1.1}Conditionals}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Loops}{10}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Traversal}{11}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Functions}{13}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Calling a Function}{13}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Declaring a Function}{13}{section.6.2}%
@@ -36,7 +33,7 @@
 \contentsline {chapter}{\numberline {7}Exceptions}{15}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Throw}{15}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Try}{15}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Catch}{15}{section.7.3}%
+\contentsline {section}{\numberline {7.3}Catch}{16}{section.7.3}%
 \contentsline {chapter}{\numberline {8}Style}{17}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Comments}{17}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Statements}{17}{section.8.2}%

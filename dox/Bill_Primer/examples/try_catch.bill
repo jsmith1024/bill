@@ -1,4 +1,4 @@
-# Try something!
+# Try...catch!
 
 fun main():no_value
 {
@@ -6,8 +6,8 @@ fun main():no_value
     {
         writeln(8)
     }
-    catch():
+    catch(exception):
     {
-        throw("What happened?")
+        throw(exception + " happened!")
     }
 }

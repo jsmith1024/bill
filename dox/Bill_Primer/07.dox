@@ -8,13 +8,25 @@
 @link       Exceptions
 @endlink
 
-oops!
+As we all know, "Things don't always go according to plan."
+Hence programmers need to account for this, with exception handling.
 
 @section    Throw
+Let's just throw this out.
+@verbinclude throw.bill
 
 @section    Try
+First a simple example.
+@verbinclude try.bill
+This is ok, if there is no concern over "What went wrong?"
 
 @section    Catch
-Next: ref Style
+Now, let's catch the exception.
+@verbinclude try_catch.bill
+However, this only catches a specific exception.
+@verbinclude try_indexError.bill
+By daisy chaining catches, we can fine tune the response.
+
+Next: @ref Style
 
 */

@@ -22,10 +22,10 @@ fun main():no_value
     }
 
     
-    # foreach (sequence types only)
-//     foreach(var str arg, argv):
-//     {
-//         writeln(arg);
-//     }
+    // foreach(variable, sequence)
+    foreach(var primary:string, ["red", "yellow", "blue"]):
+    {
+        writeln(primary);
+    }
 }
 

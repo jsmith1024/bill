@@ -8,19 +8,55 @@
 @link       Flow Flow Control
 @endlink
 
-If...
+Flow control is about conditions.
+
 @section    Conditions
-@section    If
+
+Condtions amount to @ref Bool boolean states.
+E.G.:
+- x > y
+- i == 12
+- 2 + 2 == 4
+- fruit == "apple"
+- etc   &nbsp;&nbsp;&nbsp;&nbsp;(assuming etc is a boolean variable...)
+
+Therfore the usual boolean rules apply here.
+
+@subsection    Conditionals
+
+@link       If
+@endlink
+
 @verbinclude if.bill
-@section    Else
+
+
+@link       Else
+@endlink
+
 @verbinclude else.bill
-@section    Elsif
+
+
+@link       Elsif
+@endlink
+
 @verbinclude elsif.bill
-@section    While
+
+
+@subsection    Loops
+
+@link       While
+@endlink
+
 @verbinclude whileloop.bill
-@section    For
+
+
+@link       For
+@endlink
+
 @verbinclude forloop.bill
-@section    Traversals
+
+
+@section    Traversal
 
 Next: ref Functions
 

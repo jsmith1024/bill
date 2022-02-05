@@ -2,8 +2,19 @@
 
 \mbox{\hyperlink{Flow}{Flow Control }}
 
-If... \hypertarget{Flow_Conditions}{}\doxysection{Conditions}\label{Flow_Conditions}
-\hypertarget{Flow_If}{}\doxysection{If}\label{Flow_If}
+Flow control is about conditions.\hypertarget{Flow_Conditions}{}\doxysection{Conditions}\label{Flow_Conditions}
+Condtions amount to Bool boolean states. E.\+G.\+:
+\begin{DoxyItemize}
+\item x $>$ y
+\item i == 12
+\item 2 + 2 == 4
+\item fruit == \char`\"{}apple\char`\"{}
+\item etc ~~~~(assuming etc is a boolean variable...)
+\end{DoxyItemize}
+
+Therfore the usual boolean rules apply here.\hypertarget{Flow_Conditionals}{}\doxysubsection{Conditionals}\label{Flow_Conditionals}
+\mbox{\hyperlink{}{If}}
+
 
 \begin{DoxyVerbInclude}
 # if Conditional Example
@@ -16,7 +27,10 @@ fun main():no_value
     }
 }
 \end{DoxyVerbInclude}
- \hypertarget{Flow_Else}{}\doxysection{Else}\label{Flow_Else}
+
+
+\mbox{\hyperlink{}{Else}}
+
 
 \begin{DoxyVerbInclude}
 # if - else Conditional Example
@@ -33,7 +47,10 @@ fun main():no_value
     }
 }
 \end{DoxyVerbInclude}
- \hypertarget{Flow_Elsif}{}\doxysection{Elsif}\label{Flow_Elsif}
+
+
+\mbox{\hyperlink{}{Elsif}}
+
 
 \begin{DoxyVerbInclude}
 # Full Conditional Example
@@ -54,7 +71,9 @@ fun main():no_value
     }
 }
 \end{DoxyVerbInclude}
- \hypertarget{Flow_While}{}\doxysection{While}\label{Flow_While}
+\hypertarget{Flow_Loops}{}\doxysubsection{Loops}\label{Flow_Loops}
+\mbox{\hyperlink{}{While}}
+
 
 \begin{DoxyVerbInclude}
 # whileloop.bill
@@ -72,7 +91,6 @@ fun main(argsv):int8
         # This loop is skipped.
     }
     
-//     var $limit:vector   = $argsv[1]
     var i:int8 = 0
     while i < argsv[1]:
     {
@@ -82,7 +100,10 @@ fun main(argsv):int8
 }
 
 \end{DoxyVerbInclude}
- \hypertarget{Flow_For}{}\doxysection{For}\label{Flow_For}
+
+
+\mbox{\hyperlink{}{For}}
+
 
 \begin{DoxyVerbInclude}
 # forloop.bill
@@ -109,13 +130,13 @@ fun main():no_value
     }
 
     
-    # foreach (sequence types only)
-//     foreach(var str arg, argv):
-//     {
-//         writeln(arg);
-//     }
+    // foreach(variable, sequence)
+    foreach(var primary:string, ["red", "yellow", "blue"]):
+    {
+        writeln(primary);
+    }
 }
 
 \end{DoxyVerbInclude}
- \hypertarget{Flow_Traversals}{}\doxysection{Traversals}\label{Flow_Traversals}
+\hypertarget{Flow_Traversal}{}\doxysection{Traversal}\label{Flow_Traversal}
 Next\+: ref Functions 

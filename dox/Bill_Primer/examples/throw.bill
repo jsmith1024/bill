@@ -1,0 +1,6 @@
+# Throw!
+
+fun main():no_value
+{
+    throw("Something happened!")
+}

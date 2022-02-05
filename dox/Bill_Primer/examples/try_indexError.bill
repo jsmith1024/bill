@@ -1,0 +1,17 @@
+# Try...indexError!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch(indexError):                  // Specific exception caught.
+    {
+        throw("Index out of range.")    // Specific exception handled.
+    }
+    catch(exception):                   // Unknown exception caught.
+    {
+        throw(exception + " happened!") // Unknown exception handled.
+    }
+}

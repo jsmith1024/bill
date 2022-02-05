@@ -73,14 +73,65 @@ $(function() {
 <h1>Exceptions</h1>
 </p>
 <p><a class="el" href="Exceptions.html">Exceptions</a></p>
-<p>oops!</p>
+<p>As we all know, "Things don't always go according to plan." Hence programmers need to account for this, with exception handling.</p>
 <h1><a class="anchor" id="Throw"></a>
 Throw</h1>
-<h1><a class="anchor" id="Try"></a>
+<p>Let's just throw this out. </p><pre class="fragment"># Throw!
+
+fun main():no_value
+{
+    throw("Something happened!")
+}
+</pre><h1><a class="anchor" id="Try"></a>
 Try</h1>
+<p>First a simple example. </p><pre class="fragment"># Try something!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch():
+    {
+        throw("What happened?")
+    }
+}
+</pre><p> This is ok, if there is no concern over "What went wrong?"</p>
 <h1><a class="anchor" id="Catch"></a>
 Catch</h1>
-<p>Next: ref Style </p>
+<p>Now, let's catch the exception. </p><pre class="fragment"># Try...catch!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch(exception):
+    {
+        throw(exception + " happened!")
+    }
+}
+</pre><p> However, this only catches a specific exception. </p><pre class="fragment"># Try...indexError!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch(indexError):                  // Specific exception caught.
+    {
+        throw("Index out of range.")    // Specific exception handled.
+    }
+    catch(exception):                   // Unknown exception caught.
+    {
+        throw(exception + " happened!") // Unknown exception handled.
+    }
+}
+</pre><p> By daisy chaining catches, we can fine tune the response.</p>
+<p>Next: <a class="el" href="Style.html">Style</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->

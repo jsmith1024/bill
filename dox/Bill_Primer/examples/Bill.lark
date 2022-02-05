@@ -1,6 +1,10 @@
 // Subset Grammar
 // =================================
 
+// exception handling
+catch:  "catch(" value? "):" block
+try:    "try:" block catch*
+
 // statement: (reserved_word | function_call) // | if | elsif | else)
 
 // reserved words
@@ -199,7 +203,7 @@ COMMENT: (/\#[^\n]*/ | "//" /[^\n]*/ | "/*" /(.|\n)*?/ "*/")
 // others
 UPPER_CHAR: ("A" .. "Z")
 LOWER_CHAR: ("a" .. "z")
-block: "{" (function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | method_call | reserved_word | expression)* "}"
+block: "{" (try | catch | function_def | declare_variable | assign_variable | for | if | elsif | else | while | function_call | method_call | reserved_word | expression)* "}"
 
 NOVAL: "no_value"
 
@@ -209,4 +213,4 @@ IDENTIFIER: /[a-zA-Z][a-zA-Z0-9_]{0,15}/
 BLANK: _NEWLINE
 %ignore BLANK
 
-start: (def_class | function_def | declare_variable) +
+start: (try | catch | def_class | function_def | declare_variable) +

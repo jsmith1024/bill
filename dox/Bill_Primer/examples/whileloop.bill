@@ -13,7 +13,6 @@ fun main(argsv):int8
         # This loop is skipped.
     }
     
-//     var $limit:vector   = $argsv[1]
     var i:int8 = 0
     while i < argsv[1]:
     {

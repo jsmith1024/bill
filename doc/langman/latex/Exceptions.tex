@@ -2,7 +2,70 @@
 
 \mbox{\hyperlink{Exceptions}{Exceptions}}
 
-oops!\hypertarget{Exceptions_Throw}{}\doxysection{Throw}\label{Exceptions_Throw}
+As we all know, \char`\"{}\+Things don\textquotesingle{}t always go according to plan.\char`\"{} Hence programmers need to account for this, with exception handling.\hypertarget{Exceptions_Throw}{}\doxysection{Throw}\label{Exceptions_Throw}
+Let\textquotesingle{}s just throw this out. 
+\begin{DoxyVerbInclude}
+# Throw!
+
+fun main():no_value
+{
+    throw("Something happened!")
+}
+\end{DoxyVerbInclude}
 \hypertarget{Exceptions_Try}{}\doxysection{Try}\label{Exceptions_Try}
-\hypertarget{Exceptions_Catch}{}\doxysection{Catch}\label{Exceptions_Catch}
-Next\+: ref Style 
+First a simple example. 
+\begin{DoxyVerbInclude}
+# Try something!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch():
+    {
+        throw("What happened?")
+    }
+}
+\end{DoxyVerbInclude}
+ This is ok, if there is no concern over \char`\"{}\+What went wrong?\char`\"{}\hypertarget{Exceptions_Catch}{}\doxysection{Catch}\label{Exceptions_Catch}
+Now, let\textquotesingle{}s catch the exception. 
+\begin{DoxyVerbInclude}
+# Try...catch!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch(exception):
+    {
+        throw(exception + " happened!")
+    }
+}
+\end{DoxyVerbInclude}
+ However, this only catches a specific exception. 
+\begin{DoxyVerbInclude}
+# Try...indexError!
+
+fun main():no_value
+{
+    try:
+    {
+        writeln(8)
+    }
+    catch(indexError):                  // Specific exception caught.
+    {
+        throw("Index out of range.")    // Specific exception handled.
+    }
+    catch(exception):                   // Unknown exception caught.
+    {
+        throw(exception + " happened!") // Unknown exception handled.
+    }
+}
+\end{DoxyVerbInclude}
+ By daisy chaining catches, we can fine tune the response.
+
+Next\+: \mbox{\hyperlink{Style}{Style}} 
