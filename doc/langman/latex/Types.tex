@@ -15,7 +15,11 @@ Every form of data is a type. By extension, the same is true for functions. Buil
 \item set
 \item tuple
 \item dictionary
-\end{DoxyItemize}\hypertarget{Types_Integers}{}\doxysection{Integers}\label{Types_Integers}
+\end{DoxyItemize}
+
+Types are based off of C++ types.
+
+See \href{https://en.cppreference.com/w/cpp/language/types}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/language/types}}\hypertarget{Types_Integers}{}\doxysection{Integers}\label{Types_Integers}
 All integers are signed. See \mbox{\hyperlink{Types_Unsigned}{Unsigned}} for more information.
 
 There are two integer types\+:
@@ -24,8 +28,6 @@ There are two integer types\+:
 \item int64 is 64 bit. (-\/9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)
 \end{DoxyItemize}
 
-See \href{https://en.cppreference.com/w/cpp/language/types}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/language/types}}
-
 {\itshape Tip\+:} Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don\textquotesingle{}t trust \char`\"{}\+Ther\textquotesingle{}s no reason for it to go beyond limits.\char`\"{} It must be {\bfseries{impossible}} to exceed limits or, it\textquotesingle{}s only a matter of time.\hypertarget{Types_Unsigned}{}\doxysubsection{Unsigned}\label{Types_Unsigned}
 Why no unsigned integers? Here is a great answer\+:
 
@@ -33,7 +35,7 @@ Why no unsigned integers? Here is a great answer\+:
 The float 64 offers the same specs as c++ double.\hypertarget{Types_Boolean}{}\doxysection{Boolean}\label{Types_Boolean}
 \hypertarget{Types_Strings}{}\doxysection{Strings}\label{Types_Strings}
 \hypertarget{Types_Null}{}\doxysection{Null}\label{Types_Null}
-\hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
+Use caution with null; abuse can be dangerous. See  \\ \href{https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science}{\texttt{ https\+://www.\+lucidchart.\+com/techblog/2015/08/31/the-\/worst-\/mistake-\/of-\/computer-\/science}}/\hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
 For more information, please see \mbox{\hyperlink{Containers}{Containers}}.
 
 Next\+: \mbox{\hyperlink{Expressions}{Expressions}} 

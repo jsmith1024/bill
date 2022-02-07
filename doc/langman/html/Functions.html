@@ -96,6 +96,8 @@ fun main():no_value
 <p>A common practice of statically typed languages is to declare the type "void," which is similar.</p>
 <h1><a class="anchor" id="Return"></a>
 Return</h1>
+<p>To return a value, use the resereved word return. See <a class="el" href="Functions.html#Nested">Nested</a> (below)</p>
+<p>Note: the return type must match the declared return type of the function. Otherwise a Static Error will occur, when attempting to compile.</p>
 <h1><a class="anchor" id="In"></a>
 Used in Expressions</h1>
 <h1><a class="anchor" id="Built-in"></a>
@@ -104,15 +106,21 @@ Built-in</h1>
 <tr>
 <td>catch() </td><td>catch exception  </td></tr>
 <tr>
+<td>float64() </td><td>convert to 64 bit float  </td></tr>
+<tr>
+<td>int8() </td><td>convert to 8 bit integer  </td></tr>
+<tr>
+<td>int64() </td><td>convert to 64 bit integer  </td></tr>
+<tr>
+<td>pop() </td><td>pop a value  </td></tr>
+<tr>
+<td>push() </td><td>push a value  </td></tr>
+<tr>
+<td>string() </td><td>convert to string  </td></tr>
+<tr>
 <td>throw() </td><td>throw exception  </td></tr>
 <tr>
-<td>toFloat() </td><td>convert to float  </td></tr>
-<tr>
-<td>toInt() </td><td>convert to integer  </td></tr>
-<tr>
-<td>toString() </td><td>convert to string  </td></tr>
-<tr>
-<td>toTuple() </td><td>convert to tuple  </td></tr>
+<td>tuple() </td><td>convert to tuple  </td></tr>
 <tr>
 <td>type() </td><td>get an object’s type  </td></tr>
 <tr>
@@ -120,6 +128,28 @@ Built-in</h1>
 <tr>
 <td>writeln() </td><td>print (with newline)  </td></tr>
 </table>
+<h1><a class="anchor" id="Nested"></a>
+Nested</h1>
+<p>Sometimes nested functions, limiting scope, may be useful. </p><pre class="fragment">#!/usr/bin/env bill
+
+# nested-fun.bill
+
+fun outer():int8
+{
+    fun inner(x:int8, y:int8):int8
+    {
+        return x + y
+    }
+    
+    return inner(2, 3)
+}
+
+fun main():no_value
+{
+    writeln(outer())
+    exit 0
+}
+</pre><p> nested_fun.bill</p>
 <p>Next: <a class="el" href="Exceptions.html">Exceptions</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

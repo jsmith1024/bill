@@ -20,23 +20,24 @@
 \contentsline {section}{\numberline {4.3}Sets}{7}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Tuples}{8}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Dictionaries}{8}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Others}{8}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Flow Control}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conditions}{9}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Conditionals}{9}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Loops}{10}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Traversal}{11}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Functions}{13}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Calling a Function}{13}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Declaring a Function}{13}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Return}{13}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Used in Expressions}{13}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Built-\/in}{13}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Exceptions}{15}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Throw}{15}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Try}{15}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Catch}{16}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Style}{17}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Comments}{17}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Statements}{17}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Blocks}{17}{section.8.3}%
+\contentsline {section}{\numberline {4.6}Others}{9}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Flow Control}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conditions}{11}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Conditionals}{11}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Loops}{12}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Traversal}{13}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Functions}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Calling a Function}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Declaring a Function}{15}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Return}{15}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Used in Expressions}{15}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Built-\/in}{15}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Nested}{16}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Exceptions}{17}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Throw}{17}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Try}{17}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Catch}{18}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Style}{19}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Comments}{19}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Statements}{19}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Blocks}{19}{section.8.3}%

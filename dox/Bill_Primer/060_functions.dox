@@ -25,6 +25,10 @@ After the ":" is the function return type. However, in this case "no_value" indi
 A common practice of statically typed languages is to declare the type "void," which is similar.
 
 @section    Return
+To return a value, use the resereved word return. See @ref Nested (below)
+
+Note: the return type must match the declared return type of the function.
+Otherwise a Static Error will occur, when attempting to compile.
 
 @section    In Used in Expressions
 
@@ -32,33 +36,57 @@ A common practice of statically typed languages is to declare the type "void," w
 Here is a list of built-in functions:
 <table>
     <tr>
-        <td>catch()</td>    <td>catch exception</td>
+        <td>catch()</td>
+        <td>catch exception</td>
     </tr>
     <tr>
-        <td>throw()</td>    <td>throw exception</td>
+        <td>float64()</td>
+        <td>convert to 64 bit float</td>
     </tr>
     <tr>
-        <td>toFloat()</td>  <td>convert to float</td>
+        <td>int8()</td>
+        <td>convert to 8 bit integer</td>
     </tr>
     <tr>
-        <td>toInt()</td>    <td>convert to integer</td>
+        <td>int64()</td>
+        <td>convert to 64 bit integer</td>
     </tr>
     <tr>
-        <td>toString()</td> <td>convert to string</td>
+        <td>pop()</td>
+        <td>pop a value</td>
     </tr>
     <tr>
-        <td>toTuple()</td>  <td>convert to tuple</td>
+        <td>push()</td>
+        <td>push a value</td>
     </tr>
     <tr>
-        <td>type()</td>     <td>get an object’s type</td>
+        <td>string()</td>
+        <td>convert to string</td>
     </tr>
     <tr>
-        <td>write()</td>    <td>print (without newline)</td>
+        <td>throw()</td>
+        <td>throw exception</td>
     </tr>
     <tr>
-        <td>writeln()</td>  <td>print (with newline)</td>
+        <td>tuple()</td>
+        <td>convert to tuple</td>
+    </tr>
+    <tr>
+        <td>type()</td>
+        <td>get an object’s type</td>
+    </tr>
+    <tr>
+        <td>write()</td>
+        <td>print (without newline)</td>
+    </tr>
+    <tr>
+        <td>writeln()</td>
+        <td>print (with newline)</td>
     </tr>
 </table>
+@section    Nested
+Sometimes nested functions, limiting scope, may be useful.
+@verbinclude "nested_fun.bill" nested_fun.bill
 
 Next: @ref Exceptions
 

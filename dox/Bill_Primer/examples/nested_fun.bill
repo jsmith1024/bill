@@ -2,16 +2,18 @@
 
 # nested-fun.bill
 
-fun outer():no_value
+fun outer():int8
 {
     fun inner(x:int8, y:int8):int8
     {
         return x + y
     }
     
-    write("Sum: ")
-    writeln(inner(2, 3))
-    
-    exit 0
+    return inner(2, 3)
 }
 
+fun main():no_value
+{
+    writeln(outer())
+    exit 0
+}

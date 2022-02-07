@@ -27,21 +27,49 @@ The funcion definition line should look familliar. The \char`\"{}fun\char`\"{} r
 After the \char`\"{}\+:\char`\"{} is the function return type. However, in this case \char`\"{}no\+\_\+value\char`\"{} indicates there is ho return of any kind.
 
 A common practice of statically typed languages is to declare the type \char`\"{}void,\char`\"{} which is similar.\hypertarget{Functions_Return}{}\doxysection{Return}\label{Functions_Return}
-\hypertarget{Functions_In}{}\doxysection{Used in Expressions}\label{Functions_In}
+To return a value, use the resereved word return. See \mbox{\hyperlink{Functions_Nested}{Nested}} (below)
+
+Note\+: the return type must match the declared return type of the function. Otherwise a Static Error will occur, when attempting to compile.\hypertarget{Functions_In}{}\doxysection{Used in Expressions}\label{Functions_In}
 \hypertarget{Functions_Built-in}{}\doxysection{Built-\/in}\label{Functions_Built-in}
 Here is a list of built-\/in functions\+: \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
 catch() &catch exception  \\\cline{1-2}
+float64() &convert to 64 bit float  \\\cline{1-2}
+int8() &convert to 8 bit integer  \\\cline{1-2}
+int64() &convert to 64 bit integer  \\\cline{1-2}
+pop() &pop a value  \\\cline{1-2}
+push() &push a value  \\\cline{1-2}
+string() &convert to string  \\\cline{1-2}
 throw() &throw exception  \\\cline{1-2}
-to\+Float() &convert to float  \\\cline{1-2}
-to\+Int() &convert to integer  \\\cline{1-2}
-to\+String() &convert to string  \\\cline{1-2}
-to\+Tuple() &convert to tuple  \\\cline{1-2}
+tuple() &convert to tuple  \\\cline{1-2}
 type() &get an object’s type  \\\cline{1-2}
 write() &print (without newline)  \\\cline{1-2}
 writeln() &print (with newline)  \\\cline{1-2}
 \end{longtabu}
+\hypertarget{Functions_Nested}{}\doxysection{Nested}\label{Functions_Nested}
+Sometimes nested functions, limiting scope, may be useful. 
+\begin{DoxyVerbInclude}
+#!/usr/bin/env bill
 
+# nested-fun.bill
+
+fun outer():int8
+{
+    fun inner(x:int8, y:int8):int8
+    {
+        return x + y
+    }
+    
+    return inner(2, 3)
+}
+
+fun main():no_value
+{
+    writeln(outer())
+    exit 0
+}
+\end{DoxyVerbInclude}
+ nested\+\_\+fun.\+bill
 
 Next\+: \mbox{\hyperlink{Exceptions}{Exceptions}} 

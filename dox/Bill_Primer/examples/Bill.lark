@@ -114,11 +114,11 @@ CONSTANT_NAME: UPPER_CHAR (UPPER_CHAR | DECDIGIT | "_") ~0..15
 declare_constatnt: "const" CONSTANT_NAME ":" VARIABLE_TYPE "(" valuelist ")"
 
 // dictionaries
-// pair: value ":" valuelist
-// dict: "{" pair ("," pair)* "}"
-
-// tuples
-// tuple: "(" valuelist ")"
+pair: value     value ":" value
+static_dict:    "{" pair ("," pair)* "}"
+assign_dict:    (declare_dict | VARIABLE_NAME) "=" static_dict   // | VARIABLE_NAME | call_dict)
+declare_dict:   "var" VARIABLE_NAME ":" "dict"
+call_dict:      VARIABLE_NAME (map_index)?
 
 // indeces
 map_index:      "[" value "]"
@@ -130,6 +130,12 @@ assign_vector:  (declare_vector | VARIABLE_NAME) "=" static_vector   // | VARIAB
 declare_vector: "var" VARIABLE_NAME ":" "vector"                       // ("[" UINT "]")?   // length
 call_vector:    VARIABLE_NAME (sequence_index)?
 announce_argsv: "argsv"
+
+// Tuples
+static_tuple:  "(" valuelist ")"
+assign_tuple:  (declare_tuple | VARIABLE_NAME) "=" static_tuple   // | VARIABLE_NAME | call_vector)
+declare_tuple: "var" VARIABLE_NAME ":" "tuple"                       // ("[" UINT "]")?   // length
+call_tuple:    VARIABLE_NAME (sequence_index)?
 
 // arrays
 // array: "[" valuelist "]"
@@ -206,8 +212,12 @@ block: "{" (try
         | function_def
         | declare_variable
         | assign_variable
+        | declare_dict
+        | assign_dict
         | declare_vector
         | assign_vector
+        | declare_tuple
+        | assign_tuple
         | declare_set
         | assign_set
         | for

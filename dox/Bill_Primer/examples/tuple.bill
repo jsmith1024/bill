@@ -1,0 +1,20 @@
+# vector.bill
+# for tuple samples
+
+/*  @fn     main
+ *  @brief  tuples
+ */
+fun main():no_value
+{
+    var primaries:tuple
+    primaries = ("red", "yellow", "blue")
+    writeln(primaries)      // prints ("red", "yellow", "blue")
+    
+    var secondaries:tuple = ("orange", "green", "purple")
+    writeln(primaries[1])   // prints green
+    writeln(primaries[:2])  // prints ("orange", "green")
+    writeln(primaries[1:])  // prints ("green", "purple")
+    writeln(primaries[2:3]) // prints ("green", "purple")
+    // writeln(primaries[-1])  // prints purple
+}
+

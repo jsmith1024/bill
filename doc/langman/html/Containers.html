@@ -127,9 +127,43 @@ fun main():no_value
 
 </pre><h1><a class="anchor" id="Tuples"></a>
 Tuples</h1>
-<pre class="fragment"></pre><h1><a class="anchor" id="Dictionaries"></a>
+<pre class="fragment"># vector.bill
+# for tuple samples
+
+/*  @fn     main
+ *  @brief  tuples
+ */
+fun main():no_value
+{
+    var primaries:tuple
+    primaries = ("red", "yellow", "blue")
+    writeln(primaries)      // prints ("red", "yellow", "blue")
+    
+    var secondaries:tuple = ("orange", "green", "purple")
+    writeln(primaries[1])   // prints green
+    writeln(primaries[:2])  // prints ("orange", "green")
+    writeln(primaries[1:])  // prints ("green", "purple")
+    writeln(primaries[2:3]) // prints ("green", "purple")
+    // writeln(primaries[-1])  // prints purple
+}
+
+</pre><h1><a class="anchor" id="Dictionaries"></a>
 Dictionaries</h1>
-<pre class="fragment"></pre><h1><a class="anchor" id="Others"></a>
+<p>Note: dicts are unordered. Accessing them will result in random ordering. </p><pre class="fragment"># dict.bill
+# for dictionary samples
+
+/*  @fn     main
+ *  @brief  vectors
+ */
+fun main():no_value
+{
+    var managers:dict
+    managers = {"General": "Amy", "Assistant": "Bob", "Kitchen": "Tina"}
+    writeln(managers)   // prints {"General": "Amy", "Assistant": "Bob", "Kitchen": "Tina"}
+    writeln(managers["General])
+}
+
+</pre><h1><a class="anchor" id="Others"></a>
 Others</h1>
 <p>Next: <a class="el" href="Flow.html">Flow Control</a> </p>
 </div></div><!-- contents -->

@@ -18,14 +18,16 @@ Built in types:
 - tuple
 - dictionary
 
+Types are based off of C++ types.
+
+See @ref https://en.cppreference.com/w/cpp/language/types
+
 @section    Integers
 All integers are signed. See @ref Unsigned for more information.
 
 There are two integer types:
 - int8 is 8 bit. (-128 to +127)
 - int64 is 64 bit. (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)
-
-See @ref https://en.cppreference.com/w/cpp/language/types
 
 <i>Tip:</i> Only use int8 for space conserving situations,
 provided all values will always fall within limits.
@@ -47,6 +49,10 @@ The float 64 offers the same specs as c++ double.
 @section    Strings
 
 @section    Null
+Use caution with null; abuse can be dangerous.
+See
+@latexonly\\@endlatexonly
+@ref https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
 
 @section    Others
 For more information, please see @ref Containers.

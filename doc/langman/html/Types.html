@@ -84,6 +84,8 @@ $(function() {
 <li>tuple</li>
 <li>dictionary</li>
 </ul>
+<p>Types are based off of C++ types.</p>
+<p>See <a href="https://en.cppreference.com/w/cpp/language/types">https://en.cppreference.com/w/cpp/language/types</a></p>
 <h1><a class="anchor" id="Integers"></a>
 Integers</h1>
 <p>All integers are signed. See <a class="el" href="Types.html#Unsigned">Unsigned</a> for more information.</p>
@@ -91,7 +93,6 @@ Integers</h1>
 <li>int8 is 8 bit. (-128 to +127)</li>
 <li>int64 is 64 bit. (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)</li>
 </ul>
-<p>See <a href="https://en.cppreference.com/w/cpp/language/types">https://en.cppreference.com/w/cpp/language/types</a></p>
 <p><em>Tip:</em> Only use int8 for space conserving situations, provided all values will always fall within limits. Else, use int64. Don't trust "Ther's no reason for it to go beyond limits." It must be <b>impossible</b> to exceed limits or, it's only a matter of time.</p>
 <h2><a class="anchor" id="Unsigned"></a>
 Unsigned</h2>
@@ -106,6 +107,7 @@ Boolean</h1>
 Strings</h1>
 <h1><a class="anchor" id="Null"></a>
 Null</h1>
+<p>Use caution with null; abuse can be dangerous. See  <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science">https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science</a>/</p>
 <h1><a class="anchor" id="Others"></a>
 Others</h1>
 <p>For more information, please see <a class="el" href="Containers.html">Containers</a>.</p>

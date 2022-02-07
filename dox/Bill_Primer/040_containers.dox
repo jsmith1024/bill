@@ -24,6 +24,7 @@ Note: sets are unordered. Accessing them will result in random ordering.
 @verbinclude tuple.bill
 
 @section    Dictionaries
+Note: dicts are unordered. Accessing them will result in random ordering.
 @verbinclude dict.bill
 
 // @section    Others
