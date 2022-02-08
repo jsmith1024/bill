@@ -1,0 +1,15 @@
+# dict.bill
+# for dictionary samples
+
+/*  @fn     main
+ *  @brief  vectors
+ */
+fun main():no_value
+{
+    var managers:dict
+    managers = {"General": "Amy", "Assistant": "Bob", "Kitchen": "Tina"}
+    foreach(var key:string, keys(managers)):
+    {
+        writeln(managers[key])
+    }
+}

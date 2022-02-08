@@ -100,6 +100,21 @@ Return</h1>
 <p>Note: the return type must match the declared return type of the function. Otherwise a Static Error will occur, when attempting to compile.</p>
 <h1><a class="anchor" id="In"></a>
 Used in Expressions</h1>
+<p>Functions are easily added to expressions.</p>
+<pre class="fragment">#!/usr/bin/env bill
+
+# function_expression.bill
+
+fun main():no_value
+{
+    writeln(cos(2))     // See cos in Standard Library Reference
+    var value:float64   = sin(1 / 3)
+    writeln(value)
+    writeln("Amplitude: " + string(value))
+    
+    exit 0
+}
+</pre><p> function_expression.bill</p>
 <h1><a class="anchor" id="Built-in"></a>
 Built-in</h1>
 <p>Here is a list of built-in functions: </p><table class="doxtable">
@@ -111,6 +126,8 @@ Built-in</h1>
 <td>int8() </td><td>convert to 8 bit integer  </td></tr>
 <tr>
 <td>int64() </td><td>convert to 64 bit integer  </td></tr>
+<tr>
+<td>keys() </td><td>return dictionary keys  </td></tr>
 <tr>
 <td>pop() </td><td>pop a value  </td></tr>
 <tr>

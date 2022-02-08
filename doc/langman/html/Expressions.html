@@ -73,15 +73,169 @@ $(function() {
 <h1>Expressions</h1>
 </p>
 <p><a class="el" href="Expressions.html">Expressions</a></p>
-<p>Express!</p>
+<p>Expressions work like most languages.</p>
 <h1><a class="anchor" id="Math"></a>
 Math</h1>
+<pre class="fragment">#!/usr/bin/env bill
+
+# expression.bill
+
+fun main():no_value
+{
+    writeln(2 + 2)          // expression is 2 + 2
+    writeln(4 * 2 + 3)      // evaluates 4 * 2 first
+    writeln(4 * (2 + 3))    // evaluates 2 + 3 first
+    
+    writeln()               // Hint: prints a newline.
+    
+    var numerator:float64   = 1.0
+    var denominator:float64 = 3.0
+    var product:float64     = numerator / denominator
+    writeln(product)
+    
+    writeln()               // Hint: prints a newline.
+    
+    // Integer division requires the floor division to work, which may not divide evenly.
+    writeln(5 // 2)         // prints 2
+    
+    exit 0
+}
+</pre><p> expression.bill </p>
 <h2><a class="anchor" id="Operators"></a>
 Operators</h2>
+<table class="doxtable">
+<tr>
+<th colspan="2">Urnary Operators </th><th>Example  </th></tr>
+<tr>
+<td>++ </td><td>increment </td><td>i++  </td></tr>
+<tr>
+<td>&ndash; </td><td>decrement </td><td>i&ndash;  </td></tr>
+<tr>
+<td>- </td><td>negative </td><td>-1  </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<th colspan="2">Binary Operators </th><th>Example  </th></tr>
+<tr>
+<td>+ </td><td>add </td><td>2 + 2  </td></tr>
+<tr>
+<td>- </td><td>subtract </td><td>4 - 2  </td></tr>
+<tr>
+<td>* </td><td>multiply </td><td>4 * 2  </td></tr>
+<tr>
+<td>/ </td><td>divide </td><td>4.0 / 2.0  </td></tr>
+<tr>
+<td>// </td><td>floor divide </td><td>4 // 2  </td></tr>
+<tr>
+<td>% </td><td>modulus </td><td>4 % 2  </td></tr>
+<tr>
+<td>** </td><td>power </td><td>4**2  </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<th colspan="2">Inplace Operators </th><th>Example  </th></tr>
+<tr>
+<td>+= </td><td>add </td><td>x += 2  </td></tr>
+<tr>
+<td>-= </td><td>subtract </td><td>x -= 2  </td></tr>
+<tr>
+<td>*= </td><td>multiply </td><td>x *= 2  </td></tr>
+<tr>
+<td>/= </td><td>divide </td><td>x /= 2.0  </td></tr>
+<tr>
+<td>//= </td><td>floor divide </td><td>x //= 2  </td></tr>
+<tr>
+<td>%= </td><td>modulus </td><td>x %= 2  </td></tr>
+</table>
+<h1><a class="anchor" id="Logic"></a>
+Logic</h1>
+<pre class="fragment">#!/usr/bin/env bill
+
+# logic.bill
+
+fun main():no_value
+{
+    var x:int8  = 4
+    var y:int8  = 2
+    
+    writeln(x == y)         // prints false
+    writeln(x &gt; y)          // prints true
+    
+    exit 0
+}
+</pre><p> logic.bill </p>
+<h2><a class="anchor" id="Operators"></a>
+Operators</h2>
+<table class="doxtable">
+<tr>
+<th colspan="2">Urnary Operators </th><th>Example  </th></tr>
+<tr>
+<td>! </td><td>not </td><td>! is_logical  </td></tr>
+<tr>
+<td>~ </td><td>invert </td><td>~ x  </td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<th colspan="2">Binary Operators </th><th>Example  </th></tr>
+<tr>
+<td>== </td><td>equal to </td><td>x == y  </td></tr>
+<tr>
+<td>=== </td><td>same identity </td><td>x === y  </td></tr>
+<tr>
+<td>n= </td><td>not equal to </td><td>x != y  </td></tr>
+<tr>
+<td>&lt;  </td><td>less than </td><td>x &lt; y  </td></tr>
+<tr>
+<td>&lt;= </td><td>less than or equal to </td><td>x &lt;= y  </td></tr>
+<tr>
+<td>&gt;  </td><td>greater than </td><td>x &gt; y  </td></tr>
+<tr>
+<td>&gt;= </td><td>greater than or equal to </td><td>x &gt;= y  </td></tr>
+<tr>
+<td>in  </td><td>membership </td><td>x in y  </td></tr>
+<tr>
+<td>&amp;  </td><td>and </td><td>x and y  </td></tr>
+<tr>
+<td>|  </td><td>or </td><td>x or y  </td></tr>
+<tr>
+<td>^  </td><td>xor </td><td>x xor y  </td></tr>
+<tr>
+<td>&lt;&lt;  </td><td>shift left </td><td>x &lt;&lt; y  </td></tr>
+<tr>
+<td>&gt;&gt;  </td><td>shift right </td><td>x &gt;&gt; y  </td></tr>
+</table>
 <h1><a class="anchor" id="Concatenation"></a>
 Concatenation</h1>
+<pre class="fragment">#!/usr/bin/env bill
+
+# expression.bill
+
+fun main():no_value
+{
+    var first_name:string   = John
+    var last_name:string    = Doe
+    var full_name:string    = first_name + " " + last_name
+    writeln(full_name)
+    
+    writeln()               // Hint: prints a newline.
+    
+    // Direct concatenation of numbers is impossible. Use string().
+    var age:int8            = 25
+    writeln(full_name + " is " + string(age) + " years old.")
+    
+    exit 0
+}
+</pre><p> concatenate.bill </p>
 <h2><a class="anchor" id="Operators"></a>
 Operators</h2>
+<table class="doxtable">
+<tr>
+<th colspan="2">"Binary Operators </th><th>Example  </th></tr>
+<tr>
+<td>+ </td><td>concatenate </td><td>word + " "  </td></tr>
+<tr>
+<td>+= </td><td>append </td><td>"Name: " += name  </td></tr>
+</table>
 <p>Next: <a class="el" href="Containers.html">Containers</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

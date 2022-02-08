@@ -6,4 +6,9 @@ fun main():no_value
     {
         writeln(8)
     }
+    
+    // ternary expression
+    var result:string
+    result ? "Yes." : "No!"
+    writeln(logical)
 }

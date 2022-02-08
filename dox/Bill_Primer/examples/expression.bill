@@ -1,0 +1,24 @@
+#!/usr/bin/env bill
+
+# expression.bill
+
+fun main():no_value
+{
+    writeln(2 + 2)          // expression is 2 + 2
+    writeln(4 * 2 + 3)      // evaluates 4 * 2 first
+    writeln(4 * (2 + 3))    // evaluates 2 + 3 first
+    
+    writeln()               // Hint: prints a newline.
+    
+    var numerator:float64   = 1.0
+    var denominator:float64 = 3.0
+    var product:float64     = numerator / denominator
+    writeln(product)
+    
+    writeln()               // Hint: prints a newline.
+    
+    // Integer division requires the floor division to work, which may not divide evenly.
+    writeln(5 // 2)         // prints 2
+    
+    exit 0
+}

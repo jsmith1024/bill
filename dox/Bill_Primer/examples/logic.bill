@@ -1,0 +1,14 @@
+#!/usr/bin/env bill
+
+# logic.bill
+
+fun main():no_value
+{
+    var x:int8  = 4
+    var y:int8  = 2
+    
+    writeln(x == y)         // prints false
+    writeln(x > y)          // prints true
+    
+    exit 0
+}

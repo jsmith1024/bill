@@ -32,6 +32,10 @@ Otherwise a Static Error will occur, when attempting to compile.
 
 @section    In Used in Expressions
 
+Functions are easily added to expressions.
+
+@verbinclude "function_expression.bill" function_expression.bill
+
 @section    Built-in
 Here is a list of built-in functions:
 <table>
@@ -50,6 +54,10 @@ Here is a list of built-in functions:
     <tr>
         <td>int64()</td>
         <td>convert to 64 bit integer</td>
+    </tr>
+    <tr>
+        <td>keys()</td>
+        <td>return dictionary keys</td>
     </tr>
     <tr>
         <td>pop()</td>

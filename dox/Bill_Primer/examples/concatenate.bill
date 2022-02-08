@@ -1,0 +1,19 @@
+#!/usr/bin/env bill
+
+# expression.bill
+
+fun main():no_value
+{
+    var first_name:string   = John
+    var last_name:string    = Doe
+    var full_name:string    = first_name + " " + last_name
+    writeln(full_name)
+    
+    writeln()               // Hint: prints a newline.
+    
+    // Direct concatenation of numbers is impossible. Use string().
+    var age:int8            = 25
+    writeln(full_name + " is " + string(age) + " years old.")
+    
+    exit 0
+}

@@ -57,6 +57,13 @@ Therfore the usual boolean rules apply here.
 
 
 @section    Traversal
+In the previos example, we slid in an example of travesing a vector.
+Traversing sets and tuples would follow the same pattern.
+Also, a container name could be substituted.
+
+Dictionaries are a little trickier.
+
+@verbinclude traverse_dict.bill
 
 Next: @ref Functions
 

@@ -99,6 +99,11 @@ fun main():no_value
     {
         writeln(8)
     }
+    
+    // ternary expression
+    var result:string
+    result ? "Yes." : "No!"
+    writeln(logical)
 }
 </pre><p><a class="el" href="">Else</a></p>
 <pre class="fragment"># if - else Conditional Example
@@ -189,10 +194,26 @@ fun main():no_value
         writeln(primary)
     }
 }
-
 </pre><h1><a class="anchor" id="Traversal"></a>
 Traversal</h1>
-<p>Next: <a class="el" href="Functions.html">Functions</a> </p>
+<p>In the previos example, we slid in an example of travesing a vector. Traversing sets and tuples would follow the same pattern. Also, a container name could be substituted.</p>
+<p>Dictionaries are a little trickier.</p>
+<pre class="fragment"># dict.bill
+# for dictionary samples
+
+/*  @fn     main
+ *  @brief  vectors
+ */
+fun main():no_value
+{
+    var managers:dict
+    managers = {"General": "Amy", "Assistant": "Bob", "Kitchen": "Tina"}
+    foreach(var key:string, keys(managers)):
+    {
+        writeln(managers[key])
+    }
+}
+</pre><p>Next: <a class="el" href="Functions.html">Functions</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->

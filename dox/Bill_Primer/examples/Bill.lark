@@ -93,7 +93,7 @@ TERNARY_OPERATOR_SECOND: ":"
 
 unary_pre_expression: (UNARY_OPERATOR_PRE expression)
 unary_post_expression: (expression UNARY_OPERATOR_POST)
-binary_math_expression: (expression BINARY_MATH_OPERATOR expression)
+binary_math_expression: ((expression | "(" binary_math_expression ")" ) BINARY_MATH_OPERATOR (expression | "(" binary_math_expression ")" ))
 binary_comp_expression: (expression BINARY_COMP_OPERATOR expression)
 binary_inp_expression: (VARIABLE_NAME BINARY_INP_OPERATOR expression)
 ternary_expression: (expression TERNARY_OPERATOR_FIRST expression TERNARY_OPERATOR_SECOND expression)

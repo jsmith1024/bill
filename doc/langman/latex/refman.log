@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  7 FEB 2022 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.29)  8 FEB 2022 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,6 +707,9 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 LaTeX Warning: Label `Expressions_Operators' multiply defined.
 
 
+LaTeX Warning: Label `Expressions_Operators' multiply defined.
+
+
 LaTeX Warning: Label `Containers_Others' multiply defined.
 
 )
@@ -824,7 +827,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 158.
 
 Package hyperref Info: Option `unicode' set `true' on input line 158.
  <./Bill_logo.png>
-<Bill_logo.png, id=172, 78.2925pt x 52.195pt>
+<Bill_logo.png, id=180, 78.2925pt x 52.195pt>
 File: Bill_logo.png Graphic file (type png)
 <use Bill_logo.png>
 Package pdftex.def Info: Bill_logo.png  used on input line 164.
@@ -936,25 +939,35 @@ rst-mistake-of-computer-science[][]\T1/phv/m/n/10 /[]
 
 ) [4]
 Chapter 3.
-(./Expressions.tex) [5
+(./Expressions.tex
+Overfull \vbox (0.15842pt too high) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{Expressions_O
-perators}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.196 \chapter
-              {Containers}] [6
+[5
+
+]pdfTeX warning (ext4): destination with the same identifier (name{Expressions_
+Operators}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.105 ...ill \hypertarget{Expressions_Operators}{}
+                                                  \doxysubsection{Operators}...
+[6]pdfTeX warning (ext4): destination with the same identifier (name{Expression
+s_Operators}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.168 ...ill \hypertarget{Expressions_Operators}{}
+                                                  \doxysubsection{Operators}...
+) [7] [8
 
 ]
 Chapter 4.
-(./Containers.tex [7]pdfTeX warning (ext4): destination with the same identifie
+(./Containers.tex [9]pdfTeX warning (ext4): destination with the same identifie
 r (name{Containers_Others}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.101 \hypertarget{Containers_Others}{}
                                        \doxysection{Others}\label{Containers...
-) [8] [9] [10
+) [10] [11] [12
 
 ]
 Chapter 5.
@@ -963,36 +976,36 @@ Chapter 5.
 Package hyperref Warning: Suppressing link with empty target on input line 16.
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 32.
+Package hyperref Warning: Suppressing link with empty target on input line 37.
+
+[13]
+
+Package hyperref Warning: Suppressing link with empty target on input line 57.
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 52.
-
-[11]
-
-Package hyperref Warning: Suppressing link with empty target on input line 75.
+Package hyperref Warning: Suppressing link with empty target on input line 80.
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 105.
+Package hyperref Warning: Suppressing link with empty target on input line 110.
 
 
-[12]) [13] [14
+[14]) [15] [16
 
 ]
 Chapter 6.
-(./Functions.tex
-Underfull \vbox (badness 10000) detected at line 49
+(./Functions.tex [17]
+Underfull \vbox (badness 10000) detected at line 68
  []
 
-[15]) [16]
+[18]) [19] [20
+
+]
 Chapter 7.
-(./Exceptions.tex [17
-
-]) [18]
+(./Exceptions.tex [21]) [22]
 Chapter 8.
-(./Style.tex) [19
+(./Style.tex) [23
 
-] [20
+] [24
 
 ] (./refman.ind)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
@@ -1001,30 +1014,32 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 7FA054CCE3F250F0E20E35E6B081F905;5008.
+(rerunfilecheck)             Checksum: 08885CF7BF2DD9A5E49D4DE198682BC7;5251.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16628 strings out of 483183
- 240118 string characters out of 5966292
- 513884 words of memory out of 5000000
- 31216 multiletter control sequences out of 15000+600000
+ 16656 strings out of 483183
+ 240387 string characters out of 5966292
+ 527219 words of memory out of 5000000
+ 31231 multiletter control sequences out of 15000+600000
  577518 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,12n,96p,938b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,14n,96p,938b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (24 pages, 89128 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
+c.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (28 pages, 111960 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 506 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 
