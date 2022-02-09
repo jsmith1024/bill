@@ -101,10 +101,25 @@ Unsigned</h2>
 <h1><a class="anchor" id="Floats"></a>
 Floats</h1>
 <p>The float 64 offers the same specs as c++ double.</p>
-<h1><a class="anchor" id="Boolean"></a>
-Boolean</h1>
 <h1><a class="anchor" id="Strings"></a>
 Strings</h1>
+<pre class="fragment">#!/usr/bin/env bill
+
+# numbers.bill
+
+fun main():no_value
+{
+    var x:int8      = 9
+    var y:int64     = 65536
+    var z:float64   = 1 / 3
+    
+    var x2:int64    = int64(x)  // int8() and float64() work the same way
+    var x$:string   = string(x)
+    writeln(type(x) + " " + type(x2) + " " + type(x$))
+}
+</pre><p> numbers.bill</p>
+<h1><a class="anchor" id="Boolean"></a>
+Boolean</h1>
 <h1><a class="anchor" id="Null"></a>
 Null</h1>
 <p>Use caution with null; abuse can be dangerous. See  <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science">https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science</a>/</p>

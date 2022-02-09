@@ -1,6 +1,6 @@
 #!/usr/bin/env bill
 
-# expression.bill
+# concatenate.bill
 
 fun main():no_value
 {

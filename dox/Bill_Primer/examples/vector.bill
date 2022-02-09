@@ -8,13 +8,19 @@ fun main():no_value
 {
     var primaries:vector
     primaries = ["red", "yellow", "blue"]
-    writeln(primaries)      // prints ["red", "yellow", "blue"]
+    writeln(primaries)          // prints ["red", "yellow", "blue"]
     
     var secondaries:vector = ["orange", "green", "purple"]
-    writeln(primaries[1])   // prints green
-    writeln(primaries[:2])  // prints ["orange", "green"]
-    writeln(primaries[1:])  // prints ["green", "purple"]
-    writeln(primaries[2:3]) // prints ["green", "purple"]
-    // writeln(primaries[-1])  // prints purple
+    writeln(primaries[1])       // prints green
+    writeln(primaries[:2])      // prints ["orange", "green"]
+    writeln(primaries[1:])      // prints ["green", "purple"]
+    writeln(primaries[2:3])     // prints ["green", "purple"]
+    // writeln(primaries[-1])       // prints purple
+    
+    var names:vector
+    push(names, "Mandy")
+    writeln(names)              // prints ["Mandy"]
+    var names2 = tuple(names)   // works with sets too!
+    writeln(names2)             // prints ("Mandy")
 }
 

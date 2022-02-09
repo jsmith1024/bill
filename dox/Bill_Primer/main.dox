@@ -59,43 +59,47 @@ If you operating system supports shebangs, the following will work:
 Here is a list of Reserved Words:
 <table>
     <tr>
+        <th colspan="2">Reserved Word</th>
+        <th>See:</th>
+    </tr>
+    <tr>
         <td>break</td>
         <td>exit loop</td>
-        <td>See @ref Loops </td>
+        <td>@ref Loops </td>
     </tr>
     <tr>
         <td>continue</td>
         <td>skip to next iteration</td>
-        <td>See @ref Loops </td>
+        <td>@ref Loops </td>
     </tr>
     <tr>
         <td>else</td>
         <td>default condition</td>
-        <td>See @ref Loops </td>
+        <td>@ref Loops </td>
     </tr>
     <tr>
         <td>elsif</td><td>subsequent condition</td>
-        <td>See @ref Loops </td>
+        <td>@ref Loops </td>
     </tr>
     <tr>
         <td>exit</td>
         <td>end program (possible exit value)</td>
-        <td>See below.</td>
+        <td>below.</td>
     </tr>
     <tr>
         <td>if</td>
         <td>condition</td>
-        <td>See @ref Loops </td>
+        <td>@ref Loops </td>
     </tr>
     <tr>
         <td>return</td>
         <td>end a function (possible return value)</td>
-        <td>See @ref Functions </td>
+        <td>@ref Functions </td>
     </tr>
     <tr>
         <td>try</td>
         <td>begin try block</td>
-        <td>See @ref Exceptions </td>
+        <td>@ref Exceptions </td>
     </tr>
 </table>
 With exit, you can use any positive int64 value.

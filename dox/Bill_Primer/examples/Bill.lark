@@ -75,9 +75,9 @@ BINARY_INP_OPERATOR:  "+="  // inplace add
 BINARY_COMP_OPERATOR: "=="  // equal to
                     | "===" // is
                     | "!="  // not equal to
-                    | ">="  // greater than or equal to, set superset (exclusive)
+                    | ">="  // greater than or equal to, set superset
                     | ">"   // greater than to, set superset
-                    | "<="  // less than or equal to,s set subset
+                    | "<="  // less than or equal to, set subset
                     | "<"   // less than to, set subset (exclusive)
                     | "in"  // membership
 

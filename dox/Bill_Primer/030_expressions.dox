@@ -10,8 +10,10 @@
 
 Expressions work like most languages.
 
+
 @section    Math
 @verbinclude "expression.bill" expression.bill
+@latexonly \pagebreak @endlatexonly
 @subsection Operators
 <table>
     <tr>
@@ -33,9 +35,6 @@ Expressions work like most languages.
         <td>negative</td>
         <td>-1</td>
     </tr>
-</table>
-
-<table>
     <tr>
         <th colspan="2">Binary Operators</th>
         <th>Example</th>
@@ -75,9 +74,6 @@ Expressions work like most languages.
         <td>power</td>
         <td>4**2</td>
     </tr>
-</table>
-
-<table>
     <tr>
         <th colspan="2">Inplace Operators</th>
         <th>Example</th>
@@ -114,8 +110,10 @@ Expressions work like most languages.
     </tr>
 </table>
 
+
 @section    Logic
 @verbinclude "logic.bill" logic.bill
+@latexonly \pagebreak @endlatexonly
 @subsection Operators
 <table>
     <tr>
@@ -132,9 +130,6 @@ Expressions work like most languages.
         <td>invert</td>
         <td>~ x</td>
     </tr>
-</table>
-
-<table>
     <tr>
         <th colspan="2">Binary Operators</th>
         <th>Example</th>
@@ -150,7 +145,7 @@ Expressions work like most languages.
         <td>x === y</td>
     </tr>
     <tr>
-        <td>n=</td>
+        <td>!=</td>
         <td>not equal to</td>
         <td>x != y</td>
     </tr>
@@ -182,17 +177,17 @@ Expressions work like most languages.
     <tr>
         <td> & </td>
         <td>and</td>
-        <td>x and y</td>
+        <td>x & y</td>
     </tr>
     <tr>
         <td> | </td>
         <td>or</td>
-        <td>x or y</td>
+        <td>x | y</td>
     </tr>
     <tr>
         <td> ^ </td>
         <td>xor</td>
-        <td>x xor y</td>
+        <td>x ^ y</td>
     </tr>
     <tr>
         <td> << </td>
@@ -211,7 +206,7 @@ Expressions work like most languages.
 @subsection Operators
 <table>
     <tr>
-        <th colspan="2">"Binary Operators</th>
+        <th colspan="2">Binary Operators</th>
         <th>Example</th>
     </tr>
     <tr>

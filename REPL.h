@@ -13,6 +13,9 @@ class REPL
         std::string     prompt;     // repl prompt
         std::string     help;       // help screen
     
+        std::string     user_input; // typed entry
+        std::string     result;     // results of evaluation
+    
     protected:
         /* read
          * @brief   Read user input.
@@ -50,7 +53,7 @@ class REPL
         void loop();
         
         /* destructor
-         * @brief Tear Down REPL.
+         * @brief Tear down REPL.
          */
         ~REPL();
 };

@@ -23,9 +23,6 @@ Generator::Generator(std::istream& INSTREAM, std::ostream& OUTSTREAM,Evaluator& 
     ifstream in_file("help.txt", ifstream::in);
     in_file >> help;
     in_file.close();
-    
-    std::string user_input;
-    std::string result;
 }
 
 REPL::read()
@@ -57,9 +54,14 @@ REPL::print()
 
 REPL::loop()
 {
-	// call read
-    // call evaluate
-    // call print
+	read();         // call read
+    evaluate();     // call evaluate
+    print();        // call print
+    
+    if((user_input == "exit") or (user_input == "quit"))
+    {
+        return
+    }
 }
 
 REPL::~REPL()

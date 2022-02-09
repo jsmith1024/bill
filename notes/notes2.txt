@@ -1,0 +1,62 @@
+Caching: no clue what you mean.
+Unit testing: pass an istream and ostream (by reference) to repl class.  Use them as you works have cin-cour.
+
+========================================
+
+The other half of unit testing.....
+You have to write them.  I'm a fan of:
+
+test(input, expectedOutput);
+
+Then you need something like:
+void test(const std::string& input, const std::string output) {
+   std::istringstream is(input);
+   std::ostringstream os;
+   Repl repl;
+   repl.run(is, os);
+   const std::string output = os.str();
+   if(expectedOutput != input) // Fail test
+}
+
+NOTICE: This is a BAD PLAN to match exact output.  That's a lot of fragile test results. Improve this to have a set of queries, like a map of variable names and expected values. I'm simply showing simple.
+
+====
+
+Then you have to figure out how to encode your multi-line input.  Worst case:
+test(["input 1",
+          "input 2",
+          "input 3"],
+          "expected result);
+
+====
+
+Thre is atleast one newer string type which might help.
+
+====
+The example on test() needs to be refined to match what's easiest to input.
+
+====
+
+You need to do trial and error.  Its possible, this might work:
+test(std::istringstream() << "line1" << "line2", "result);
+
+====
+
+If it does, maybe simply to:
+test(iss() << "line1" << "line2", result);
+
+====
+
+or maybe:
+test(R"
+line1
+line2
+", "output")
+
+====
+
+Every bit of that is example, tweak for convenience.
+
+====
+
+the streams into the repl is the most solid part of it

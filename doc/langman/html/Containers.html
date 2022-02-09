@@ -88,14 +88,20 @@ fun main():no_value
 {
     var primaries:vector
     primaries = ["red", "yellow", "blue"]
-    writeln(primaries)      // prints ["red", "yellow", "blue"]
+    writeln(primaries)          // prints ["red", "yellow", "blue"]
     
     var secondaries:vector = ["orange", "green", "purple"]
-    writeln(primaries[1])   // prints green
-    writeln(primaries[:2])  // prints ["orange", "green"]
-    writeln(primaries[1:])  // prints ["green", "purple"]
-    writeln(primaries[2:3]) // prints ["green", "purple"]
-    // writeln(primaries[-1])  // prints purple
+    writeln(primaries[1])       // prints green
+    writeln(primaries[:2])      // prints ["orange", "green"]
+    writeln(primaries[1:])      // prints ["green", "purple"]
+    writeln(primaries[2:3])     // prints ["green", "purple"]
+    // writeln(primaries[-1])       // prints purple
+    
+    var names:vector
+    push(names, "Mandy")
+    writeln(names)              // prints ["Mandy"]
+    var names2 = tuple(names)   // works with sets too!
+    writeln(names2)             // prints ("Mandy")
 }
 
 </pre><h1><a class="anchor" id="Sets"></a>
@@ -123,9 +129,36 @@ fun main():no_value
     writeln(colors &gt; primaries) // prints false
     
     // add more later
+    
+    // pop (unordered)
+    write(pop(colors))          // prints either red or yellow (without a newline)
+    write("\n")                 // prints a newline
+    writelin(colors)            // prints whichever color was not popped
 }
 
-</pre><h1><a class="anchor" id="Tuples"></a>
+</pre><h2><a class="anchor" id="Operators"></a>
+Operators</h2>
+<table class="doxtable">
+<tr>
+<th colspan="2">Binary Operators </th><th>Example  </th></tr>
+<tr>
+<td>&lt;  </td><td>subset </td><td>x &lt; y  </td></tr>
+<tr>
+<td>&lt;= </td><td>subset or equal to </td><td>x &lt;= y  </td></tr>
+<tr>
+<td>&gt;  </td><td>superset </td><td>x &gt; y  </td></tr>
+<tr>
+<td>&gt;= </td><td>superset or equal to </td><td>x &gt;= y  </td></tr>
+<tr>
+<td>in  </td><td>membership </td><td>x in y  </td></tr>
+<tr>
+<td>&amp;  </td><td>intersection </td><td>x &amp; y  </td></tr>
+<tr>
+<td>|  </td><td>union </td><td>x | y  </td></tr>
+<tr>
+<td>^  </td><td>symmetric difference </td><td>x ^ y  </td></tr>
+</table>
+<h1><a class="anchor" id="Tuples"></a>
 Tuples</h1>
 <pre class="fragment"># vector.bill
 # for tuple samples

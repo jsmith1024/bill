@@ -44,9 +44,10 @@ https://blog.robertelder.org/signed-or-unsigned-part-2/
 
 The float 64 offers the same specs as c++ double.
 
-@section    Boolean
-
 @section    Strings
+@verbinclude "numbers.bill" numbers.bill
+
+@section    Boolean
 
 @section    Null
 Use caution with null; abuse can be dangerous.

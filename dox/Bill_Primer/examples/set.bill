@@ -21,5 +21,10 @@ fun main():no_value
     writeln(colors > primaries) // prints false
     
     // add more later
+    
+    // pop (unordered)
+    write(pop(colors))          // prints either red or yellow (without a newline)
+    write("\n")                 // prints a newline
+    writelin(colors)            // prints whichever color was not popped
 }
 
