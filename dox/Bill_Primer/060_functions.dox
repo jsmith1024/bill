@@ -1,16 +1,13 @@
 /**
-@page       Functions
+@page       Functions Functions
 
-@htmlonly
-<h1>Functions</h1>
-@endhtmlonly
-
-@link       Functions
+@link       Functions Functions
 @endlink
 
 Encapsulating repeatable steps, is how we make programming easier.
 
 @section    Calling Calling a Function
+TBD
 
 @section    Declaring Declaring a Function
 

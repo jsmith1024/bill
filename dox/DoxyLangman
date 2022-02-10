@@ -1652,7 +1652,7 @@ LATEX_HEADER           = dox/Bill_Primer/headerFile
 # Note: Only use a user-defined footer if you know what you are doing!
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_FOOTER           =
+LATEX_FOOTER           = dox/Bill_Primer/footerFile
 
 # The LATEX_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the LATEX_OUTPUT output
@@ -1660,7 +1660,7 @@ LATEX_FOOTER           =
 # markers available.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_EXTRA_FILES      =
+LATEX_EXTRA_FILES      = dox/background.png
 
 # If the PDF_HYPERLINKS tag is set to YES, the LaTeX that is generated is
 # prepared for conversion to PDF (using ps2pdf or pdflatex). The PDF file will

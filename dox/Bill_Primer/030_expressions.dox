@@ -1,15 +1,10 @@
 /**
-@page       Expressions
+@page       Expressions Expressions
 
-@htmlonly
-<h1>Expressions</h1>
-@endhtmlonly
-
-@link       Expressions
+@link       Expressions Expressions
 @endlink
 
 Expressions work like most languages.
-
 
 @section    Math
 @verbinclude "expression.bill" expression.bill

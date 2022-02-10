@@ -1,17 +1,13 @@
 /**
-@page       Style
+@page       Style Style
 
-@htmlonly
-<h1>Style</h1>
-@endhtmlonly
-
-@link       Style
+@link       Style Style
 @endlink
 
 Code style can be a matter of choice...
 
 However, consistency means readability.
-As such, heare are coventions used throught this documentation.
+As such, here are coventions used throught this documentation.
 
 @section    Comments
 
@@ -19,6 +15,7 @@ Possible comment types:
 @verbinclude comments.bill
 
 @section    Statements
+TBD
 
 @section    Blocks
 @verbinclude block

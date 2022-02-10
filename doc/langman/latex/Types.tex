@@ -1,6 +1,4 @@
-\doxysection*{Types}
-
-\mbox{\hyperlink{Types}{Types}}
+\mbox{\hyperlink{Types}{Types }}
 
 Every form of data is a type. By extension, the same is true for functions. Built in types\+:
 \begin{DoxyItemize}
@@ -51,8 +49,26 @@ fun main():no_value
 }
 \end{DoxyVerbInclude}
  numbers.\+bill\hypertarget{Types_Boolean}{}\doxysection{Boolean}\label{Types_Boolean}
-\hypertarget{Types_Null}{}\doxysection{Null}\label{Types_Null}
-Use caution with null; abuse can be dangerous. See  \\ \href{https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science}{\texttt{ https\+://www.\+lucidchart.\+com/techblog/2015/08/31/the-\/worst-\/mistake-\/of-\/computer-\/science}}/\hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
+T\+BD\hypertarget{Types_Null}{}\doxysection{Null}\label{Types_Null}
+Use caution with null; abuse can be dangerous. See  \\ \href{https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science}{\texttt{ https\+://www.\+lucidchart.\+com/techblog/2015/08/31/the-\/worst-\/mistake-\/of-\/computer-\/science}}/\hypertarget{Types_Constants}{}\doxysection{Constants}\label{Types_Constants}
+The const reserverd word may be used to create a constant. 
+\begin{DoxyVerbInclude}
+#!/usr/bin/env bill
+
+# constant.bill
+
+fun main():no_value
+{
+    const x:int8    = 9
+    const y:int64   = 65536
+    const z:float64 = 1 / 3
+    
+    const x2:int64  = int64(x)  // int8() and float64() work the same way
+    const x$:string = string(x)
+    writeln(type(x) + " " + type(x2) + " " + type(x$))
+}
+\end{DoxyVerbInclude}
+ constant.\+bill\hypertarget{Containers_Others}{}\doxysection{Others}\label{Containers_Others}
 For more information, please see \mbox{\hyperlink{Containers}{Containers}}.
 
 Next\+: \mbox{\hyperlink{Expressions}{Expressions}} 

@@ -1,24 +1,21 @@
 /**
-@page       Containers
+@page       Containers Containers
 
-@htmlonly
-<h1>Containers</h1>
-@endhtmlonly
-
-@link       Containers
+@link       Containers Containers
 @endlink
 
 Containers can hold multiple values.
-// @section    Arrays
+@section    Arrays
+TBD
 
 @section    Vectors
 Vectors, which are similar to lists, are sequences of data.
-@verbinclude vector.bill
+@verbinclude "vector.bill" vector.bill
 
 @section    Sets
 Sets are based on the mathenatical sets. See <a href="https://en.wikipedia.org/wiki/Set_(mathematics)">sets</a>
 Note: sets are unordered. Accessing them will result in random ordering.
-@verbinclude set.bill
+@verbinclude "set.bill" set.bill
 
 @subsection Operators
 <table>
@@ -70,13 +67,14 @@ Note: sets are unordered. Accessing them will result in random ordering.
 @latexonly \pagebreak @endlatexonly
 
 @section    Tuples
-@verbinclude tuple.bill
+@verbinclude "tuple.bill" tuple.bill
 
 @section    Dictionaries
 Note: dicts are unordered. Accessing them will result in random ordering.
-@verbinclude dict.bill
+@verbinclude "dict.bill" dict.bill
 
-// @section    Others
+@section    Others
+TBD
 
 Next: @ref Flow
 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['introduction_19',['Introduction',['../index.html',1,'']]]
+  ['exceptions_25',['Exceptions',['../Exceptions.html',1,'']]],
+  ['expressions_26',['Expressions',['../Expressions.html',1,'']]]
 ];

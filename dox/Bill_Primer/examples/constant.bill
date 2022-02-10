@@ -1,0 +1,14 @@
+#!/usr/bin/env bill
+
+# constant.bill
+
+fun main():no_value
+{
+    const x:int8    = 9
+    const y:int64   = 65536
+    const z:float64 = 1 / 3
+    
+    const x2:int64  = int64(x)  // int8() and float64() work the same way
+    const x$:string = string(x)
+    writeln(type(x) + " " + type(x2) + " " + type(x$))
+}

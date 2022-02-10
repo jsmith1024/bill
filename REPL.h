@@ -41,7 +41,7 @@ class REPL
          * @param   outstream           (reference)
          * @param   Evaluator           (reference)
          */
-        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM,Evaluator&  EVALUATOR);
+        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR);
         REPL(const REPL& rhs);              // Copy Constructor
         REPL(REPL&&) = delete;              // Move Constructor
         REPL& operator=(const REPL& rhs);   // assignment operator

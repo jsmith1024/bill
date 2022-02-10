@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 
-Generator::Generator(std::istream& INSTREAM, std::ostream& OUTSTREAM,Evaluator&  EVALUATOR)
+Generator::Generator(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR)
 {
     std::cout << "Construct\n\n";
     

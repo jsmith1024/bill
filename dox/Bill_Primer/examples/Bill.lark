@@ -164,6 +164,9 @@ assign_variable: (declare_variable | VARIABLE_NAME) "=" expression
 declare_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE
 // declare_assign_variable: "var" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
 
+// contants
+declare_constant: "const" VARIABLE_NAME ":" VARIABLE_TYPE "=" expression
+
 // strings
 %import common.ESCAPED_STRING -> STRING
 
@@ -220,6 +223,7 @@ block: "{" (try
         | assign_tuple
         | declare_set
         | assign_set
+        | declare_constant
         | for
         | foreach
         | if
