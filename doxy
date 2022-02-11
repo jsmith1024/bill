@@ -39,7 +39,7 @@ if [ -f ${doxyfile} ]
             echo "Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
-		cd doc/refman/latex
+		cd docs/refman/latex
 		make
 		retVal=$?
 		if [ $retVal -ne 0 ]
@@ -61,7 +61,7 @@ if [ -f ${doxyfile} ]
             echo "Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
-# 		cd doc/userman/latex
+# 		cd docs/userman/latex
 # 		make
 # 		retVal=$?
 # 		if [ $retVal -ne 0 ]
@@ -83,7 +83,7 @@ if [ -f ${doxyfile} ]
             echo"Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
-		cd doc/langman/latex
+		cd docs/langman/latex
 		make
 		retVal=$?
 		if [ $retVal -ne 0 ]
@@ -105,7 +105,7 @@ if [ -f ${doxyfile} ]
             echo "Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
-# 		cd doc/stlman/latex
+# 		cd docs/stlman/latex
 # 		make
 # 		retVal=$?
 # 		if [ $retVal -ne 0 ]

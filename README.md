@@ -1,7 +1,7 @@
 # Bill
 Bill is a simple, statically typed, functional language.
 ####License
-Copyright (c)  2022  J. Smith.
+Copyright (c)  2022  Joe Smith.
 
 Permission is granted to copy, distribute and/or modify this document, 
 
