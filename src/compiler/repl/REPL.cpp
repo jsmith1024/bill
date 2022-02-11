@@ -1,4 +1,5 @@
 #include "./REPL.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -73,12 +74,12 @@ REPL::~REPL()
     delete  Evaluator;
 }
 
-// std::ostream& operator<<(std::ostream& os, const REPL& rhs)
-// {
-//     os  << "default precision (6): " << rhs.getProduct() << '\n'
-//         << "std::setprecision(10): " << std::setprecision(10) << rhs.getProduct() << '\n'
-//         << "max precision:         "
-//         << std::setprecision(std::numeric_limits<long double>::digits10 + 1)
-//         << rhs.getProduct() << "\n";
-//     return os;
-// }
+std::ostream& operator<<(std::ostream& os, const REPL& rhs)
+{
+    os  << "default precision (6): " << rhs.getProduct() << '\n'
+        << "std::setprecision(10): " << std::setprecision(10) << rhs.getProduct() << '\n'
+        << "max precision:         "
+        << std::setprecision(std::numeric_limits<long double>::digits10 + 1)
+        << rhs.getProduct() << "\n";
+    return os;
+}
