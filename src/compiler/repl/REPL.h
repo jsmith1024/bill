@@ -1,14 +1,18 @@
 #ifndef REPL_H
 #define REPL_H
 
+#include <iostream>
+#include <string>
+
+class Evaluator;
 
 class REPL
 {
     private:
         std::istream    instream;   // reference to input stream
         std::ostream    outstream;  // reference to output stream
-        ???             Evaluator;  // reference to Evaluator
-        
+        Evaluator       Evaluator;  // reference to Evaluator
+ 
         std::string     welcome;    // Welcom Screen
         std::string     prompt;     // repl prompt
         std::string     help;       // help screen
@@ -34,6 +38,11 @@ class REPL
         
     public:
         
+        /* destructor
+         * @brief Tear down REPL.
+         */
+        ~REPL();
+
         /* constructor
          * @brief   Set up repl.
          * @details Store instream, outstream, and Evaluator references. Also store contents of welcome.txt, prompt.txt, and help.txt.
@@ -41,23 +50,19 @@ class REPL
          * @param   outstream           (reference)
          * @param   Evaluator           (reference)
          */
-        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR);
-        REPL(const REPL& rhs);              // Copy Constructor
+        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR) = delete;
+        REPL(const REPL& rhs) = delete;     // Copy Constructor
         REPL(REPL&&) = delete;              // Move Constructor
         REPL& operator=(const REPL& rhs);   // assignment operator
+        REPL& operator=(REPL&& rhs);        // assignment operator
         
         /* loop
          * @brief   Control the process.
          * @note    This is the only method to call directly.
          */
         void loop();
-        
-        /* destructor
-         * @brief Tear down REPL.
-         */
-        ~REPL();
 };
 
-// std::ostream& operator<<(std::ostream& os, const REPL& rhs);
+std::ostream& operator<<(std::ostream& os, const REPL& rhs);
 
 #endif
