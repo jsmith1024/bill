@@ -1,13 +1,12 @@
 # Bill
 Bill is a simple, statically typed, functional language.
-####License
+#### License:
 Copyright (c)  2022  Joe Smith.
 
 Permission is granted to copy, distribute and/or modify this document, 
-
 provided this notice is kept.
 
-####Name:
+#### Name:
 Bill
 
 - *B* eginner
@@ -15,14 +14,14 @@ Bill
 - *L* earning
 - *L* anguage
 
-####Purpose:
+#### Purpose:
 It is a general purpose statically typed, with dynamic types, easy to learn and use language.
 
-####Key uses:
+#### Key uses:
 - Learning basic level programming.
 - Pursuing enthusiast programming.
 
-####Features:
+#### Features:
 - portable
 - a variety of useful data types
 - extend-able data types
@@ -31,11 +30,8 @@ It is a general purpose statically typed, with dynamic types, easy to learn and 
 - ease of static typing
 - strong static typing
 
-####Manuals:
-[User Manual](../userman/html/index.html)
-
-[Reference Manual](../refman/html/index.html)
-
-[Bill_Primer](../langman/html/index.html)
-
-[Standard_Library_Refence](../stlman/html/index.html)
+#### Manuals:
+- [User Manual](../userman/html/index.html)
+- [Reference Manual](../refman/html/index.html)
+- [Bill_Primer](../langman/html/index.html)
+- [Standard_Library_Refence](../stlman/html/index.html)
