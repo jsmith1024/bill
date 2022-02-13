@@ -1,1 +1,1 @@
-Define test suite here.
+// Define test suite here.
