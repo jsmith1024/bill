@@ -1,32 +1,38 @@
 #include "./REPL.h"
 
+#include <iomanip>
 #include <iostream>
 #include <fstream>
 #include <string>
 
-Generator::Generator(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR)
+REPL::REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR)
+  : instream(INSTREAM)
+  , outstream(OUTSTREAM)
+  , evaluator(EVALUATOR)
 {
     std::cout << "Construct\n\n";
-    
-    instream    = INSTREAM;
-    outstream   = OUTSTREAM;
-    Evaluator   = EVALUATOR;
-    
+        
     // Read in files.
-    ifstream in_file("welcome.txt", ifstream::in);
-    in_file >> welcome;
-    in_file.close();
+    {
+      std::ifstream in_file("welcome.txt");
+      in_file >> welcome;
+      in_file.close();
+    }
+      
+    std::ifstream in_file("prompt.txt");
+    {
+      in_file >> prompt;
+      in_file.close();
+    }
     
-    ifstream in_file("prompt.txt", ifstream::in);
-    in_file >> prompt;
-    in_file.close();
-    
-    ifstream in_file("help.txt", ifstream::in);
-    in_file >> help;
-    in_file.close();
+    {
+      std::ifstream in_file("help.txt");
+      in_file >> help;
+      in_file.close();
+    }
 }
 
-REPL::read()
+void REPL::read()
 {
 	std::string text;
     
@@ -36,42 +42,38 @@ REPL::read()
     user_input = text;
 }
 
-REPL::evaluate()
+void REPL::evaluate()
 {
-	if(user_input == "help")
+    if(user_input == "help")
     {
         result = user_input;
     }
     else
     {
-        result = Evaluator.setInput()   // placeholder
+      result = "<todo: implement evaluator>"; // evaluator.setInput();   // placeholder
     }
 }
 
-REPL::print()
+void REPL::print()
 {
 	std::cout << result << '\n';
 }
 
-REPL::loop()
+void REPL::loop()
 {
-	read();         // call read
+    read();         // call read
     evaluate();     // call evaluate
     print();        // call print
     
     if((user_input == "exit") or (user_input == "quit"))
     {
-        return
+      return;
     }
 }
 
 REPL::~REPL()
 {
     std::cout << "\nDestruct\n";
-    
-    delete  instream;
-    delete  outstream;
-    delete  Evaluator;
 }
 
 std::ostream& operator<<(std::ostream& os, const REPL& rhs)

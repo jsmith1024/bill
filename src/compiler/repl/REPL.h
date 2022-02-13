@@ -9,9 +9,9 @@ class Evaluator;
 class REPL
 {
     private:
-        std::istream    instream;   // reference to input stream
-        std::ostream    outstream;  // reference to output stream
-        Evaluator       Evaluator;  // reference to Evaluator
+        std::istream&   instream;   // reference to input stream
+        std::ostream&   outstream;  // reference to output stream
+        Evaluator&      evaluator;  // reference to Evaluator
  
         std::string     welcome;    // Welcom Screen
         std::string     prompt;     // repl prompt
@@ -50,7 +50,7 @@ class REPL
          * @param   outstream           (reference)
          * @param   Evaluator           (reference)
          */
-        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR) = delete;
+        REPL(std::istream& INSTREAM, std::ostream& OUTSTREAM, Evaluator& EVALUATOR);
         REPL(const REPL& rhs) = delete;     // Copy Constructor
         REPL(REPL&&) = delete;              // Move Constructor
         REPL& operator=(const REPL& rhs);   // assignment operator
@@ -61,6 +61,11 @@ class REPL
          * @note    This is the only method to call directly.
          */
         void loop();
+
+  inline std::string getProduct() const
+  {
+    return result;
+  }
 };
 
 std::ostream& operator<<(std::ostream& os, const REPL& rhs);
