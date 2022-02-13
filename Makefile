@@ -2,6 +2,7 @@ all:
 
 PROG = bill
 
+CXXFLAGS+= -std=c++17
 CXXFLAGS+= -Wall
 CXXFLAGS+= -Werror
 CXXFLAGS+= -O3
