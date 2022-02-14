@@ -15,7 +15,7 @@ Bill
 - *L* anguage
 
 #### Purpose:
-It is a general purpose statically typed, with dynamic types, easy to learn and use language.
+It is a general purpose statically typed, easy to learn and use language.
 
 #### Key uses:
 - Learning basic level programming.
