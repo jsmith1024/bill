@@ -31,7 +31,7 @@ It is a general purpose statically typed, with dynamic types, easy to learn and 
 - strong static typing
 
 #### Manuals:
-- [User Manual](../userman/html/index.html)
-- [Reference Manual](../refman/html/index.html)
-- [Bill_Primer](langman/html/index.html)
-- [Standard_Library_Refence](../stlman/html/index.html)
+- [User Manual](https://jsmith1024.github.io/bill//userman/html/index.html)
+- [Reference Manual](https://jsmith1024.github.io/bill//refman/html/index.html)
+- [Bill_Primer](https://jsmith1024.github.io/bill/langman/html/index.html)
+- [Standard_Library_Refence](https://jsmith1024.github.io/bill//stlman/html/index.html)
