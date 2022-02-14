@@ -33,5 +33,5 @@ It is a general purpose statically typed, with dynamic types, easy to learn and 
 #### Manuals:
 - [User Manual](../userman/html/index.html)
 - [Reference Manual](../refman/html/index.html)
-- [Bill_Primer](../langman/html/index.html)
+- [Bill_Primer](langman/html/index.html)
 - [Standard_Library_Refence](../stlman/html/index.html)
