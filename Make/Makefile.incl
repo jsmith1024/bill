@@ -1,0 +1,99 @@
+
+# Generic Makefile to be included to support building code using the following examples:
+#
+# # Build an executable from all .cpp files in the current directory (recursively)
+# # with includes from ../other and library flags -L ../other -lother -- aka ../other/libother.a
+#
+# all:
+# TOPDIR=../..
+# EXE=myprog
+# CXXFLAGS+= -I ../other/
+# LIBS+=-L ../other -lother # links to libother.a
+# include $(TOPDIR)/Make/Makefile.incl
+
+# Default target
+all:
+
+# Compliler info
+CXX=g++
+CXXFLAGS+= -std=c++17
+CXXFLAGS+= -Wall
+CXXFLAGS+= -Werror
+CXXFLAGS+= -O3
+
+# Also generate dependency files when compiling objects
+CXXFLAGS_MAKE_DEPEND=-MMD
+
+# Archiver Info
+AR=ar
+ARFLAGS+=rcs
+
+# File definitions
+SOURCES+=$(shell find . -name "*.cpp")
+OBJECTS+=$(patsubst %.cpp,%.o,$(SOURCES))
+DEPS+=$(patsubst %.cpp,%.d,$(SOURCES))
+
+# Setup files to be cleaned
+CLEANS+=$(OBJECTS)
+CLEANERS+=$(DEPS)
+
+# Include dependencies, ignoring if they don't exist
+# In the event all the .d files are deleted, but not the .o files,
+# Dependencies may fail until the .d files are generated...
+# Fix: make cleanest all
+-include $(DEPS)
+
+# Generic build of a .o and .d from a .cpp
+%.o: %.cpp
+	g++ -o $@ -c $< $(CXXFLAGS_MAKE_DEPEND) $(CXXFLAGS)
+
+#
+# Executable Generation
+#
+ifdef EXE
+
+# Cleanup executable
+CLEANESTS+=$(EXE)
+
+# Require executable
+all: $(EXE)
+
+# Build executable
+$(EXE): $(OBJECTS)
+	$(CXX) -o $@ $^ $(LIBS) $(CXXFLAGS)
+
+#
+# Library Generation
+#
+else ifdef LIB
+
+# Cleanup library
+CLEANESTS+=$(LIB)
+
+# Require library
+all: $(LIB)
+
+# Build executable
+$(LIB): $(OBJECTS)
+	$(AR) $(ARFLAGS) $@ $^
+
+endif
+
+#
+# Cleanup
+#
+
+clean:
+ifdef CLEANS
+	-rm $(CLEANS)
+endif
+
+cleaner: clean
+ifdef CLEANERS
+	-rm $(CLEANERS)
+endif
+
+cleanest: cleaner
+ifdef CLEANESTS
+	-rm $(CLEANESTS)
+endif
