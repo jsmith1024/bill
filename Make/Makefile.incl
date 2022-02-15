@@ -14,18 +14,36 @@
 # Default target
 all:
 
+# If provided, apply Config.mk from the top of the repository.
+# Pro-Tip: .gitignore it to allow users to provide it
+ifeq ($(shell test -e $(TOPDIR)/Config.mk && echo yes),)
+$(warning $$(TOPDIR)/Config.mk not present.  Proceeding without it.)
+else
+include $(TOPDIR)/Config.mk
+endif
+
 # Compliler info
-CXX=g++
+CXX?=g++
 CXXFLAGS+= -std=c++17
 CXXFLAGS+= -Wall
 CXXFLAGS+= -Werror
 CXXFLAGS+= -O3
 
+# Configure boost if required
+ifdef REQUIRE_BOOST
+ifdef BOOST_ROOT
+CXXFLAGS+=-I $(BOOST_ROOT)/include
+LIBS+=-L$(BOOST_ROOT)/lib -lboost_unit_test_framework
+else
+$(error BOOST_ROOT variable is not set.  Set in $$(TOPDIR)/Config.mk)
+endif
+endif
+
 # Also generate dependency files when compiling objects
 CXXFLAGS_MAKE_DEPEND=-MMD
 
 # Archiver Info
-AR=ar
+AR?=ar
 ARFLAGS+=rcs
 
 # File definitions
