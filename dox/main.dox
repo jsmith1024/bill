@@ -1,0 +1,28 @@
+/**
+@mainpage   Bill
+
+@htmlonly
+<h1>Reference Manual</h1>
+<h4>Introduction</h4>
+:
+    - :
+    <ul>
+        <li> 
+    </ul>
+
+<h4>License</h4>
+    Copyright (c)  2022  J. Smith.</br>
+    Permission is granted to copy, distribute and/or modify this document, 
+    provided this notice is kept.</br>
+    
+    <p>Please see the current documentation in <a href="https://jsmith1024.github.io/bill/home/html/index.html">html</a>.</p>
+
+    <p>If you prefer a pdf:
+    <ul>
+        <li><a href="Bill_Primer.pdf">Primer</a></li>
+        <li><a href="Bill_Reference_Manual.pdf">Reference Manual</a></li>
+    </ul>
+    </p>
+@endhtmlonly
+
+*/
