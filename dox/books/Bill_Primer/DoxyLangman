@@ -753,7 +753,7 @@ WARN_LOGFILE           =
 # spaces.
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = dox/book/Bill_Primer \
+INPUT                  = dox/books/Bill_Primer \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -789,7 +789,9 @@ RECURSIVE              = NO
 # run.
 
 EXCLUDE                = ./test_* \
-                         ~/.. ./.. .. ../.. ../../.. /home/ /home/j/ /home/j/dev
+                         ~/.. ./.. .. ../.. ../../.. \
+                         /home/ /home/j/ /home/j/dev \
+                         dox/books/Bill_Primer/Bill_Primer.dox
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

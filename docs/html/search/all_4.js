@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getproduct_8',['getProduct',['../classREPL.html#a1604b0a8a051cf0625e4904d947cb5c4',1,'REPL']]]
+  ['6_2edox_4',['6.dox',['../6_8dox.html',1,'']]]
 ];

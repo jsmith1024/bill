@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7erepl_29',['~REPL',['../classREPL.html#a7f9cc594eb4ed37514bf832fcd51b037',1,'REPL']]]
+  ['loop_19',['loop',['../classREPL.html#a2c4266f7ac3669599d2251bd818c2a79',1,'REPL']]],
+  ['loops_2edox_20',['Loops.dox',['../Loops_8dox.html',1,'']]]
 ];

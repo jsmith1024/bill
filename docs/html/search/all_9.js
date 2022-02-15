@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['read_23',['read',['../classREPL.html#a1241caa662239befe3b10241862a53d6',1,'REPL']]],
-  ['repl_24',['REPL',['../classREPL.html',1,'REPL'],['../classREPL.html#ab059e4ccdabd5e7b830fb6cf75f24be9',1,'REPL::REPL(std::istream &amp;INSTREAM, std::ostream &amp;OUTSTREAM, Evaluator &amp;EVALUATOR)'],['../classREPL.html#af809777ccb7fe5fc7a56e0bda420cce6',1,'REPL::REPL(const REPL &amp;rhs)=delete'],['../classREPL.html#a96d2ce4ffdc6a0d7ec4e071d88bf97d4',1,'REPL::REPL(REPL &amp;&amp;)=delete']]],
-  ['repl_2ecpp_25',['REPL.cpp',['../REPL_8cpp.html',1,'']]],
-  ['repl_2eh_26',['REPL.h',['../REPL_8h.html',1,'']]]
+  ['evaluate_13',['evaluate',['../classREPL.html#a0e236161286a2a5af8280a47c3cff6f3',1,'REPL']]],
+  ['exceptions_2edox_14',['Exceptions.dox',['../Exceptions_8dox.html',1,'']]],
+  ['expressions_2edox_15',['Expressions.dox',['../Expressions_8dox.html',1,'']]]
 ];

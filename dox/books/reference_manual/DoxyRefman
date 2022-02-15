@@ -791,7 +791,9 @@ RECURSIVE              = NO
 # run.
 
 EXCLUDE                = ./test_* \
-                         ~/.. ./.. .. ../.. ../../.. /home/ /home/j/ /home/j/dev
+                         ~/.. ./.. .. ../.. ../../.. \
+                         /home/ /home/j/ /home/j/dev \
+                         dox/books/reference_manual/reference.dox
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
