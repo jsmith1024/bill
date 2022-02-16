@@ -17,7 +17,7 @@ Bill
 #### Purpose:
 It is a general purpose statically typed, easy to learn and use language.
 
-#### Key uses:
+#### Key Uses:
 - Learning basic level programming.
 - Pursuing enthusiast programming.
 
@@ -33,5 +33,5 @@ It is a general purpose statically typed, easy to learn and use language.
 #### Manuals:
 - [User Manual](https://jsmith1024.github.io/bill/userman/html/index.html)
 - [Reference Manual](https://jsmith1024.github.io/bill/refman/html/index.html)
-- [Bill_Primer](https://jsmith1024.github.io/bill/langman/html/index.html)
-- [Standard_Library_Refence](https://jsmith1024.github.io/bill/stlman/html/index.html)
+- [Bill Primer](https://jsmith1024.github.io/bill/langman/html/index.html)
+- [Standard Library Refence](https://jsmith1024.github.io/bill/stlman/html/index.html)
