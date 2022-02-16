@@ -1,0 +1,44 @@
+/**
+@page   About About bill
+
+<h4>Name:</h4>
+<b>Bill</b>
+<ul>
+    <li><b>B</b>eginner
+    <li><b>I</b>ntermediate
+    <li><b>L</b>earning
+    <li><b>L</b>anguage
+</ul>
+
+<h4>Purpose:</h4>
+It is a general purpose statically typed, easy to learn and use language.
+
+<h4>Key uses:</h4>
+<ul>
+    <li>Learning basic level programming.
+    <li>Pursuing enthusiast programming.
+</ul>
+
+<h4>Features:</h4>
+<ul>
+    <li>portable
+    <li>a variety of useful data types
+    <li>extend-able data types
+    <li>simple to use
+    <li>constants
+    <li>ease of static typing
+    <li>strong static typing
+</ul>
+
+@section FAQ
+- <b>Why is it called Bill?</b><br>
+&nbsp;Bill is named after Bill Smith, who encouraged the language's creator to learn programming as a teenager.<br>
+<br>
+- <b>Is bill Object Oriented?</b><br>
+As there are numerous definitions of "bill Object Oriented" accepted by the programming community, it is impossible to anser all of the definitions. (See next question.)<br>
+<br>
+- <b>Can I define a class and create an instance of it?</b><br>
+This is planned for a future version of Bill. At this time, it is not possible.<br>
+
+
+*/

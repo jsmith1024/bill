@@ -1,0 +1,55 @@
+/**
+@mainpage   Bill Home
+
+@htmlonly
+
+<h4>Name:</h4>
+<b>Bill</b>
+<ul>
+    <li><b>B</b>eginner
+    <li><b>I</b>ntermediate
+    <li><b>L</b>earning
+    <li><b>L</b>anguage
+</ul>
+
+<h4>Purpose:</h4>
+It is a general purpose statically typed, easy to learn and use language.
+
+<h4>Key uses:</h4>
+<ul>
+    <li>Learning basic level programming.
+    <li>Pursuing enthusiast programming.
+</ul>
+
+<h4>Features:</h4>
+<ul>
+    <li>portable
+    <li>a variety of useful data types
+    <li>extend-able data types
+    <li>simple to use
+    <li>constants
+    <li>ease of static typing
+    <li>strong static typing
+</ul>
+
+<h4>License:</h4>
+    Copyright (c)  2022  J. Smith.</br>
+    Permission is granted to copy, distribute and/or modify this document, 
+    provided this notice is kept.</br>
+
+<h4>Documentation:</h4>
+<ul>
+    <li><a href="Reference.html">Reference Manual</a>
+    <li><a href="Primer.html">Bill Primer</a>
+    <li><a href="About.html#FAQ">FAQ</a>
+</ul>
+
+    <p>If you prefer a pdf:
+    <ul>
+        <li><a href="../Bill_Primer.pdf">Primer</a></li>
+        <li><a href="../Bill_Reference_Manual.pdf">Reference Manual</a></li>
+    </ul>
+    </p>
+@endhtmlonly
+
+*/

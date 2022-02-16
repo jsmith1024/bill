@@ -24,31 +24,33 @@ if [ -f ${doxyfile} ]
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on ${doxyfile}."
+            echo "Error: exit code ${retVal} on ${doxyfile}."
             exit $retVal
         fi
 fi
 
-doxyfile="dox/DoxyRefman"
+mkdir /tmp/bill
+
+doxyfile="dox/books/reference_manual/DoxyRefman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on ${doxyfile}."
+            echo "Error: exit code ${retVal} on ${doxyfile}."
             exit $retVal
         fi
-		cd docs/refman/latex
+		cd    /tmp/bill/refman/latex
 		make
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on Make of ${doxyfile}."
+            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
             exit $retVal
         fi
-        mv refman.pdf ../../Bill_Reference_Manual.pdf
 		cd $here
+        mv /tmp/bill/refman/latex/refman.pdf docs/Bill_Reference_Manual.pdf
 fi
 
 doxyfile="dox/DoxyUserman"
@@ -58,7 +60,7 @@ if [ -f ${doxyfile} ]
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on ${doxyfile}."
+            echo "Error: exit code ${retVal} on ${doxyfile}."
             exit $retVal
         fi
 # 		cd docs/userman/latex
@@ -66,33 +68,33 @@ if [ -f ${doxyfile} ]
 # 		retVal=$?
 # 		if [ $retVal -ne 0 ]
 # 		then
-#             echo "Error: exit code ${$retVal} on Make of ${doxyfile}."
+#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
 #             exit $retVal
 #       fi
 #       mv refman.pdf ../../Bill_User_Manual.pdf
 # 		cd $here
 fi
 
-doxyfile="dox/DoxyLangman"
+doxyfile="dox/books/Bill_Primer/DoxyLangman"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo"Error: exit code ${$retVal} on ${doxyfile}."
+            echo"Error: exit code ${retVal} on ${doxyfile}."
             exit $retVal
         fi
-		cd docs/langman/latex
+		cd /tmp/bill/langman/latex
 		make
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on Make of ${doxyfile}."
+            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
             exit $retVal
         fi
-        mv refman.pdf ../../Bill_Primer.pdf
 		cd $here
+        mv /tmp/bill/langman/latex/refman.pdf docs/Bill_Primer.pdf
 fi
 
 doxyfile="dox/DoxyStlman"
@@ -102,7 +104,7 @@ if [ -f ${doxyfile} ]
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${$retVal} on ${doxyfile}."
+            echo "Error: exit code ${retVal} on ${doxyfile}."
             exit $retVal
         fi
 # 		cd docs/stlman/latex
@@ -110,11 +112,13 @@ if [ -f ${doxyfile} ]
 # 		retVal=$?
 # 		if [ $retVal -ne 0 ]
 # 		then
-#             echo "Error: exit code ${$retVal} on Make of ${doxyfile}."
+#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
 #             exit $retVal
 #       fi
 #       mv refman.pdf ../../Bill_Standard_Library_Reference.pdf
 # 		cd $here
 fi
+
+# rm -r /tmp/bill
 
 # echo ${here}
