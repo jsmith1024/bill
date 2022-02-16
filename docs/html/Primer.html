@@ -105,49 +105,17 @@ This document is disigned to help progammers learn the basics of Bill.
     Permission is granted to copy, distribute and/or modify this document,
     provided this notice is kept.</br>
 </p>
-<p><a class="el" href="">Hello World </a></p>
-<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; "Hello World" is traditionally the first program one writes in a new language. That makes it a good starting point.</p>
-<pre class="fragment">#!/usr/bin/env bill
-
-# hello.bill
-# aka hello world
-
-fun main():no_value
-{
-    writeln("Hello World")
-    exit                    // defaults to 0
-}
-
-</pre><p> hello.bill</p>
-<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; Of course, the first few lines are unnecessary. However, declaring a main function is required. For details, on that, in shapter 6 (<a class="el" href="Functions.html">Functions</a>).</p>
-<p>To compile and run:</p>
-<pre class="fragment">prompt&gt; bill hello.bill
-</pre><p>If you operating system supports shebangs, the following will work:</p>
-<pre class="fragment">prompt&gt; hello.bill
-</pre><h1><a class="anchor" id="Reserved"></a>
-Reserved Words</h1>
-<p>Here is a list of Reserved Words: </p><table class="doxtable">
-<tr>
-<th colspan="2">Reserved Word </th><th>See:  </th></tr>
-<tr>
-<td>break </td><td>exit loop </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
-<tr>
-<td>continue </td><td>skip to next iteration </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
-<tr>
-<td>else </td><td>default condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
-<tr>
-<td>elsif</td><td>subsequent condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
-<tr>
-<td>exit </td><td>end program (possible exit value) </td><td>below.  </td></tr>
-<tr>
-<td>if </td><td>condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
-<tr>
-<td>return </td><td>end a function (possible return value) </td><td><a class="el" href="Functions.html">Functions</a>   </td></tr>
-<tr>
-<td>try </td><td>begin try block </td><td><a class="el" href="Exceptions.html">Exceptions</a>   </td></tr>
-</table>
-<p>With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1.</p>
-<p>Next: <a class="el" href="Types.html">Types</a> </p>
+<h4>Sections:</h4>
+<ul>
+<li><a class="el" href="Hello.html">Hello World</a></li>
+<li><a class="el" href="Types.html">Types</a></li>
+<li><a class="el" href="Expressions.html">Expressions</a></li>
+<li><a class="el" href="Containers.html">Containers</a></li>
+<li><a class="el" href="Flow.html">Flow Control</a></li>
+<li><a class="el" href="Functions.html">Functions</a></li>
+<li><a class="el" href="Exceptions.html">Exceptions</a></li>
+<li><a class="el" href="Style.html">Style</a> </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->

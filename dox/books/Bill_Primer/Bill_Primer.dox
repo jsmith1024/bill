@@ -33,79 +33,14 @@ This document is disigned to help progammers learn the basics of Bill.
     provided this notice is kept.</br>
 @endhtmlonly
 
-@link Hello Hello World
-@endlink
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-"Hello World" is traditionally the first program one writes in a new language.
-That makes it a good starting point.
-
-@verbinclude "hello.bill" hello.bill
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Of course, the first few lines are unnecessary.
-However, declaring a main function is required.
-For details, on that, in shapter 6 (\ref Functions).
-
-To compile and run:
-
-@verbinclude run_hello
-
-If you operating system supports shebangs, the following will work:
-
-@verbinclude run_hello_shebang
-
-@section    Reserved Reserved Words
-Here is a list of Reserved Words:
-<table>
-    <tr>
-        <th colspan="2">Reserved Word</th>
-        <th>See:</th>
-    </tr>
-    <tr>
-        <td>break</td>
-        <td>exit loop</td>
-        <td>@ref Loops </td>
-    </tr>
-    <tr>
-        <td>continue</td>
-        <td>skip to next iteration</td>
-        <td>@ref Loops </td>
-    </tr>
-    <tr>
-        <td>else</td>
-        <td>default condition</td>
-        <td>@ref Loops </td>
-    </tr>
-    <tr>
-        <td>elsif</td><td>subsequent condition</td>
-        <td>@ref Loops </td>
-    </tr>
-    <tr>
-        <td>exit</td>
-        <td>end program (possible exit value)</td>
-        <td>below.</td>
-    </tr>
-    <tr>
-        <td>if</td>
-        <td>condition</td>
-        <td>@ref Loops </td>
-    </tr>
-    <tr>
-        <td>return</td>
-        <td>end a function (possible return value)</td>
-        <td>@ref Functions </td>
-    </tr>
-    <tr>
-        <td>try</td>
-        <td>begin try block</td>
-        <td>@ref Exceptions </td>
-    </tr>
-</table>
-With exit, you can use any positive int64 value.
-However, 0 (default) generally represents a good run.
-Typically, a problem is designated by 1.
-
-Next: @ref Types
+<h4>Sections:</h4>
+- @ref Hello
+- @ref Types
+- @ref Expressions
+- @ref Containers
+- @ref Flow
+- @ref Functions
+- @ref Exceptions
+- @ref Style
 
 */

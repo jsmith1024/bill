@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bill: dox/books/Bill_Primer/primer_030_expressions.dox File Reference</title>
+<title>Bill: Hello World</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,12 +68,56 @@ $(function() {
 </div>
 
 </div><!-- top -->
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">dox/books/Bill_Primer/primer_030_expressions.dox File Reference</div>  </div>
+<div class="title">Hello World </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p><a class="el" href="Hello.html">Hello World </a></p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; "Hello World" is traditionally the first program one writes in a new language. That makes it a good starting point.</p>
+<pre class="fragment">#!/usr/bin/env bill
+
+# hello.bill
+# aka hello world
+
+fun main():no_value
+{
+    writeln("Hello World")
+    exit                    // defaults to 0
+}
+
+</pre><p> hello.bill</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; Of course, the first few lines are unnecessary. However, declaring a main function is required. For details, on that, in shapter 6 (<a class="el" href="Functions.html">Functions</a>).</p>
+<p>To compile and run:</p>
+<pre class="fragment">prompt&gt; bill hello.bill
+</pre><p>If you operating system supports shebangs, the following will work:</p>
+<pre class="fragment">prompt&gt; hello.bill
+</pre><h1><a class="anchor" id="Reserved"></a>
+Reserved Words</h1>
+<p>Here is a list of Reserved Words: </p><table class="doxtable">
+<tr>
+<th colspan="2">Reserved Word </th><th>See:  </th></tr>
+<tr>
+<td>break </td><td>exit loop </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
+<tr>
+<td>continue </td><td>skip to next iteration </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
+<tr>
+<td>else </td><td>default condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
+<tr>
+<td>elsif</td><td>subsequent condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
+<tr>
+<td>exit </td><td>end program (possible exit value) </td><td>below.  </td></tr>
+<tr>
+<td>if </td><td>condition </td><td><a class="el" href="Flow.html#Loops">Loops</a>   </td></tr>
+<tr>
+<td>return </td><td>end a function (possible return value) </td><td><a class="el" href="Functions.html">Functions</a>   </td></tr>
+<tr>
+<td>try </td><td>begin try block </td><td><a class="el" href="Exceptions.html">Exceptions</a>   </td></tr>
+</table>
+<p>With exit, you can use any positive int64 value. However, 0 (default) generally represents a good run. Typically, a problem is designated by 1.</p>
+<p>Next: <a class="el" href="Types.html">Types</a> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.17-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer">
