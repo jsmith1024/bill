@@ -3,20 +3,16 @@
 here=`pwd`
 # echo ${here}
 
-# doxyfile="dox/DoxyHtml"
-# if [ -f ${doxyfile} ]
-# 	then
-# 		doxygen ${doxyfile}
-# fi
+doxyfiles=("DoxyLangman" "DoxyRefman"            "DoxyUserman"      "DoxyStlman")
+locations=("langman"     "refman"                "userman"          "stlman")
+books=(    "Bill_Primer" "reference_manual"      "user_manual"      "standard_library_reference")
+names=(    "Bill_Primer" "Bill_Reference_Manual" "Bill_User_Manual" "Bill_Standard_Library_Reference")
 
-# doxyfile="dox/DoxyMan"
-# if [ -f ${doxyfile} ]
-# 	then
-# 		doxygen ${doxyfile}
-# fi
+# html forward and config
+cp dox/index.html  docs/index.html
+cp dox/_config.yml docs/_config.yml
 
-
-
+# html docs
 doxyfile="dox/DoxyHome"
 if [ -f ${doxyfile} ]
 	then
@@ -24,101 +20,35 @@ if [ -f ${doxyfile} ]
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
+            echo "Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
 fi
 
-mkdir /tmp/bill
-
-doxyfile="dox/books/reference_manual/DoxyRefman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-		cd    /tmp/bill/refman/latex
-		make
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-            exit $retVal
-        fi
-		cd $here
-        mv /tmp/bill/refman/latex/refman.pdf docs/Bill_Reference_Manual.pdf
-fi
-
-doxyfile="dox/DoxyUserman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-# 		cd docs/userman/latex
-# 		make
-# 		retVal=$?
-# 		if [ $retVal -ne 0 ]
-# 		then
-#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-#             exit $retVal
-#       fi
-#       mv refman.pdf ../../Bill_User_Manual.pdf
-# 		cd $here
-fi
-
-doxyfile="dox/books/Bill_Primer/DoxyLangman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo"Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-		cd /tmp/bill/langman/latex
-		make
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-            exit $retVal
-        fi
-		cd $here
-        mv /tmp/bill/langman/latex/refman.pdf docs/Bill_Primer.pdf
-fi
-
-doxyfile="dox/DoxyStlman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-# 		cd docs/stlman/latex
-# 		make
-# 		retVal=$?
-# 		if [ $retVal -ne 0 ]
-# 		then
-#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-#             exit $retVal
-#       fi
-#       mv refman.pdf ../../Bill_Standard_Library_Reference.pdf
-# 		cd $here
-fi
-
-# rm -r /tmp/bill
-
-# echo ${here}
+# pdf docs
+for i in {0..3}
+do
+    doxyfile="dox/books/${books[i]}/${doxyfiles[i]}"
+    if [ -f ${doxyfile} ]
+        then
+            doxygen ${doxyfile}
+            retVal=$?
+            if [ $retVal -ne 0 ]
+            then
+                echo "Error: exit code ${$retVal} on doxygen ${doxyfile}."
+                exit $retVal
+            fi
+            cd /tmp/bill/${locations[i]}/latex
+            make
+            retVal=$?
+            if [ $retVal -ne 0 ]
+            then
+                echo "Error: exit code ${retVal} on Make of ${doxyfile}."
+                exit $retVal
+            fi
+            cd $here
+            mv /tmp/bill/${locations[i]}/latex/refman.pdf docs/${names[i]}.pdf
+    else
+        echo -e "\n========\nInfo: ${doxyfile} does not exist.\n========\n"
+    fi
+done
