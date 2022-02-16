@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['exceptions_2edox_61',['Exceptions.dox',['../Exceptions_8dox.html',1,'']]],
-  ['expressions_2edox_62',['Expressions.dox',['../Expressions_8dox.html',1,'']]]
+  ['functions_2edox_62',['Functions.dox',['../Functions_8dox.html',1,'']]]
 ];

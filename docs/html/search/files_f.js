@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['reference_2edox_75',['reference.dox',['../reference_8dox.html',1,'']]],
-  ['repl_2ecpp_76',['REPL.cpp',['../REPL_8cpp.html',1,'']]],
-  ['repl_2eh_77',['REPL.h',['../REPL_8h.html',1,'']]]
+  ['strings_2edox_78',['Strings.dox',['../Strings_8dox.html',1,'']]],
+  ['style_2edox_79',['Style.dox',['../Style_8dox.html',1,'']]]
 ];
