@@ -38,8 +38,11 @@ It is a general purpose statically typed, easy to learn and use language.
     provided this notice is kept.</br>
 
 <h4>Documentation:</h4>
-    
-<--    <p>Please see the current documentation in <a href="https://jsmith1024.github.io/bill/home/html/index.html">html</a>.</p> -->
+<ul>
+    <li><a href="Reference.html">Reference Manual</a>
+    <li><a href="Primer.html">Bill Primer</a>
+    <li><a href="About.html#FAQ">FAQ</a>
+</ul>
 
     <p>If you prefer a pdf:
     <ul>

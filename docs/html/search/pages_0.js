@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bill_20home_88',['Bill Home',['../index.html',1,'']]],
-  ['bill_20primer_89',['Bill Primer',['../Primer.html',1,'']]]
+  ['about_20bill_91',['About bill',['../About.html',1,'']]]
 ];
