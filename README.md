@@ -31,7 +31,7 @@ It is a general purpose statically typed, easy to learn and use language.
 - strong static typing
 
 #### Manuals:
-- [User Manual](https://jsmith1024.github.io/bill/userman/html/index.html)
-- [Reference Manual](https://jsmith1024.github.io/bill/refman/html/index.html)
-- [Bill Primer](https://jsmith1024.github.io/bill/langman/html/index.html)
-- [Standard Library Refence](https://jsmith1024.github.io/bill/stlman/html/index.html)
+- [User Manual](https://jsmith1024.github.io/bill/User.html)
+- [Reference Manual](https://jsmith1024.github.io/bill/Reference.html)
+- [Bill Primer](https://jsmith1024.github.io/bill/Primer.html)
+- [Standard Library Refence](https://jsmith1024.github.io/bill/Standard.html)
