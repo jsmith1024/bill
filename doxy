@@ -35,7 +35,8 @@ do
             retVal=$?
             if [ $retVal -ne 0 ]
             then
-                echo "Error: exit code ${$retVal} on doxygen ${doxyfile}."
+                echo "Error: exit code ${retVal} on doxygen ${doxyfile}."
+                cd $here
                 exit $retVal
             fi
             cd /tmp/bill/${locations[i]}/latex
@@ -44,6 +45,7 @@ do
             if [ $retVal -ne 0 ]
             then
                 echo "Error: exit code ${retVal} on Make of ${doxyfile}."
+                cd $here
                 exit $retVal
             fi
             cd $here
