@@ -1,18 +1,60 @@
 #!/usr/bin/bash
 
-here=`pwd`
-# echo ${here}
+# function to generate PDFs
+genPdf () {
+    # parameters:
+    config=$1
+    book=$2
+    location=$3
+    name=$4
+    
+    # test build folder presence
+    if [ ! -d /tmp/bill ]
+    then
+        mkdir /tmp/bill
+    fi
+    
+    # build if DoxyFile exists
+    doxyfile="dox/books/${book}/${config}"
+    if [ -f ${doxyfile} ]
+    then
+        doxygen ${doxyfile}
+        retVal=$?
+        if [ $retVal -ne 0 ]
+        then
+            echo "Error: exit code ${retVal} on doxygen ${doxyfile}."
+#                 cd $here
+            exit $retVal
+        fi
+        
+        # make pdf
+        pushd /tmp/bill/${location}/latex
+        make
+        retVal=$?
+        if [ $retVal -ne 0 ]
+        then
+            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
+            popd
+            exit $retVal
+        fi
+        popd
+        
+        # move pdf to docs
+        mv /tmp/bill/${location}/latex/refman.pdf docs/${name}.pdf
+    else
+        echo -e "\n========\nInfo: ${doxyfile} does not exist.\n========\n"
+        # future activation
+#         echo -e "\n========\nError: ${doxyfile} does not exist.\n========\n"
+#         popd
+#         exit 1
+    fi
+}
 
-doxyfiles=("DoxyLangman" "DoxyRefman"            "DoxyUserman"      "DoxyStlman")
-locations=("langman"     "refman"                "userman"          "stlman")
-books=(    "Bill_Primer" "reference_manual"      "user_manual"      "standard_library_reference")
-names=(    "Bill_Primer" "Bill_Reference_Manual" "Bill_User_Manual" "Bill_Standard_Library_Reference")
-
-# html forward and config
+# copy html forward and config
 cp dox/index.html  docs/index.html
 cp dox/_config.yml docs/_config.yml
 
-# html docs
+# build html docs
 doxyfile="dox/DoxyHome"
 if [ -f ${doxyfile} ]
 	then
@@ -25,32 +67,8 @@ if [ -f ${doxyfile} ]
         fi
 fi
 
-# pdf docs
-for i in {0..3}
-do
-    doxyfile="dox/books/${books[i]}/${doxyfiles[i]}"
-    if [ -f ${doxyfile} ]
-        then
-            doxygen ${doxyfile}
-            retVal=$?
-            if [ $retVal -ne 0 ]
-            then
-                echo "Error: exit code ${retVal} on doxygen ${doxyfile}."
-                cd $here
-                exit $retVal
-            fi
-            cd /tmp/bill/${locations[i]}/latex
-            make
-            retVal=$?
-            if [ $retVal -ne 0 ]
-            then
-                echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-                cd $here
-                exit $retVal
-            fi
-            cd $here
-            mv /tmp/bill/${locations[i]}/latex/refman.pdf docs/${names[i]}.pdf
-    else
-        echo -e "\n========\nInfo: ${doxyfile} does not exist.\n========\n"
-    fi
-done
+# make pdf docs
+genPdf DoxyLangman Bill_Primer                langman Bill_Primer
+genPdf DoxyRefman  reference_manual           refman  Bill_Reference_Manual
+genPdf DoxyUserman user_manual                userman Bill_User_Manual
+genPdf DoxyStlman  standard_library_reference stlman  Bill_Standard_Library_Reference
