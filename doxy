@@ -1,22 +1,60 @@
 #!/usr/bin/bash
 
-here=`pwd`
-# echo ${here}
+# function to generate PDFs
+genPdf () {
+    # parameters:
+    config=$1
+    book=$2
+    location=$3
+    name=$4
+    
+    # test build folder presence
+    if [ ! -d /tmp/bill ]
+    then
+        mkdir /tmp/bill
+    fi
+    
+    # build if DoxyFile exists
+    doxyfile="dox/books/${book}/${config}"
+    if [ -f ${doxyfile} ]
+    then
+        doxygen ${doxyfile}
+        retVal=$?
+        if [ $retVal -ne 0 ]
+        then
+            echo "Error: exit code ${retVal} on doxygen ${doxyfile}."
+#                 cd $here
+            exit $retVal
+        fi
+        
+        # make pdf
+        pushd /tmp/bill/${location}/latex
+        make
+        retVal=$?
+        if [ $retVal -ne 0 ]
+        then
+            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
+            popd
+            exit $retVal
+        fi
+        popd
+        
+        # move pdf to docs
+        mv /tmp/bill/${location}/latex/refman.pdf docs/${name}.pdf
+    else
+        echo -e "\n========\nInfo: ${doxyfile} does not exist.\n========\n"
+        # future activation
+#         echo -e "\n========\nError: ${doxyfile} does not exist.\n========\n"
+#         popd
+#         exit 1
+    fi
+}
 
-# doxyfile="dox/DoxyHtml"
-# if [ -f ${doxyfile} ]
-# 	then
-# 		doxygen ${doxyfile}
-# fi
+# copy html forward and config
+cp dox/index.html  docs/index.html
+cp dox/_config.yml docs/_config.yml
 
-# doxyfile="dox/DoxyMan"
-# if [ -f ${doxyfile} ]
-# 	then
-# 		doxygen ${doxyfile}
-# fi
-
-
-
+# build html docs
 doxyfile="dox/DoxyHome"
 if [ -f ${doxyfile} ]
 	then
@@ -24,101 +62,13 @@ if [ -f ${doxyfile} ]
 		retVal=$?
 		if [ $retVal -ne 0 ]
 		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
+            echo "Error: exit code ${$retVal} on ${doxyfile}."
             exit $retVal
         fi
 fi
 
-mkdir /tmp/bill
-
-doxyfile="dox/books/reference_manual/DoxyRefman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-		cd    /tmp/bill/refman/latex
-		make
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-            exit $retVal
-        fi
-		cd $here
-        mv /tmp/bill/refman/latex/refman.pdf docs/Bill_Reference_Manual.pdf
-fi
-
-doxyfile="dox/DoxyUserman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-# 		cd docs/userman/latex
-# 		make
-# 		retVal=$?
-# 		if [ $retVal -ne 0 ]
-# 		then
-#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-#             exit $retVal
-#       fi
-#       mv refman.pdf ../../Bill_User_Manual.pdf
-# 		cd $here
-fi
-
-doxyfile="dox/books/Bill_Primer/DoxyLangman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo"Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-		cd /tmp/bill/langman/latex
-		make
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-            exit $retVal
-        fi
-		cd $here
-        mv /tmp/bill/langman/latex/refman.pdf docs/Bill_Primer.pdf
-fi
-
-doxyfile="dox/DoxyStlman"
-if [ -f ${doxyfile} ]
-	then
-		doxygen ${doxyfile}
-		retVal=$?
-		if [ $retVal -ne 0 ]
-		then
-            echo "Error: exit code ${retVal} on ${doxyfile}."
-            exit $retVal
-        fi
-# 		cd docs/stlman/latex
-# 		make
-# 		retVal=$?
-# 		if [ $retVal -ne 0 ]
-# 		then
-#             echo "Error: exit code ${retVal} on Make of ${doxyfile}."
-#             exit $retVal
-#       fi
-#       mv refman.pdf ../../Bill_Standard_Library_Reference.pdf
-# 		cd $here
-fi
-
-# rm -r /tmp/bill
-
-# echo ${here}
+# make pdf docs
+genPdf DoxyLangman Bill_Primer                langman Bill_Primer
+genPdf DoxyRefman  reference_manual           refman  Bill_Reference_Manual
+genPdf DoxyUserman user_manual                userman Bill_User_Manual
+genPdf DoxyStlman  standard_library_reference stlman  Bill_Standard_Library_Reference

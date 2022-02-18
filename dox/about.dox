@@ -13,7 +13,7 @@
 <h4>Purpose:</h4>
 It is a general purpose statically typed, easy to learn and use language.
 
-<h4>Key uses:</h4>
+<h4>Key Uses:</h4>
 <ul>
     <li>Learning basic level programming.
     <li>Pursuing enthusiast programming.
@@ -34,11 +34,23 @@ It is a general purpose statically typed, easy to learn and use language.
 - <b>Why is it called Bill?</b><br>
 &nbsp;Bill is named after Bill Smith, who encouraged the language's creator to learn programming as a teenager.<br>
 <br>
-- <b>Is bill Object Oriented?</b><br>
+- <b>Is Bill Object Oriented?</b><br>
 As there are numerous definitions of "bill Object Oriented" accepted by the programming community, it is impossible to anser all of the definitions. (See next question.)<br>
 <br>
 - <b>Can I define a class and create an instance of it?</b><br>
 This is planned for a future version of Bill. At this time, it is not possible.<br>
+<br>
+- <b>How can I build the documentation, on a Linux based system?</b><br>
+It will be neccessary to install the following:
+<ul>
+    <li>doxygen
+    <li>graphviz
+    <li>texlive-latex-base
+    <li>texlive-fonts-recommended
+    <li>texlive-fonts-extra
+    <li>texlive-latex-extra
+</ul>
+Based on: https://gist.github.com/rain1024/98dd5e2c6c8c28f9ea9d<br>
 
 
 */
