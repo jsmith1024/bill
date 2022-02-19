@@ -1,8 +1,6 @@
 /**
 @mainpage   Bill Home
 
-@htmlonly
-
 <h4>Name:</h4>
 <b>Bill</b>
 <ul>
@@ -38,18 +36,10 @@ It is a general purpose statically typed, easy to learn and use language.
     provided this notice is kept.</br>
 
 <h4>Documentation:</h4>
-<ul>
-    <li><a href="Reference.html">Reference Manual</a>
-    <li><a href="Primer.html">Bill Primer</a>
-    <li><a href="About.html#FAQ">FAQ</a>
-</ul>
-
-    <p>If you prefer a pdf:
-    <ul>
-        <li><a href="../Bill_Primer.pdf">Primer</a></li>
-        <li><a href="../Bill_Reference_Manual.pdf">Reference Manual</a></li>
-    </ul>
-    </p>
-@endhtmlonly
+- Bill Primer: <a href="Primer.html">HTML</a> <a href="../Primer.pdf">PDF</a>
+- Bill Reference Manual: <a href="Reference.html">HTML</a> <a href="../Reference_Manual.pdf">PDF</a>
+- Bill Standard Library Reference: <a href="Library.html">HTML</a> <a href="../Standard_Library_Reference.pdf">PDF</a>
+- Bill User Manual: <a href="User.html">HTML</a> <a href="../User_Manual.pdf">PDF</a>
+- FAQ: <a href="About.html#FAQ">HTML</a>
 
 */
