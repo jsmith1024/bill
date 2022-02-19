@@ -60,7 +60,7 @@ cp dox/index.html  docs/index.html
 cp dox/_config.yml docs/_config.yml
 
 # build html docs
-doxyfile="dox/DoxyHome"
+doxyfile="dox/doxyfile"
 if [ -f ${doxyfile} ]
 	then
 		doxygen ${doxyfile}
