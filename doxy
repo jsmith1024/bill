@@ -27,7 +27,7 @@ genPdf () {
         
         # make pdf
         pushd ${tmp_location}
-        make
+        make # Note: doxygen is hardcoded to generate refman.tex and refman.pdf -- there is no configuration for this
         retVal=$?
         if [ $retVal -ne 0 ]
         then
@@ -38,7 +38,8 @@ genPdf () {
         popd
         
         # move pdf to docs
-        mv ${tmp_location}/refman.pdf docs/${name}.pdf # TODO: Why is this refman.pdf?
+        # Note: doxygen is hardcoded to generate refman.pdf -- there is no configuration for this
+        mv ${tmp_location}/refman.pdf docs/${name}.pdf
         retVal=$?
         if [ $retVal -ne 0 ]
         then
