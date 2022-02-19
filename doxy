@@ -3,10 +3,9 @@
 # function to generate PDFs
 genPdf () {
     # parameters:
-    config=$1
-    book=$2
-    location=$3
-    name=$4
+    name=$1
+    doxyfile="dox/books/${name}/doxyfile"
+    tmp_location=/tmp/bill/${name}/latex
     
     # test build folder presence
     if [ ! -d /tmp/bill ]
@@ -15,7 +14,6 @@ genPdf () {
     fi
     
     # build if DoxyFile exists
-    doxyfile="dox/books/${book}/${config}"
     if [ -f ${doxyfile} ]
     then
         doxygen ${doxyfile}
@@ -28,7 +26,7 @@ genPdf () {
         fi
         
         # make pdf
-        pushd /tmp/bill/${location}/latex
+        pushd ${tmp_location}
         make
         retVal=$?
         if [ $retVal -ne 0 ]
@@ -40,7 +38,14 @@ genPdf () {
         popd
         
         # move pdf to docs
-        mv /tmp/bill/${location}/latex/refman.pdf docs/${name}.pdf
+        mv ${tmp_location}/refman.pdf docs/${name}.pdf # TODO: Why is this refman.pdf?
+        retVal=$?
+        if [ $retVal -ne 0 ]
+        then
+            echo "Error: exit code ${retVal} on move of pdf from ${tmp_location} to docs/${name}.pdf."
+            popd
+            exit $retVal
+        fi
     else
         echo -e "\n========\nInfo: ${doxyfile} does not exist.\n========\n"
         # future activation
@@ -68,7 +73,7 @@ if [ -f ${doxyfile} ]
 fi
 
 # make pdf docs
-genPdf DoxyLangman Bill_Primer                langman Bill_Primer
-genPdf DoxyRefman  reference_manual           refman  Bill_Reference_Manual
-genPdf DoxyUserman user_manual                userman Bill_User_Manual
-genPdf DoxyStlman  standard_library_reference stlman  Bill_Standard_Library_Reference
+genPdf Primer
+genPdf Reference_Manual
+genPdf User_Manual
+genPdf Standard_Library_Reference
