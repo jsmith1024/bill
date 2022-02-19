@@ -52,5 +52,8 @@ It will be neccessary to install the following:
 </ul>
 Based on: https://gist.github.com/rain1024/98dd5e2c6c8c28f9ea9d<br>
 
-
+@section License
+    Copyright (c)  2022  J. Smith.</br>
+    Permission is granted to copy, distribute and/or modify this document,
+    provided this notice is kept.</br>
 */
