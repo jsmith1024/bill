@@ -33,4 +33,13 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html"},
-{text:"Functions",url:"globals_func.html"}]}]}]}
+{text:"Functions",url:"globals_func.html"}]}]},
+{text:"Manuals",url:"usergroup0.html",children:[
+{text:"Primer",url:"Primer.html"},
+{text:"Reference Manual",url:"Reference.html"},
+{text:"Standard Library Reference",url:"Library.html"},
+{text:"User Manual",url:"User.html"}]},
+{text:"Additional",url:"usergroup1.html",children:[
+{text:"About",url:"About.html"},
+{text:"FAQ",url:"About.html#FAQ"},
+{text:"License",url:"About.html#License"}]}]}
