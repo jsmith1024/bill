@@ -33,5 +33,5 @@ It is a general purpose statically typed, easy to learn and use language.
 #### Manuals:
 - Bill Primer [HTML](https://jsmith1024.github.io/bill/html/Primer.html) [PDF](https://jsmith1024.github.io/bill/Primer.pdf)
 - Reference Manual [HTML](https://jsmith1024.github.io/bill/html/Reference.html) [PDF](https://jsmith1024.github.io/bill/Reference_Manual.pdf)
-- Standard Library Reference [HTML](https://jsmith1024.github.io/bill/Library.html) [PDF](https://jsmith1024.github.io/bill/html/Standard_Library_Reference.pdf)
+- Standard Library Reference [HTML](https://jsmith1024.github.io/bill/html/Library.html) [PDF](https://jsmith1024.github.io/bill/Standard_Library_Reference.pdf)
 - User Manual [HTML](https://jsmith1024.github.io/bill/html/User.html) [PDF](https://jsmith1024.github.io/bill/User_Manual.pdf)
