@@ -31,9 +31,9 @@ It is a general purpose statically typed, easy to learn and use language.
 </ul>
 
 <h4>License:</h4>
-    Copyright (c)  2022  J. Smith.</br>
-    Permission is granted to copy, distribute and/or modify this document, 
-    provided this notice is kept.</br>
+    <p>Copyright (c)  2022  Joe Smith.</p>
+    <p>Permission is granted to copy, distribute and/or modify this document, 
+    provided this notice is kept.</p>
 
 <h4>Documentation:</h4>
 - Bill Primer: <a href="Primer.html">HTML</a> <a href="../Primer.pdf">PDF</a>
