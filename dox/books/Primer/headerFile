@@ -24,6 +24,7 @@
 \usepackage[table]{xcolor}
 \usepackage{ifpdf,ifxetex}
 \usepackage{graphicx}
+\usepackage{appendix}
 
 % mine
 %\usepackage{background}
