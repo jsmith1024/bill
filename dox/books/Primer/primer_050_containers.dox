@@ -17,54 +17,7 @@ Sets are based on the mathenatical sets. See <a href="https://en.wikipedia.org/w
 Note: sets are unordered. Accessing them will result in random ordering.
 @verbinclude "set.bill" set.bill
 
-@subsection Operators
-<table>
-    <tr>
-        <th colspan="2">Binary Operators</th>
-        <th>Example</th>
-    </tr>
-    <tr>
-        <td> < </td>
-        <td>subset</td>
-        <td>x < y</td>
-    </tr>
-    <tr>
-        <td><=</td>
-        <td>subset or equal to</td>
-        <td>x <= y</td>
-    </tr>
-    <tr>
-        <td> > </td>
-        <td>superset</td>
-        <td>x > y</td>
-    </tr>
-    <tr>
-        <td>>=</td>
-        <td>superset or equal to</td>
-        <td>x >= y</td>
-    </tr>
-    <tr>
-        <td> in </td>
-        <td>membership</td>
-        <td>x in y</td>
-    </tr>
-    <tr>
-        <td> & </td>
-        <td>intersection</td>
-        <td>x & y</td>
-    </tr>
-    <tr>
-        <td> | </td>
-        <td>union</td>
-        <td>x | y</td>
-    </tr>
-    <tr>
-        <td> ^ </td>
-        <td>symmetric difference</td>
-        <td>x ^ y</td>
-    </tr>
-</table>
-@latexonly \pagebreak @endlatexonly
+For set operators, see @ref Set
 
 @section    Tuples
 @verbinclude "tuple.bill" tuple.bill

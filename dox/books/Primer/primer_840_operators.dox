@@ -1,0 +1,262 @@
+/**
+@page       Operators Operators
+
+@link       Operators Operators
+@endlink
+
+Here are Bill's operators.
+
+
+@subsection Mathmatic Math Operators
+<table>
+    <tr>
+        <th colspan="2">Urnary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>++</td>
+        <td>increment</td>
+        <td>i++</td>
+    </tr>
+    <tr>
+        <td>--</td>
+        <td>decrement</td>
+        <td>i--</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>negative</td>
+        <td>-1</td>
+    </tr>
+    <tr>
+        <th colspan="2">Binary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>+</td>
+        <td>add</td>
+        <td>2 + 2</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>subtract</td>
+        <td>4 - 2</td>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>multiply</td>
+        <td>4 * 2</td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>divide</td>
+        <td>4.0 / 2.0</td>
+    </tr>
+    <tr>
+        <td>//</td>
+        <td>floor divide</td>
+        <td>4 // 2</td>
+    </tr>
+    <tr>
+        <td>%</td>
+        <td>modulus</td>
+        <td>4 % 2</td>
+    </tr>
+    <tr>
+        <td>**</td>
+        <td>power</td>
+        <td>4**2</td>
+    </tr>
+    <tr>
+        <th colspan="2">Inplace Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>+=</td>
+        <td>add</td>
+        <td>x += 2</td>
+    </tr>
+    <tr>
+        <td>-=</td>
+        <td>subtract</td>
+        <td>x -= 2</td>
+    </tr>
+    <tr>
+        <td>*=</td>
+        <td>multiply</td>
+        <td>x *= 2</td>
+    </tr>
+    <tr>
+        <td>/=</td>
+        <td>divide</td>
+        <td>x /= 2.0</td>
+    </tr>
+    <tr>
+        <td>//=</td>
+        <td>floor divide</td>
+        <td>x //= 2</td>
+    </tr>
+    <tr>
+        <td>%=</td>
+        <td>modulus</td>
+        <td>x %= 2</td>
+    </tr>
+</table>
+
+@latexonly \pagebreak @endlatexonly
+@subsection Logical Logic Operators
+<table>
+    <tr>
+        <th colspan="2">Urnary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>!</td>
+        <td>not</td>
+        <td>! is_logical</td>
+    </tr>
+    <tr>
+        <td>~</td>
+        <td>invert</td>
+        <td>~ x</td>
+    </tr>
+    <tr>
+        <th colspan="2">Binary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>==</td>
+        <td>equal to</td>
+        <td>x == y</td>
+    </tr>
+    <tr>
+        <td>===</td>
+        <td>same identity</td>
+        <td>x === y</td>
+    </tr>
+    <tr>
+        <td>!=</td>
+        <td>not equal to</td>
+        <td>x != y</td>
+    </tr>
+    <tr>
+        <td> < </td>
+        <td>less than</td>
+        <td>x < y</td>
+    </tr>
+    <tr>
+        <td><=</td>
+        <td>less than or equal to</td>
+        <td>x <= y</td>
+    </tr>
+    <tr>
+        <td> > </td>
+        <td>greater than</td>
+        <td>x > y</td>
+    </tr>
+    <tr>
+        <td>>=</td>
+        <td>greater than or equal to</td>
+        <td>x >= y</td>
+    </tr>
+    <tr>
+        <td> in </td>
+        <td>membership</td>
+        <td>x in y</td>
+    </tr>
+    <tr>
+        <td> & </td>
+        <td>and</td>
+        <td>x & y</td>
+    </tr>
+    <tr>
+        <td> | </td>
+        <td>or</td>
+        <td>x | y</td>
+    </tr>
+    <tr>
+        <td> ^ </td>
+        <td>xor</td>
+        <td>x ^ y</td>
+    </tr>
+    <tr>
+        <td> << </td>
+        <td>shift left</td>
+        <td>x << y</td>
+    </tr>
+    <tr>
+        <td> >> </td>
+        <td>shift right</td>
+        <td>x >> y</td>
+    </tr>
+</table>
+
+@subsection Concatenate Concatenation Operators
+<table>
+    <tr>
+        <th colspan="2">Binary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>+</td>
+        <td>concatenate</td>
+        <td>word + " "</td>
+    </tr>
+    <tr>
+        <td>+=</td>
+        <td>append</td>
+        <td>"Name: " += name</td>
+    </tr>
+</table>
+
+@subsection Set Set Operators
+<table>
+    <tr>
+        <th colspan="2">Binary Operators</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td> < </td>
+        <td>subset</td>
+        <td>x < y</td>
+    </tr>
+    <tr>
+        <td><=</td>
+        <td>subset or equal to</td>
+        <td>x <= y</td>
+    </tr>
+    <tr>
+        <td> > </td>
+        <td>superset</td>
+        <td>x > y</td>
+    </tr>
+    <tr>
+        <td>>=</td>
+        <td>superset or equal to</td>
+        <td>x >= y</td>
+    </tr>
+    <tr>
+        <td> in </td>
+        <td>membership</td>
+        <td>x in y</td>
+    </tr>
+    <tr>
+        <td> & </td>
+        <td>intersection</td>
+        <td>x & y</td>
+    </tr>
+    <tr>
+        <td> | </td>
+        <td>union</td>
+        <td>x | y</td>
+    </tr>
+    <tr>
+        <td> ^ </td>
+        <td>symmetric difference</td>
+        <td>x ^ y</td>
+    </tr>
+</table>
+
+Next: @ref Containers
+
+*/

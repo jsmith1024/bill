@@ -40,5 +40,8 @@ This document is disigned to help progammers learn the basics of Bill.
 - @ref Functions
 - @ref Exceptions
 - @ref Style
+- @ref Reserved
+- @ref Built-in
+- @ref Operators
 
 */
