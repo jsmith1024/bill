@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reserved_20words_112',['Reserved Words',['../Reserved.html',1,'']]]
+  ['operators_113',['Operators',['../Operators.html',1,'']]]
 ];
