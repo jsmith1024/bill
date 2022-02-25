@@ -20,4 +20,9 @@ TBD
 @section    Blocks
 @verbinclude block
 
+@latexonly
+\appendix
+\appendixpage
+\addappheadtotoc
+@endlatexonly
 */
