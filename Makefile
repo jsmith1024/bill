@@ -42,4 +42,5 @@ docs/%.pdf: FORCE | $(TMP_DIR)
 # Running tests
 .PHONY: test
 test: all
+	test/exampletest/bill_examples.sh dox "echo TODO: Compile "
 	test/unittest/bill_test.exe
